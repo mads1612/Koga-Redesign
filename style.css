@@ -1,0 +1,82 @@
+/*-----------fonts & variables-----------*/
+
+
+h1 {
+    font-family: 'Open Sans', sans-serif font-weight: bold;
+    margin-top: 0;
+    padding-top: 1rem;
+    font-size: 2rem;
+}
+
+h2 {
+    font-family: 'Open Sans', sans-serif;
+}
+
+h3 {
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+}
+
+p {
+    font-family: 'Montserrat', sans-serif;
+}
+
+form {
+    font-family: 'Montserrat', sans-serif;
+}
+
+ul {
+    font-family: 'Montserrat', sans-serif;
+}
+
+input {
+    margin-top: 1rem;
+}
+
+
+
+:root {
+    --light-blue: #4d9cd0;
+    --blue: #0E7DC7;
+    --dark-blue: #052D47;
+    --background: #ffffff;
+    --link-color: #052D47;
+    --button-color: #0E7DC7;
+    --footer: #052D47;
+}
+
+button {
+    margin: 0.5rem 0.5rem 0.5rem 0;
+    padding: 0.5rem;
+    background-color: var(--button-color);
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #052D47;
+}
+
+/*-------------Generelt & common styling----------*/
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.hide {
+    transform: translateX(100%);
+    opacity: 0;
+    /*Placerer element 100% til højre så det er "skjult"*/
+}
+
+img {
+    width: 100%;
+}
