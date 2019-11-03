@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <style>
         SKRIV DIN CSS HER
+
     </style>
 </head>
 
@@ -32,7 +33,30 @@
     </footer>
     <script src="burgermenu.js"></script>
     <script>
-        SKRIV DIN JAVASCRIPT HER
+        let side = {};
+        const url = "";
+
+        document.addEventListener("DOMContentLoaded", start);
+
+        function start() {
+            hentJson();
+        }
+
+        async function hentJson() {
+            const response = await fetch(url);
+            side = await response.json();
+            vis();
+        }
+
+        function vis() {
+
+
+            document.querySelector("").textContent = side.title.rendered;
+            document.querySelector("").innerHTML = side.content.rendered;
+        }
+
     </script>
 
-</body></html>
+</body>
+
+</html>
