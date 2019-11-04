@@ -7,8 +7,51 @@
     <title>Koga's cykler</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        SKRIV DIN CSS HER
+        body {
+            overflow-x: hidden;
+            margin: 0 auto;
 
+
+
+
+        }
+
+        #bike_model {
+            display: grid;
+            grid-gap: 2rem;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            /*Hvert element skal være mindst 400px. Hver gang der er plads til et element ved siden af med 400px kommer det op ved siden af og udvider rækken*/
+            margin: 1rem auto;
+            padding: 2rem;
+
+        }
+
+
+        #bike_model_section {
+            background-color: #f7f7f7;
+
+        }
+
+        .wrapper {
+            max-width: 1200px;
+        }
+
+        #bike_model h1 {
+            text-align: center;
+        }
+
+        .cykler {
+            padding: 0.5rem;
+            background-color: #ffffff;
+        }
+
+        .cykler:hover {
+            border-top-style: solid;
+            border-top-color: var(--blue);
+            border-width: 3px;
+            transform: scale(1.05);
+
+        }
     </style>
 </head>
 
@@ -45,86 +88,69 @@
     </section>
 
     <!-- Skal ikke vises i desktop version?-->
-    <section class="valgt_filter">
+    <section id="filtermenu">
+        <nav>
+            <button id="filterknap">Filter</button>
+            <div id="kategorier" class="hidden">
+                <!-- <template id="filterbuttons">
+                <button class="filter" data-type=""></button>
+                </template>-->
+                <button class="filter valgt" data-type="alle">Alle </button>
+                <button class="filter" data-type="el">Elcykel</button>
+                <button class="filter" data-type="by">Bycykel</button>
+                <button class="filter" data-type="trekking">Trekkingcykel</button>
+                <button class="filter" data-type="racer">Racercykel</button>
 
-        <template>
-            <div class="filter_knap">
-                <h1 class=""></h1>
-                <form action="">
-                    <select name="filter">
-                        <option value="">Filter</option>
-                        <option value="">Race</option>
-                        <option value="">City tour</option>
-                        <option value="">Mountain bike</option>
-                        <option value="">Trekking</option>
-                        <option value="">E-bike</option>
-                    </select>
-                    <input type="submit">
-                </form>
+
             </div>
-
-            <div class="sorter_knap">
-                <form action="">
-                    <select name="sorter">
-                        <option value="">Sorter</option>
-                        <option value="">Race</option>
-                        <option value="">City tour</option>
-                        <option value="">Mountain bike</option>
-                        <option value="">Trekking</option>
-                        <option value="">E-bike</option>
-                    </select>
-                    <input type="submit">
-                </form>
-            </div>
-        </template>
-
+        </nav>
     </section>
 
-    <section class="cykel_model">
-        <template>
-            <h1 class=""></h1>
-            <article class="">
-                <h2></h2>
-                <img class="billede" src="" alt="">
-                <p></p>
-                <p></p>
-            </article>
-        </template>
+    <section id="bike_model_section">
+        <div id="bike_model" class="wrapper"></div>
     </section>
+    <template class="bike_template">
+        <article class="cykler">
+            <h1></h1>
+            <img class="image" src="" alt="">
+            <p class="price"></p>
+            <p class="weight"></p>
+            <h3 class="read_more">Læs mere</h3>
+        </article>
+    </template>
+
+
 
     <footer>
     </footer>
     <script src="burgermenu.js"></script>
     <script>
-        let posts = [];
-        const url = "";
+        let bikes = [];
+        const dest = document.querySelector("#bike_model");
+        const template = document.querySelector(".bike_template");
 
         document.addEventListener("DOMContentLoaded", start);
 
         function start() {
-            hentJson();
+            getJson();
         }
 
-        async function hentJson() {
-            const response = await fetch(url);
-            posts = await response.json();
-            vis();
+        async function getJson() {
+            const url = "http://kbdesign.dk/kea/kogacenter/wordpress/wp-json/wp/v2/cykler"
+            let jsonData = await fetch(url);
+            bikes = await jsonData.json();
+            showBikes();
         }
 
-        function vis() {
-            const skabalon = document.querySelector("");
-            const liste = document.querySelector(".");
-            posts.forEach(post => {
-                const klon = skabalon.cloneNode(true).content;
-                klon.querySelector(".").textContent = post.title.rendered;
-                klon.querySelector(".").innerHTML = post.content.rendered;
-                liste.appendChild(klon);
+        function showBikes() {
+            bikes.forEach(bike => {
+                const clone = template.cloneNode(true).content;
+                clone.querySelector("h1").textContent = bike.title.rendered;
+                clone.querySelector("img").src = bike.billede.guid;
+                dest.appendChild(clone);
             })
 
         }
-
     </script>
 
-</body>
-
-</html>
+</body></html>
