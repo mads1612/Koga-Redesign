@@ -7,7 +7,7 @@
     <title>Om butikken</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        SKRIV DIN CSS HER
+
 
     </style>
 </head>
@@ -19,44 +19,39 @@
     </header>
 
 
-    <section class="ejer_sektion">
+    <section class="historie_sektion">
 
-        <template>
-            <article class="">
-                <h1 class=""></h1>
-                <img class="billede" src="" alt="">
-                <p class=""></p>
-                <img class="billede" src="" alt="">
-            </article>
-        </template>
+
+        <article class="historie_indhold">
+            <h1 class="historie_overskrift"></h1>
+            <img class="historie_billede1" src="" alt="kogacenter_facade">
+            <p class="historie_tekst"></p>
+            <img class="historie_billede2" src="" alt="koga_cykler">
+        </article>
 
     </section>
 
-    <section class="histore_sektion">
-
-        <template>
-            <article class="">
-                <h2 class=""></h2>
-                <p class=""></p>
-                <img class="billede" src="" alt="">
-            </article>
-        </template>
-
+    <section class="ejer_sektion">
+        <article class="ejer_indhold">
+            <h2 class="ejer_overskrift"></h2>
+            <p class="ejer_tekst"></p>
+            <img class="ejer_billede" src="" alt="">
+        </article>
     </section>
 
     <footer>
-        <template>
-            <a class=""></a>
-            <a class=""></a>
-            <a class=""></a>
-            <button class=""></button>
-            <button class=""></button>
-        </template>
+        <a class=""></a>
+        <a class=""></a>
+        <a class=""></a>
+        <button class=""></button>
+        <button class=""></button>
     </footer>
+
     <script src="burgermenu.js"></script>
+
     <script>
-        let side = {};
-        const url = "";
+        let side;
+        const url = "http://kbdesign.dk/kea/kogacenter/wordpress/wp-json/wp/v2/pages/14";
 
         document.addEventListener("DOMContentLoaded", start);
 
@@ -67,14 +62,12 @@
         async function hentJson() {
             const response = await fetch(url);
             side = await response.json();
-            vis();
+            visIndhold();
         }
 
-        function vis() {
+        function visIndhold() {
 
 
-            document.querySelector("").textContent = side.title.rendered;
-            document.querySelector("").innerHTML = side.content.rendered;
         }
 
     </script>
