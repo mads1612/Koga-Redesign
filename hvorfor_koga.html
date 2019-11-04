@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="style.css">
     <style>
         SKRIV DIN CSS HER
-
     </style>
 </head>
 
@@ -20,35 +19,33 @@
 
     <section class="om_koga_sektion">
 
-        <template>
-            <article class="">
-                <h1 class=""></h1>
-                <img class="billede" src="" alt="">
-                <h2 class=""></h2>
-                <p class=""></p>
-                <img class="billede" src="" alt="">
-                <img class="billede" src="" alt="">
-            </article>
-        </template>
+        <article class="koga_indhold">
+            <h1 class="koga_h1"></h1>
+            <img class="koga_billede1" src="" alt="">
+            <h2 class="koga_h2"></h2>
+            <p class="koga_tekst"></p>
+            <img class="koga_billede2" src="" alt="">
+            <img class="koga_billede3" src="" alt="">
+        </article>
 
     </section>
 
     <section class="teknologi_sektion">
-        <template>
-            <article class="">
-                <h2 class=""></h2>
-                <img class="billede" src="" alt="">
-                <p class=""></p>
-            </article>
-        </template>
+
+        <article class="teknologi_indhold">
+            <h2 class="teknologi_h2"></h2>
+            <img class="teknologi_billede" src="" alt="">
+            <p class="teknologi_tekst"></p>
+        </article>
+
     </section>
 
     <footer>
     </footer>
     <script src="burgermenu.js"></script>
     <script>
-        let side = {};
-        const url = "";
+        let side;
+        const url = "http://kbdesign.dk/kea/kogacenter/wordpress/wp-json/wp/v2/pages/12";
 
         document.addEventListener("DOMContentLoaded", start);
 
@@ -59,17 +56,14 @@
         async function hentJson() {
             const response = await fetch(url);
             side = await response.json();
-            vis();
+            visIndhold();
         }
 
-        function vis() {
+        function visIndhold() {
 
 
-            document.querySelector("").textContent = side.title.rendered;
+            document.querySelector(".koga_h1").textContent = side.title.rendered;
             document.querySelector("").innerHTML = side.content.rendered;
         }
-
     </script>
-</body>
-
-</html>
+</body></html>
