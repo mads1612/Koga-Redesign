@@ -8,19 +8,75 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat&#124;Open+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <style>
-        article {
-            margin: 50px;
-        }
+        /*
+
+        .wp-block-video {}
+
+        .has-small-font-size {}
+
+        .wp-block-image {}
+*/
+
+
+
+        article {}
 
         p {
-            margin: 40px;
-            width: ;
+            margin: 35px;
         }
 
         h2 {
-            margin: 40px;
+            margin: 35px;
 
         }
+
+        img {}
+
+
+
+
+
+
+        #forside_vid {}
+
+        .indhold {}
+
+
+
+        .velkommen_indhold {
+            display: grid;
+
+
+            grid-template-areas:
+                "vid"
+                "overskrift "
+                "img"
+
+            ;
+        }
+
+        video {
+            grid-area: vid;
+            height: 350px;
+            width: 100%;
+        }
+
+        .velkommen_h1 {
+            grid-area: overskrift;
+        }
+
+        .velkommen_tekst {
+            grid-area: brodtekst;
+
+        }
+
+        .velkommen_billede {
+            grid-area: img;
+        }
+
+
+
+        #altid_koga {}
     </style>
 </head>
 
@@ -30,42 +86,34 @@
     <header></header>
 
 
-    <section id="forside_vid">
 
-        <template>
-            <video></video>
-        </template>
 
-    </section>
 
     <section id="velkommen">
-        <template>
-            <article class="side">
-                <h1 class="overskrift"></h1>
-                <p class="brodtekst"></p>
-                <img class="billede" src="" alt="">
-            </article>
-        </template>
+        <article class="velkommen_indhold"> </article>
+
+        <video class="guide"></video>
+        <h1 class="velkommen_h1"></h1>
+        <p class="velkommen_tekst"></p>
+        <img class="velkommen_billede" src="" alt="">
     </section>
 
 
 
-    <section class="altid_koga">
-        <template>
-            <article class="side">
-                <h1 class="overskrift"></h1>
-                <p class=""></p>
-                <figure>
-                    <img class="billede" src="" alt="">
-                </figure>
-                <figure>
-                    <img class="billede" src="" alt="">
-                </figure>
-                <figure>
-                    <img class="billede" src="" alt="">
-                </figure>
-            </article>
-        </template>
+    <section id="altid_koga">
+        <article class="altid_koga_indhold">
+            <h1 class="altid_koga_h1"></h1>
+            <p class="altid_koga_tekst"></p>
+            <figure>
+                <img class="altid_koga_billede1" src="" alt="">
+            </figure>
+            <figure>
+                <img class="altid_koga_billede2" src="" alt="">
+            </figure>
+            <figure>
+                <img class="altid_koga_billede3" src="" alt="">
+            </figure>
+        </article>
     </section>
 
 
@@ -93,8 +141,8 @@
         function vis() {
 
 
-            document.querySelector(".overskrift").textContent = side.title.rendered;
-            document.querySelector(".side").innerHTML = side.content.rendered;
+            document.querySelector(".velkommen_h1").textContent = side.title.rendered;
+            document.querySelector(".velkommen_indhold").innerHTML = side.content.rendered;
         }
     </script>
 </body></html>
