@@ -20,12 +20,11 @@
     <section class="om_koga_sektion">
 
         <article class="koga_indhold">
+            <img class="koga_splash" src="" alt="mand på cykel">
             <h1 class="koga_h1"></h1>
-            <img class="koga_billede1" src="" alt="">
-            <h2 class="koga_h2"></h2>
             <p class="koga_tekst"></p>
-            <img class="koga_billede2" src="" alt="">
-            <img class="koga_billede3" src="" alt="">
+            <img class="koga_billede_venstre" src="" alt="service mand">
+            <img class="koga_billede_højre" src="" alt="cykelstyr detalje">
         </article>
 
     </section>
@@ -34,8 +33,9 @@
 
         <article class="teknologi_indhold">
             <h2 class="teknologi_h2"></h2>
-            <img class="teknologi_billede" src="" alt="">
             <p class="teknologi_tekst"></p>
+            <img class="teknologi_billede" src="" alt="">
+
         </article>
 
     </section>
@@ -45,7 +45,7 @@
     <script src="burgermenu.js"></script>
     <script>
         let side;
-        const url = "http://kbdesign.dk/kea/kogacenter/wordpress/wp-json/wp/v2/pages/12";
+        const url = "http://kbdesign.dk/kea/kogacenter/wordpress/wp-json/wp/v2/hvorfor-koga/286";
 
         document.addEventListener("DOMContentLoaded", start);
 
@@ -62,8 +62,16 @@
         function visIndhold() {
 
 
-            document.querySelector(".koga_h1").textContent = side.title.rendered;
-            document.querySelector("").innerHTML = side.content.rendered;
+            document.querySelector(".koga_splash").src = side.top_billede.guid;
+            document.querySelector(".koga_h1").textContent = side.hvorfor_overskrift;
+            document.querySelector(".koga_tekst").textContent = side.hvorfor_tekst;
+            document.querySelector(".koga_billede_venstre").src = side.hvorfor_billede_venstre.guid;
+            document.querySelector(".koga_billede_højre").src = side.hvorfor_billede_hoejre.guid;
+            document.querySelector(".teknologi_h2").textContent = side.teknologi_overskrift;
+            document.querySelector(".teknologi_tekst").textContent = side.teknologi_tekst;
+            document.querySelector(".teknologi_billede").src = side.teknologi_billede.guid;
+
+
         }
     </script>
 </body></html>
