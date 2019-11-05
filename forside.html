@@ -8,14 +8,203 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat&#124;Open+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <style>
-        /*
+        .velkommen_indhold {
+            display: grid;
+            justify-content: center;
+            margin: auto;
 
-        .wp-block-video {}
+
+        }
+
+        .left {
+            width: 70vw;
+            margin: auto;
+
+        }
+
+        .leftt {
+            width: 70vw;
+
+        }
+
+
+
+        .nex {
+            width: 70vw;
+            margin: auto;
+        }
+
+
+        .altid_koga_h1 {
+            width: 24rem;
+        }
+
+        .altid_koga_tekst {}
+
+
+        .box {
+            width: 70vw;
+        }
+
+
+
+        .velkommen_h1 {
+            display: none;
+        }
+
+        .velkommen_tekst {}
+
+        .velkommen_billede {}
+
+
+
+
+        .altid_koga_billede1 {
+            width: 70vw;
+            height: 40vw
+        }
+
+        .altid_koga_billede2 {
+            width: 70vw;
+            height: 40vw
+        }
+
+        .altid_koga_billede3 {
+            width: 70vw;
+            height: 40vw
+        }
+
+        @media screen and (min-width:1000px) {
+
+            .velkommen_indhold {}
+
+
+            .left {
+                display: grid;
+                grid-gap: 5vw;
+                grid-template-columns: repeat(3, 1fr);
+
+                justify-content: space-around;
+                ;
+
+            }
+
+            .leftt {
+                width: 35vw;
+
+            }
+
+            .velkommen_billede {
+                width: 44vw;
+                height: 30vw;
+            }
+
+
+            .nex {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr 1fr 1fr);
+                justify-content: space-around;
+
+            }
+
+            .altid_koga_h1 {
+                width: 43vw;
+            }
+
+            .altid_koga_tekst {
+                width: 43vw;
+
+            }
+
+            .box {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                justify-content: space-around;
+                ;
+
+
+            }
+
+            .altid_koga_billede1 {
+                width: 30vw;
+                height: 20vw;
+            }
+
+            .altid_koga_billede2 {
+                width: 30vw;
+                height: 20vw;
+            }
+
+            .altid_koga_billede3 {
+                width: 30vw;
+                height: 20vw;
+            }
+
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <header></header>
+    <main>
+        <section id="velkommen">
+            <h1 class="velkommen_h1"></h1>
+            <article class="velkommen_indhold"> </article>
+
+
+        </section>
+    </main>
+
+
+    <footer>
+    </footer>
+    <script src="burgermenu.js"></script>
+
+    <script>
+        let side = {};
+        const url = "http://kbdesign.dk/kea/kogacenter/wordpress/wp-json/wp/v2/pages/8";
+
+
+        document.addEventListener("DOMContentLoaded", start);
+
+        function start() {
+            hentJson();
+        }
+
+        async function hentJson() {
+            const response = await fetch(url);
+            side = await response.json();
+            vis();
+        }
+
+        function vis() {
+
+
+            document.querySelector(".velkommen_h1").textContent = side.title.rendered;
+            document.querySelector(".velkommen_indhold").innerHTML = side.content.rendered;
+        }
+    </script>
+</body></html>
+
+
+<!--
+   <section id="forside_video">
+        <video class="guide"></video>
+    </section>
+-->
+
+
+
+
+<!--
+      .wp-block-video {}
 
         .has-small-font-size {}
 
         .wp-block-image {}
-*/
+
 
 
 
@@ -76,26 +265,18 @@
 
 
 
-        #altid_koga {}
-    </style>
-</head>
-
-
-<body>
-
-    <header></header>
+        #altid_koga {}-->
 
 
 
-
+<!--
 
     <section id="velkommen">
-        <article class="velkommen_indhold"> </article>
-
-        <video class="guide"></video>
-        <h1 class="velkommen_h1"></h1>
-        <p class="velkommen_tekst"></p>
-        <img class="velkommen_billede" src="" alt="">
+        <article class="velkommen_indhold">
+            <h1 class="velkommen_h1"></h1>
+            <p class="velkommen_tekst"></p>
+            <img class="velkommen_billede" src="" alt="">
+        </article>
     </section>
 
 
@@ -106,43 +287,112 @@
             <p class="altid_koga_tekst"></p>
             <figure>
                 <img class="altid_koga_billede1" src="" alt="">
-            </figure>
-            <figure>
                 <img class="altid_koga_billede2" src="" alt="">
-            </figure>
-            <figure>
                 <img class="altid_koga_billede3" src="" alt="">
             </figure>
         </article>
     </section>
+-->
 
 
-    <footer>
-    </footer>
-    <script src="burgermenu.js"></script>
 
-    <script>
-        let side = {};
-        const url = "http://kbdesign.dk/kea/kogacenter/wordpress/wp-json/wp/v2/pages/8";
+<!--
+
+     <h1 class="velkommen_h1"></h1>
+        <p class="velkommen_tekst"></p>
+        <img class="velkommen_billede" src="" alt="">
+
+        <h1 class="altid_koga_h1"></h1>
+        <p class="altid_koga_tekst"></p>
+
+        <figure>
+            <img class="altid_koga_billede1" src="" alt="">
+            <img class="altid_koga_billede2" src="" alt="">
+            <img class="altid_koga_billede3" src="" alt="">
+        </figure>-->
 
 
-        document.addEventListener("DOMContentLoaded", start);
+<!--
 
-        function start() {
-            hentJson();
+
+     .velkommen_indhold {
+            margin: 100px;
         }
 
-        async function hentJson() {
-            const response = await fetch(url);
-            side = await response.json();
-            vis();
+        .left {
+            justify-content: center;
+            display: grid;
+            grid-gap: 40px;
+            grid-template-columns: repeat(3, 1fr);
+            margin: 60px;
+
         }
 
-        function vis() {
+        .leftt {
 
+            width: 400px;
 
-            document.querySelector(".velkommen_h1").textContent = side.title.rendered;
-            document.querySelector(".velkommen_indhold").innerHTML = side.content.rendered;
         }
-    </script>
-</body></html>
+
+
+
+        .nex {
+            justify-content: center;
+            margin: 60px;
+
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+
+        .altid_koga_h1 {
+            width: 30rem;
+            text-align: center;
+        }
+
+        .altid_koga_tekst {
+            width: 25rem;
+
+        }
+
+
+        .box {
+            justify-content: center;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+
+
+        }
+
+
+
+        .velkommen_h1 {
+            display: none;
+        }
+
+        .velkommen_tekst {}
+
+        .velkommen_billede {
+            width: 40vw;
+            height: 30vw;
+        }
+
+
+
+
+        .altid_koga_billede1 {
+            width: 30vw;
+            height: 20vw;
+        }
+
+        .altid_koga_billede2 {
+            width: 30vw;
+            height: 20vw;
+        }
+
+        .altid_koga_billede3 {
+            width: 30vw;
+            height: 20vw;
+        }
+
+ -->
