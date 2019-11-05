@@ -156,23 +156,40 @@
 <body>
 
     <header></header>
-    <main>
-        <section id="velkommen">
+
+    <section id="forside_video">
+        <video class="guide"></video>
+    </section>
+
+    <section id="velkommen">
+        <article class="velkommen_indhold">
             <h1 class="velkommen_h1"></h1>
-            <article class="velkommen_indhold"> </article>
+            <p class="velkommen_tekst"></p>
+            <img class="velkommen_billede" src="" alt="">
+        </article>
+    </section>
 
 
-        </section>
-    </main>
 
+    <section id="altid_koga">
+        <article class="altid_koga_indhold">
+            <h1 class="altid_koga_h1"></h1>
+            <p class="altid_koga_tekst"></p>
+            <figure>
+                <img class="altid_koga_billede1" src="" alt="">
+                <img class="altid_koga_billede2" src="" alt="">
+                <img class="altid_koga_billede3" src="" alt="">
+            </figure>
+        </article>
+    </section>
 
     <footer>
     </footer>
     <script src="burgermenu.js"></script>
 
     <script>
-        let side = {};
-        const url = "http://kbdesign.dk/kea/kogacenter/wordpress/wp-json/wp/v2/pages/8";
+        let side;
+        const url = "http://kbdesign.dk/kea/kogacenter/wordpress/wp-json/wp/v2/forside/312";
 
 
         document.addEventListener("DOMContentLoaded", start);
@@ -190,14 +207,36 @@
         function vis() {
 
 
-            document.querySelector(".velkommen_h1").textContent = side.title.rendered;
-            document.querySelector(".velkommen_indhold").innerHTML = side.content.rendered;
+
+            document.querySelector(".guide").src = side.forside_video;
+            document.querySelector(".velkommen_h1").textContent = side.velkommen_overskrift;
+            document.querySelector(".velkommen_tekst").textContent = side.velkommen_tekst;
+            document.querySelector(".velkommen_billede").src = side.velkommen_billede;
+            document.querySelector(".altid_koga_h1").textContent = side.altid_overskrift;
+            document.querySelector(".altid_koga_tekst").textContent = side.altid_tekst;
+            document.querySelector(".altid_koga_billede1").src = side.altid_billede_venstre;
+            document.querySelector(".altid_koga_billede2").src = side.altid_billede_mid;
+            document.querySelector(".altid_koga_billede3").src = side.altid_billede_hjre;
+
         }
     </script>
 </body></html>
 
 
 <!--
+
+
+  video
+  kogah1
+  koga tekst
+  koga img
+
+  altid h1
+  altid tekst
+  altid billede
+  altid billede
+  altid billede
+
    <section id="forside_video">
         <video class="guide"></video>
     </section>
