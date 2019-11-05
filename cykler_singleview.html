@@ -33,6 +33,32 @@
     <footer></footer>
     <script src="burgermenu.js"></script>
     <script>
-        SKRIV DIN JAVASCRIPT HER
+        let side;
+        const url = "http://kbdesign.dk/kea/kogacenter/wordpress/wp-json/wp/v2/cykler"
+        const urlParams = new URLSearchParams(window.location.search);
+        const id = urlParams.get("id");
+        document.addEventListener("DOMContentLoaded", start);
+
+        function start() {
+            getJson();
+        }
+
+        async function getJson() {
+            let jsonData = await fetch(url);
+            sides = await jsonData.json();
+            showSide();
+        }
+
+        function showSide() {
+
+            sides.forEach(side => {
+                if (side.id == id) {
+
+                    document.querySelector("h1").textContent = side.title.rendered;
+                    document.querySelector("img").src = side.billede.guid;
+
+                }
+            })
+        }
     </script>
 </body></html>

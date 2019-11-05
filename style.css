@@ -81,3 +81,114 @@ html {
 img {
     width: 100%;
 }
+
+
+/*------Burgermenu-----*/
+#burgermenu {
+    list-style-type: none;
+    transition: transform .3s;
+    transform-origin: top left;
+    top: 0;
+    left: 0;
+    position: fixed;
+    width: 100%;
+    z-index: 40;
+    padding: 7rem 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--blue);
+    height: 100vh;
+
+
+}
+
+
+#menuknap {
+    display: inline-block;
+    z-index: 100;
+    font-size: 2.3rem;
+    position: absolute;
+    right: 0;
+    top: 0;
+    position: fixed;
+    padding: 0.5rem;
+    cursor: pointer;
+    color: #ffffff;
+}
+
+/*#menuknap:hover {
+    background-color: var(--blue);
+}*/
+
+header nav a {
+    color: #ffffff;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 1.2rem;
+    margin: 0.3rem 0;
+    padding: 0.3rem 0;
+    line-height: 3rem;
+}
+
+header nav a:hover {
+    color: var(--light-blue);
+    text-decoration: none;
+}
+
+nav li {
+    list-style-type: none;
+}
+
+
+@media screen and (min-width:850px) {
+    #menuknap {
+        display: none;
+    }
+
+    #burgermenu.hide {
+        transform: translateX(0);
+        opacity: 1;
+        /*placer menuen normalt*/
+    }
+
+    #burgermenu li {
+        display: inline-block;
+        /*lad menuen være vandret*/
+
+    }
+
+    #burgermenu {
+        justify-content: flex-end;
+        background-color: #ffffff;
+        position: fixed;
+        width: 100vw;
+        padding: 1rem;
+        display: flex;
+        flex-direction: row;
+        height: 12vh;
+
+    }
+
+    header {
+        z-index: 100;
+
+
+    }
+
+
+    header nav a {
+        margin: 0 1rem;
+        font-size: 1.2rem;
+        text-align: center;
+        color: var(--dark-blue);
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    header nav {
+        overflow: hidden;
+    }
+
+
+}

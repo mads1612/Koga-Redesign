@@ -43,6 +43,9 @@
         .cykler {
             padding: 0.5rem;
             background-color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         .cykler:hover {
@@ -50,6 +53,15 @@
             border-top-color: var(--blue);
             border-width: 3px;
             transform: scale(1.05);
+
+        }
+
+        .read_more {
+            text-align: right;
+            padding-right: 1rem;
+            cursor: pointer;
+            color: var(--dark-blue);
+            text-decoration: underline;
 
         }
     </style>
@@ -128,7 +140,8 @@
         let bikes = [];
         const dest = document.querySelector("#bike_model");
         const template = document.querySelector(".bike_template");
-
+        const urlParams = new URLSearchParams(window.location.search);
+        const id = urlParams.get("id");
         document.addEventListener("DOMContentLoaded", start);
 
         function start() {
@@ -146,9 +159,14 @@
             bikes.forEach(bike => {
                 const clone = template.cloneNode(true).content;
                 clone.querySelector("h1").textContent = bike.title.rendered;
+                clone.querySelector(".price").textContent = `${bike.pris  -.00 } kr`;
                 clone.querySelector("img").src = bike.billede.guid;
                 dest.appendChild(clone);
-            })
+                dest.lastElementChild.addEventListener("click", () => {
+                    location.href = `cykler_singleview.html?cykel= ${bike.title.rendered}&id=${bike.id}`;
+                });
+            });
+
 
         }
     </script>
