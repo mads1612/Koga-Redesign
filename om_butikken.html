@@ -7,8 +7,15 @@
     <title>Om butikken</title>
     <link rel="stylesheet" href="style.css">
     <style>
+        /*Historie sektion*/
 
-
+        .historie_h1,
+        .historie_tekst,
+        .ejer_h2,
+        .ejer_tekst {
+            margin-left: 1rem;
+            max-width: 90vw;
+        }
     </style>
 </head>
 
@@ -24,9 +31,8 @@
 
         <article class="historie_indhold">
             <h1 class="historie_h1"></h1>
-            <img class="historie_billede1" src="" alt="kogacenter_facade">
+            <img class="historie_billede" src="" alt="facade på butik">
             <p class="historie_tekst"></p>
-            <img class="historie_billede2" src="" alt="koga_cykler">
         </article>
 
     </section>
@@ -35,7 +41,7 @@
         <article class="ejer_indhold">
             <h2 class="ejer_h2"></h2>
             <p class="ejer_tekst"></p>
-            <img class="ejer_billede" src="" alt="">
+            <img class="ejer_billede" src="" alt="Jonas Larsson ejer af Koga Center">
         </article>
     </section>
 
@@ -51,7 +57,7 @@
 
     <script>
         let side;
-        const url = "http://kbdesign.dk/kea/kogacenter/wordpress/wp-json/wp/v2/pages/14";
+        const url = "http://kbdesign.dk/kea/kogacenter/wordpress/wp-json/wp/v2/om-butikken/226";
 
         document.addEventListener("DOMContentLoaded", start);
 
@@ -66,7 +72,14 @@
         }
 
         function visIndhold() {
-            document.querySelector(".historie_h1").textContent = side.title.rendered;
+            document.querySelector(".historie_h1").textContent = side.om_overskrift;
+            document.querySelector(".historie_billede").src = side.om_billede.guid;
+            document.querySelector(".historie_tekst").textContent = side.om_tekst;
+            document.querySelector(".ejer_h2").textContent = side.ejer_overskrift;
+            document.querySelector(".ejer_tekst").textContent = side.ejer_tekst;
+            document.querySelector(".ejer_billede").src = side.ejer_billede.guid;
+
+
 
         }
     </script>
