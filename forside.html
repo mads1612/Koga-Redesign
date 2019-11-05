@@ -8,64 +8,292 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat&#124;Open+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <style>
+        .velkommen_h1,
+        .velkommen_tekst,
+        .altid_koga_h1,
+        .altid_koga_tekst {
+            margin-left: 1rem;
+            max-width: 90vw;
+        }
+
+        #forside_video {}
+
+        .guide {}
+
+
+        #velkommen {
+            margin: 10vw;
+        }
+
+        .velkommen_indhold {
+            width: 70vw;
+            margin: auto;
+            display: grid;
+            width: 100%;
+
+        }
+
+        .left {}
+
+        .right {}
+
+        .velkommen_h1 {}
+
+        .velkommen_tekst {
+            padding-bottom: 5vw;
+
+        }
+
+        .right {}
+
+        .velkommen_billede {}
+
+
+
+        #altid_koga {
+            margin: 10vw;
+        }
+
+
+        .altid_koga_indhold {
+            display: grid;
+            width: 100%;
+            margin: auto;
+
+        }
+
+
+        .altid_koga_h1 {}
+
+        .altid_koga_tekst {
+            padding-bottom: 5vw;
+
+        }
+
+        .leftt {}
+
+        .rightt {}
+
+        .gallery {
+            margin-right: vw;
+        }
+
+        .altid_koga_billede1 {
+            width: 70vw;
+            height: 40vw
+        }
+
+        .altid_koga_billede2 {
+            width: 70vw;
+            height: 40vw
+        }
+
+        .altid_koga_billede3 {
+            width: 70vw;
+            height: 40vw
+        }
+
+        @media screen and (min-width:1000px) {
+
+            #velkommen {}
+
+
+
+            .velkommen_indhold {
+                grid-template-columns: repeat(2, 1fr);
+                grid-gap: 5vw;
+            }
+
+
+            .left {
+                margin: auto;
+            }
+
+            .right {}
+
+            .velkommen_billede {
+                height: 30vw;
+            }
+
+
+            .altid_koga_indhold {
+                grid-template-columns: repeat(2, 1fr);
+
+            }
+
+            .altid_koga_h1 {}
+
+            .altid_koga_tekst {}
+
+            .gallery {
+                margin: 1vw
+            }
+
+            .altid_koga_billede1 {
+                width: 25vw;
+                height: 20vw;
+            }
+
+            .altid_koga_billede2 {
+                width: 25vw;
+                height: 20vw;
+            }
+
+            .altid_koga_billede3 {
+                width: 25vw;
+                height: 20vw;
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <header></header>
+    <section id="forside_video">
+        <img class="guide" src="" alt="">
+    </section>
+
+    <section id="velkommen">
+        <article class="velkommen_indhold">
+            <div class="left">
+                <h1 class="velkommen_h1"></h1>
+                <p class="velkommen_tekst"></p>
+            </div>
+            <div class="right">
+                <img class="velkommen_billede" src="" alt="">
+            </div>
+        </article>
+    </section>
+
+
+
+    <section id="altid_koga">
+        <article class="altid_koga_indhold">
+            <h1 class="altid_koga_h1"></h1>
+            <p class="altid_koga_tekst"></p>
+
+        </article>
+
+        <figure class="gallery">
+            <img class="altid_koga_billede1" src="" alt="">
+            <img class="altid_koga_billede2" src="" alt="">
+            <img class="altid_koga_billede3" src="" alt="">
+        </figure>
+    </section>
+    <footer>
+    </footer>
+    <script src="burgermenu.js"></script>
+
+    <script>
+        let side;
+        const url = "http://kbdesign.dk/kea/kogacenter/wordpress/wp-json/wp/v2/forside/316";
+
+
+        document.addEventListener("DOMContentLoaded", start);
+
+        function start() {
+            hentJson();
+        }
+
+        async function hentJson() {
+            const response = await fetch(url);
+            side = await response.json();
+            vis();
+        }
+
+        function vis() {
+
+
+
+            document.querySelector(".guide").src = side.forside_billede.guid;
+            document.querySelector(".velkommen_h1").textContent = side.velkommen_overskrift;
+            document.querySelector(".velkommen_tekst").textContent = side.velkommen_tekst;
+            document.querySelector(".velkommen_billede").src = side.velkommen_billede.guid;
+            document.querySelector(".altid_koga_h1").textContent = side.altid_overskrift;
+            document.querySelector(".altid_koga_tekst").textContent = side.altid_tekst;
+            document.querySelector(".altid_koga_billede1").src = side.altid_billede_venstre.guid;
+            document.querySelector(".altid_koga_billede2").src = side.altid_billede_mid.guid;
+            document.querySelector(".altid_koga_billede3").src = side.altid_billede_hjre.guid;
+
+        }
+    </script>
+</body></html>
+
+
+<!--
+   .velkommen_h1,
+        .velkommen_tekst,
+        .altid_koga_h1,
+        .altid_koga_tekst {}
+
+        .velkommen_billede,
+        .altid_koga_billede1,
+        .altid_koga_billede2,
+        .altid_koga_billede3 {}
+
+        .guide {
+
+            width: 44vw;
+            height: 30vw;
+        }
+
+
+
         .velkommen_indhold {
             display: grid;
             justify-content: center;
-            margin: auto;
-
-
-        }
-
-        video {
-            width: 90vw;
+            width: 100vw;
             padding-bottom: 5vw;
-            height: 40vw;
+
         }
 
-        .left {
-            width: 70vw;
+
+        .left {}
+
+        .right {}
+
+        .velkommen_h1 {}
+
+        .velkommen_tekst {
+            padding-bottom: 5vw;
+
+        }
+
+        .velkommen_billede {
+            width: ;
+
+        }
+
+
+
+
+
+
+        .altid_koga_indhold {
+            display: grid;
+            width: 100vw;
             margin: auto;
             justify-content: center;
+        }
+
+
+        .altid_koga_h1 {}
+
+        .altid_koga_tekst {
             padding-bottom: 5vw;
-        }
-
-        .leftt {
-            width: 70vw;
 
         }
 
 
-
-        .nex {
-            width: 70vw;
-            margin: auto;
+        figure {
+            margin: ;
             justify-content: center;
-            padding-bottom: 5vw;
+            width: 100vw;
         }
 
 
-        .altid_koga_h1 {
-            width: 24rem;
-        }
-
-        .altid_koga_tekst {}
-
-
-        .box {
-            width: 70vw;
-            justify-content: center;
-            padding-bottom: 5vw;
-        }
-
-
-
-        .velkommen_h1 {
-            display: none;
-        }
-
-        .velkommen_tekst {}
-
-        .velkommen_billede {}
 
 
 
@@ -87,30 +315,22 @@
 
         @media screen and (min-width:1000px) {
 
+
+
             .velkommen_indhold {}
 
 
-            .left {
-                display: grid;
-                grid-gap: 5vw;
-                grid-template-columns: repeat(3, 1fr);
+            .left {}
 
-
-            }
-
-            .leftt {
-                width: 30vw;
-
-            }
+            .right {}
 
             .velkommen_billede {
-                width: 44vw;
-                height: 30vw;
+                width: ;
+                height: ;
             }
 
 
-            .nex {
-                display: grid;
+            .altid_koga_indhold {
                 grid-template-columns: repeat(2, 1fr 1fr);
                 grid-gap: 3vw;
 
@@ -125,10 +345,9 @@
 
             }
 
-            .box {
-                display: grid;
+            figure {
                 grid-template-columns: repeat(3, 1fr);
-                grid-gap: 2vw;
+                grid-gap: ;
 
 
             }
@@ -149,123 +368,4 @@
             }
 
         }
-    </style>
-</head>
-
-
-<body>
-
-    <header></header>
-
-    <section id="forside_video">
-        <video class="guide"></video>
-    </section>
-
-    <section id="velkommen">
-        <article class="velkommen_indhold">
-            <h1 class="velkommen_h1"></h1>
-            <p class="velkommen_tekst"></p>
-            <img class="velkommen_billede" src="" alt="">
-        </article>
-    </section>
-
-
-
-    <section id="altid_koga">
-        <article class="altid_koga_indhold">
-            <h1 class="altid_koga_h1"></h1>
-            <p class="altid_koga_tekst"></p>
-            <figure>
-                <img class="altid_koga_billede1" src="" alt="">
-                <img class="altid_koga_billede2" src="" alt="">
-                <img class="altid_koga_billede3" src="" alt="">
-            </figure>
-        </article>
-    </section>
-
-    <footer>
-    </footer>
-    <script src="burgermenu.js"></script>
-
-    <script>
-        let side;
-        const url = "http://kbdesign.dk/kea/kogacenter/wordpress/wp-json/wp/v2/forside/312";
-
-
-        document.addEventListener("DOMContentLoaded", start);
-
-        function start() {
-            hentJson();
-        }
-
-        async function hentJson() {
-            const response = await fetch(url);
-            side = await response.json();
-            vis();
-        }
-
-        function vis() {
-
-
-
-            document.querySelector(".guide").src = side.forside_video;
-            document.querySelector(".velkommen_h1").textContent = side.velkommen_overskrift;
-            document.querySelector(".velkommen_tekst").textContent = side.velkommen_tekst;
-            document.querySelector(".velkommen_billede").src = side.velkommen_billede;
-            document.querySelector(".altid_koga_h1").textContent = side.altid_overskrift;
-            document.querySelector(".altid_koga_tekst").textContent = side.altid_tekst;
-            document.querySelector(".altid_koga_billede1").src = side.altid_billede_venstre;
-            document.querySelector(".altid_koga_billede2").src = side.altid_billede_mid;
-            document.querySelector(".altid_koga_billede3").src = side.altid_billede_hjre;
-
-        }
-    </script>
-</body></html>
-
-
-<!--
-
-
-  video
-  kogah1
-  koga tekst
-  koga img
-
-  altid h1
-  altid tekst
-  altid billede
-  altid billede
-  altid billede
-
-   <section id="forside_video">
-        <video class="guide"></video>
-    </section>
 -->
-
-<!--
-
-    <section id="velkommen">
-        <article class="velkommen_indhold">
-            <h1 class="velkommen_h1"></h1>
-            <p class="velkommen_tekst"></p>
-            <img class="velkommen_billede" src="" alt="">
-        </article>
-    </section>
-
-
-
-    <section id="altid_koga">
-        <article class="altid_koga_indhold">
-            <h1 class="altid_koga_h1"></h1>
-            <p class="altid_koga_tekst"></p>
-            <figure>
-                <img class="altid_koga_billede1" src="" alt="">
-                <img class="altid_koga_billede2" src="" alt="">
-                <img class="altid_koga_billede3" src="" alt="">
-            </figure>
-        </article>
-    </section>
--->
-
-
-
