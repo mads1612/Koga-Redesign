@@ -7,7 +7,124 @@
     <title>Hvorfor koga</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        SKRIV DIN CSS HER
+        /*Tekst layout*/
+        .koga_h1,
+        .koga_tekst,
+        .teknologi_h2,
+        .teknologi_tekst {
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+
+        p {
+            line-height: 1.5rem;
+        }
+
+        .koga_billede_hoejre {
+            margin-top: 1rem;
+        }
+
+        /*Media query desktop*/
+
+
+        @media screen and (min-width: 1000px) {
+
+
+
+
+            /*Hvorfor koga sektion*/
+
+            .koga_indhold {
+                display: grid;
+                grid-template-areas:
+                    "header txt txt txt"
+                    "left left right right"
+                    "left left right right";
+                margin-top: 6rem;
+                padding-left: 6rem;
+                padding-right: 6rem;
+            }
+
+
+            .koga_h1 {
+                grid-area: header;
+                min-width: 30vw;
+                text-align: center;
+                padding-top: 18%;
+
+            }
+
+            .koga_tekst {
+                grid-area: txt;
+                border-left: 2.5px solid black;
+
+            }
+
+            .koga_billede_venstre {
+                grid-area: left;
+                width: 40vw;
+                height: 24vw;
+                margin-top: 6rem;
+
+            }
+
+            .koga_billede_hoejre {
+                grid-area: right;
+                width: 40vw;
+                height: 24vw;
+                margin-top: 0;
+                margin-top: 6rem;
+                margin-left: 6rem;
+            }
+
+            /*Teknologi sektion*/
+
+            .teknologi_indhold {
+                display: grid;
+                grid-template-areas:
+                    "header header header"
+                    "main main sidebar"
+                    "main main sidebar";
+                margin-top: 5rem;
+                padding-left: 6rem;
+                padding-right: 6rem;
+            }
+
+            .teknologi_h2 {
+                grid-area: header;
+
+            }
+
+
+
+            .teknologi_tekst {
+                grid-area: main;
+                max-width: 50vw;
+                width: 40vw;
+                height: 24vw;
+
+
+
+            }
+
+            .teknologi_billede {
+                grid-area: sidebar;
+                width: 40vw;
+                margin-left: 4rem;
+
+
+            }
+
+
+            .koga_splash {
+                height: 50vw;
+            }
+
+
+
+
+
+        }
     </style>
 </head>
 
@@ -18,13 +135,13 @@
     </header>
 
     <section class="om_koga_sektion">
-
+        <img class="koga_splash" src="" alt="mand på cykel">
         <article class="koga_indhold">
-            <img class="koga_splash" src="" alt="mand på cykel">
+
             <h1 class="koga_h1"></h1>
             <p class="koga_tekst"></p>
             <img class="koga_billede_venstre" src="" alt="service mand">
-            <img class="koga_billede_højre" src="" alt="cykelstyr detalje">
+            <img class="koga_billede_hoejre" src="" alt="cykelstyr detalje">
         </article>
 
     </section>
@@ -66,7 +183,7 @@
             document.querySelector(".koga_h1").textContent = side.hvorfor_overskrift;
             document.querySelector(".koga_tekst").textContent = side.hvorfor_tekst;
             document.querySelector(".koga_billede_venstre").src = side.hvorfor_billede_venstre.guid;
-            document.querySelector(".koga_billede_højre").src = side.hvorfor_billede_hoejre.guid;
+            document.querySelector(".koga_billede_hoejre").src = side.hvorfor_billede_hoejre.guid;
             document.querySelector(".teknologi_h2").textContent = side.teknologi_overskrift;
             document.querySelector(".teknologi_tekst").textContent = side.teknologi_tekst;
             document.querySelector(".teknologi_billede").src = side.teknologi_billede.guid;
