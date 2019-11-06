@@ -7,7 +7,7 @@
     <title>Om butikken</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /*Historie sektion*/
+        /*Tekst layout*/
 
         .historie_h1,
         .historie_tekst,
@@ -15,6 +15,95 @@
         .ejer_tekst {
             margin-left: 1rem;
             max-width: 90vw;
+        }
+
+        p {
+            line-height: 1.5rem;
+        }
+
+        /*Media query desktop*/
+
+        @media screen and (min-width:1000px) {
+
+            .historie_h1,
+            .historie_tekst,
+            .ejer_h2,
+            .ejer_tekst {
+                margin-left: 0;
+
+            }
+
+            /*Historie sektion*/
+            .historie_sektion {
+                margin: 2rem;
+
+            }
+
+
+
+            .historie_indhold {
+                display: grid;
+                grid-template-areas:
+                    "header header header"
+                    "main main sidebar"
+                    "main main sidebar";
+                margin-top: 5rem;
+            }
+
+            .historie_h1 {
+                grid-area: header;
+
+            }
+
+
+
+            .historie_tekst {
+                grid-area: main;
+                max-width: 50vw;
+                padding-right: 2rem;
+
+
+            }
+
+            .historie_billede {
+                grid-area: sidebar;
+            }
+
+            /*Ejer sektion*/
+
+            .ejer_sektion {
+                margin: 2rem;
+
+            }
+
+
+
+            .ejer_indhold {
+                display: grid;
+                grid-template-areas:
+                    "header header header"
+                    "main main sidebar"
+                    "main main sidebar";
+            }
+
+            .ejer_h2 {
+                grid-area: header;
+
+            }
+
+
+
+            .ejer_tekst {
+                grid-area: main;
+                max-width: 50vw;
+                padding-right: 2rem;
+
+
+            }
+
+            .ejer_billede {
+                grid-area: sidebar;
+            }
         }
     </style>
 </head>
@@ -30,6 +119,7 @@
 
 
         <article class="historie_indhold">
+
             <h1 class="historie_h1"></h1>
             <img class="historie_billede" src="" alt="facade på butik">
             <p class="historie_tekst"></p>
