@@ -8,26 +8,23 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat&#124;Open+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <style>
-        .velkommen_h1,
-        .velkommen_tekst,
-        .altid_koga_h1,
-        .altid_koga_tekst {
-            padding-left: 1rem;
-            max-width: 90vw;
-        }
+        /* Diverse css regler */
+
+
 
         p {
             line-height: 1.5rem;
         }
 
+        /*--------------------Forside video sektion-------------------*/
 
-        #myVideo {
+        #loop_video {
             width: 100%;
         }
 
-        /*
+        /* tekst som skal placeret i midten af video
 
-        .content {
+        #video_tekst {
             text-align: center;
             position: absolute;
             top: 50%;
@@ -39,26 +36,33 @@
             padding: 20px;
         }
 */
+        .altid_koga_billede1,
+        .altid_koga_billede2 {
+            margin-bottom: 5vw;
+        }
+
+        .velkommen_h1,
+        .velkommen_tekst,
+        .altid_koga_h1,
+        .altid_koga_tekst {
+            padding-left: 1rem;
+            max-width: 90vw;
+        }
 
 
+
+        /*--------------------Desktop Media-------------------*/
 
         @media screen and (min-width:1000px) {
 
+            /*--------------------Velkommen sektion-------------------*/
 
             .velkommen_h1,
             .velkommen_tekst {
                 padding-left: 0;
             }
 
-            .altid_koga_h1,
-            .altid_koga_tekst {
-                padding-left: 1rem;
-                padding-right: 1rem;
-            }
-
-
             #velkommen {
-
                 margin: 2rem;
             }
 
@@ -66,8 +70,7 @@
                 display: grid;
                 grid-template-areas:
                     "header header header"
-                    "main main sidebar"
-                    "main main sidebar";
+                    "main main rightpic";
                 margin-top: 5rem;
                 margin-left: 6rem;
                 margin-right: 6rem;
@@ -75,7 +78,6 @@
 
             .velkommen_h1 {
                 grid-area: header;
-
             }
 
             .velkommen_tekst {
@@ -85,11 +87,18 @@
             }
 
             .velkommen_billede {
-                grid-area: sidebar;
+                grid-area: rightpic;
                 width: 40vw;
                 height: 30vw;
             }
 
+            /*--------------------Altid koga sektion-------------------*/
+
+            .altid_koga_h1,
+            .altid_koga_tekst {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
 
             .altid_koga_indhold {
                 display: grid;
@@ -112,7 +121,9 @@
                 border-left: 2.5px solid black;
             }
 
-            .gallery {
+            /*--------------------Altid koga Gallery -------------------*/
+
+            #gallery {
                 display: grid;
                 grid-template-columns: repeat(3, 1fr);
                 grid-gap: 10px;
@@ -120,31 +131,45 @@
                 padding-left: 2rem;
                 padding-right: 2rem;
                 width: 100vw;
-
             }
 
             .altid_koga_billede1 {
-
                 width: 25vw;
                 height: 20vw;
             }
 
             .altid_koga_billede2 {
-
                 width: 25vw;
                 height: 20vw;
             }
 
             .altid_koga_billede3 {
-
                 width: 25vw;
                 height: 20vw;
             }
 
+        }
 
+        /*--------------------Smartphone/Tablet Media-------------------*/
 
+        @media screen and (max-width:1000px) {
+            .altid_koga_indhold {
+                margin: 10vw;
+            }
 
+            .velkommen_indhold {
+                margin: 10vw;
 
+            }
+
+            .velkommen_tekst {
+                margin-bottom: 10vw;
+            }
+
+            #gallery {
+                margin: 10vw;
+
+            }
         }
     </style>
 </head>
@@ -153,9 +178,9 @@
 
     <header></header>
     <section id="forside_video">
-        <video autoplay muted loop id="myVideo" src="video/kogavideo_loop.mp4" type="video/mp4"></video>
-        <!--
-        <div class="content">
+        <video autoplay muted loop id="loop_video" src="video/kogavideo_loop.mp4" type="video/mp4"></video>
+        <!-- video tekst
+        <div id="video_tekst">
             <h1>En gang koga - altid koga</h1>
             <p></p>
         </div>
@@ -164,13 +189,12 @@
 
     <section id="velkommen">
         <article class="velkommen_indhold">
-            <div>
+            <div class="velkommen_left">
                 <h1 class="velkommen_h1"></h1>
                 <p class="velkommen_tekst"></p>
             </div>
-            <div>
-
-                <img class="velkommen_billede" src="" alt="">
+            <div class="velkommen_right">
+                <img class="velkommen_billede" src="" alt="Morgen cykel">
             </div>
         </article>
     </section>
@@ -183,10 +207,10 @@
             <p class="altid_koga_tekst"></p>
         </article>
 
-        <figure class="gallery">
-            <img class="altid_koga_billede1" src="" alt="">
-            <img class="altid_koga_billede2" src="" alt="">
-            <img class="altid_koga_billede3" src="" alt="">
+        <figure id="gallery">
+            <img class="altid_koga_billede1" src="" alt="Natur cykel">
+            <img class="altid_koga_billede2" src="" alt="Bjerg cykel">
+            <img class="altid_koga_billede3" src="" alt="By cykel">
         </figure>
 
     </section>
@@ -233,93 +257,3 @@
         }
     </script>
 </body></html>
-<!--
-
-
-
-        #velkommen {
-            margin: 10vw;
-        }
-
-        .velkommen_indhold {
-            width: 70vw;
-            margin: auto;
-            display: grid;
-            width: 100%;
-        }
-
-        .velkommen_tekst {
-            padding-bottom: 5vw;
-        }
-
-        #altid_koga {
-            margin: 10vw;
-        }
-
-        .altid_koga_indhold {
-            display: grid;
-            width: 100%;
-            margin: auto;
-        }
-
-        .altid_koga_tekst {
-            padding-bottom: 5vw;
-        }
-
-        .altid_koga_billede1 {
-            width: 70vw;
-            height: 40vw
-        }
-
-        .altid_koga_billede2 {
-            width: 70vw;
-            height: 40vw
-        }
-
-        .altid_koga_billede3 {
-            width: 70vw;
-            height: 40vw
-        }
-
-        footer {
-            background-color: var(--footer);
-        }
-
-        @media screen and (min-width:1000px) {
-
-            .velkommen_indhold {
-                grid-template-columns: repeat(2, 1fr);
-                grid-gap: 5vw;
-            }
-
-            .left {
-                margin: auto;
-            }
-
-            .velkommen_billede {
-                height: 30vw;
-            }
-
-            .altid_koga_indhold {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .gallery {
-                margin: 1vw
-            }
-
-            .altid_koga_billede1 {
-                width: 25vw;
-                height: 20vw;
-            }
-
-            .altid_koga_billede2 {
-                width: 25vw;
-                height: 20vw;
-            }
-
-            .altid_koga_billede3 {
-                width: 25vw;
-                height: 20vw;
-            }
-        }-->
