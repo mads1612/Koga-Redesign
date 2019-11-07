@@ -13,6 +13,8 @@ async function hentNav() {
     const include = await response.text();
     document.querySelector("header").innerHTML = include;
     clickBurgermenu();
+    dropDown()
+
 }
 
 function clickBurgermenu() {
@@ -36,4 +38,21 @@ function toggleMenu() {
         document.querySelector("#menuknap").textContent = "X";
         /*    Ellers skift tegn til X*/
     }
+}
+
+function dropDown() {
+    console.log("dropdown");
+    document.querySelectorAll(".filter").forEach(link => {
+        link.addEventListener("click", dropDownHandler);
+
+
+
+    })
+}
+
+function dropDownHandler() {
+    let handler = this.dataset.type;
+    console.log(this.dataset.type);
+
+    location.href = `cykler.html?type=${handler}`;
 }

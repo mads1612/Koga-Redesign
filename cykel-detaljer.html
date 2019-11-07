@@ -5,9 +5,50 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cykler singleview</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:400,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <style>
-        SKRIV DIN CSS HER
+        body {
+            overflow-x: hidden;
+        }
+
+        .model_singleview {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: row-reverse;
+            margin-top: 12vw;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+
+        img {
+            width: 100%;
+            max-width: 800px;
+        }
+
+        .info {
+            margin: 1rem;
+            max-width: 80vw;
+        }
+
+
+        @media screen and (min-width: 1000px) {
+            .model_singleview {}
+
+            .billede {
+                max-width: 40vw;
+                object-fit: contain;
+                margin: 1rem;
+            }
+
+            .info {
+                margin: 1rem;
+                width: 30vw;
+            }
+        }
+
     </style>
 </head>
 
@@ -18,32 +59,35 @@
 
     <section class="model_singleview">
 
-        <h1 class=""></h1>
+
         <img class="billede" src="" alt="">
 
         <div class="info">
-            <p class=""></p>
-            <h2></h2>
-            <p class=""></p>
-            <h2></h2>
-            <p class=""></p>
+            <h1></h1>
+            <p class="lang"></p>
+            <p class="vaegt"></p>
+            <p class="farve"></p>
+            <p class="pris"></p>
+            <a class="link" href="" target="_blank">Find specifikationer på Kogas officielle hjemmeside</a>
+            <p>Kom ind i butikken og få vejledning!</p>
         </div>
 
     </section>
     <footer></footer>
     <script src="burgermenu.js"></script>
+    <script src="footer.js"></script>
     <script>
         let side;
-        const url = "http://kbdesign.dk/kea/kogacenter/wordpress/wp-json/wp/v2/cykler"
+        const url = "http://kbdesign.dk/kea/kogacenter/wordpress/wp-json/wp/v2/cykler?per_page=100"
         const urlParams = new URLSearchParams(window.location.search);
         const id = urlParams.get("id");
         document.addEventListener("DOMContentLoaded", start);
 
         function start() {
-            getJson();
+            hentJson();
         }
 
-        async function getJson() {
+        async function hentJson() {
             let jsonData = await fetch(url);
             sides = await jsonData.json();
             showSide();
@@ -54,11 +98,23 @@
             sides.forEach(side => {
                 if (side.id == id) {
 
+                    document.querySelector(".billede").src = side.billede1.guid;
                     document.querySelector("h1").textContent = side.title.rendered;
-                    document.querySelector("img").src = side.billede.guid;
+                    document.querySelector(".lang").textContent = side.lang_beskrivelse;
+                    document.querySelector(".vaegt").innerHTML = `<b>Vægt:</b> ${side.vaegt} kg`;
+                    document.querySelector(".farve").innerHTML = `<b>Farve:</b> ${side.farve}`;
+                    document.querySelector(".pris").innerHTML = `<b>Pris:</b> ${side.pris} kr`;
+                    document.querySelector(".link").href = side.link;
+
+
+
+
 
                 }
             })
         }
+
     </script>
-</body></html>
+</body>
+
+</html>

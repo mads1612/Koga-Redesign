@@ -5,15 +5,36 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Koga's cykler</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:400,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <style>
         body {
             overflow-x: hidden;
             margin: 0 auto;
+            background-color: #f7f7f7;
+        }
+
+        #filtermenu {
+            text-align: right;
+            max-width: 1200px;
+
+        }
+
+        #filterknap {
+            margin-top: 100px;
+            z-index: 200;
+
+        }
+
+        #kateogrier {
+            display: flex;
+            flex-wrap: wrap;
+        }
 
 
 
-
+        .hidden {
+            display: none;
         }
 
         #bike_model {
@@ -29,19 +50,31 @@
 
         #bike_model_section {
             background-color: #f7f7f7;
+            max-width: 1200px;
+            margin: 0 auto;
 
+
+
+        }
+
+        #bike_model_section h1 {
+            margin-top: 50px;
+            text-align: center;
+            margin-bottom: 0;
+            padding-bottom: 0;
         }
 
         .wrapper {
             max-width: 1200px;
         }
 
-        #bike_model h1 {
+        #bike_model h2 {
             text-align: center;
+            margin-top: 0;
         }
 
         .cykler {
-            padding: 0.5rem;
+            padding: 2rem;
             background-color: #ffffff;
             display: flex;
             flex-direction: column;
@@ -56,12 +89,44 @@
 
         }
 
+        .kort {
+            margin-bottom: 0;
+        }
+
+        .pris {
+            padding-bottom: 0;
+        }
+
         .read_more {
-            text-align: right;
-            padding-right: 1rem;
+            text-align: center;
+            padding: 0.5rem;
             cursor: pointer;
-            color: var(--dark-blue);
-            text-decoration: underline;
+            width: 100px;
+            font-size: 1rem;
+            align-self: flex-end;
+            margin-top: 0;
+        }
+
+        @media screen and (min-width:700px) {
+
+            #bike_model_section {
+                padding-top: 80px;
+            }
+
+            #bike_model {
+                padding-top: 4rem;
+            }
+
+            #kategorier {
+                display: list-item;
+                list-style-type: none;
+                position: absolute;
+                right: 165px;
+            }
+
+            #filterknap {
+                display: none;
+            }
 
         }
     </style>
@@ -72,72 +137,46 @@
     <header>
     </header>
 
-    <section class="cykel_kategori">
-        <template>
-            <div class="kategori_nav">
-                <figure>
-                    <img class="billede" src="" alt="">
-                    <p class=""></p>
-                </figure>
-                <figure>
-                    <img class="billede" src="" alt="">
-                    <p class=""></p>
-                </figure>
-                <figure>
-                    <img class="billede" src="" alt="">
-                    <p class=""></p>
-                </figure>
-                <figure>
-                    <img class="billede" src="" alt="">
-                    <p class=""></p>
-                </figure>
-                <figure>
-                    <img class="billede" src="" alt="">
-                    <p class=""></p>
-                </figure>
-            </div>
-        </template>
-    </section>
 
-    <!-- Skal ikke vises i desktop version?-->
-    <section id="filtermenu">
-        <nav>
-            <button id="filterknap">Filter</button>
+    <section id="bike_model_section">
+        <nav id="filtermenu">
+            <button id="filterknap">Filtrér</button>
             <div id="kategorier" class="hidden">
                 <!-- <template id="filterbuttons">
                 <button class="filter" data-type=""></button>
                 </template>-->
-                <button class="filter valgt" data-type="alle">Alle </button>
-                <button class="filter" data-type="el">Elcykel</button>
-                <button class="filter" data-type="by">Bycykel</button>
-                <button class="filter" data-type="trekking">Trekkingcykel</button>
-                <button class="filter" data-type="racer">Racercykel</button>
-
-
+                <button class="filter" data-type="Alle cykler">Alle cykler </button>
+                <button class="filter" data-type="Elcykler">Elcykler</button>
+                <button class="filter" data-type="Bycykler">Bycykler</button>
+                <button class="filter" data-type="Trekkingcykler">Trekkingcykler</button>
+                <button class="filter" data-type="Racercykler">Racercykler</button>
             </div>
         </nav>
-    </section>
+        <h1></h1>
+        <div id="bike_model" class="wrapper">
 
-    <section id="bike_model_section">
-        <div id="bike_model" class="wrapper"></div>
+        </div>
+
     </section>
+    <footer></footer>
     <template class="bike_template">
         <article class="cykler">
-            <h1></h1>
+            <h2></h2>
             <img class="image" src="" alt="">
+            <p class="kort"></p>
             <p class="price"></p>
-            <p class="weight"></p>
-            <h3 class="read_more">Læs mere</h3>
+            <button class="read_more">Læs mere</button>
         </article>
     </template>
 
 
 
-    <footer>
-    </footer>
+
     <script src="burgermenu.js"></script>
+    <script src="footer.js"></script>
     <script>
         let bikes = [];
+        let filter = "Alle cykler"
         const dest = document.querySelector("#bike_model");
         const template = document.querySelector(".bike_template");
         const urlParams = new URLSearchParams(window.location.search);
@@ -145,29 +184,77 @@
         document.addEventListener("DOMContentLoaded", start);
 
         function start() {
-            getJson();
+            hentJson();
         }
 
-        async function getJson() {
-            const url = "http://kbdesign.dk/kea/kogacenter/wordpress/wp-json/wp/v2/cykler"
+        async function hentJson() {
+            const url = "http://kbdesign.dk/kea/kogacenter/wordpress/wp-json/wp/v2/cykler?per_page=100"
             let jsonData = await fetch(url);
             bikes = await jsonData.json();
             showBikes();
+
+            clickonFilterknap();
+            klikFilter()
         }
 
+        function toggleFilterlist() {
+            document.querySelector("#kategorier").classList.toggle("hidden");
+            /*Toggle filterknap*/
+        }
+
+
         function showBikes() {
+            filter = urlParams.get("type");
+            dest.innerHTML = "";
             bikes.forEach(bike => {
-                const clone = template.cloneNode(true).content;
-                clone.querySelector("h1").textContent = bike.title.rendered;
-                clone.querySelector(".price").textContent = `${bike.pris  -.00 } kr`;
-                clone.querySelector("img").src = bike.billede.guid;
-                dest.appendChild(clone);
-                dest.lastElementChild.addEventListener("click", () => {
-                    location.href = `cykel-detaljer.html?cykel= ${bike.title.rendered}&id=${bike.id}`;
-                });
+
+                if (filter == "Alle cykler" || filter == bike.kategori[0]) {
+                    document.querySelector("h1").textContent = filter;
+                    const clone = template.cloneNode(true).content;
+                    clone.querySelector("h2").textContent = bike.title.rendered;
+                    clone.querySelector(".price").textContent = `${bike.pris  -.00 } kr`;
+                    clone.querySelector(".kort").textContent = bike.kort_beskrivelse;
+
+                    clone.querySelector("img").src = bike.thumbnail.guid;
+                    dest.appendChild(clone);
+                    dest.lastElementChild.addEventListener("click", () => {
+                        location.href = `cykel-detaljer.html?cykel= ${bike.title.rendered}&id=${bike.id}`;
+
+                    });
+                }
+
+
             });
 
 
+        }
+
+        function clickonFilterknap() {
+            console.log("clickonFilterknap");
+            document.querySelector("#filterknap").addEventListener("click", toggleFilterlist);
+
+        }
+
+        function klikFilter() {
+            document.querySelectorAll(".filter").forEach(elm => {
+                elm.addEventListener("click", filtrering);
+            })
+        }
+
+        function filtrering() {
+            filter = this.dataset.type;
+            /*tag værdien af dataatribute med typen på den knap, der bliver trykket på*/
+            /*   document.querySelectorAll(".filter").forEach(elm => {
+                   elm.classList.remove("valgt");
+                   Fjern klassen "avalgt fra alle knapper
+               });*/
+
+            /*      this.classList.add("valgt");*/
+            /*Tilføj klassen "valgt" på knappen, der er trykket på*/
+
+            /*  bikes.innerHTML = "";*/
+            /*nulstil*/
+            showBikes();
         }
     </script>
 
