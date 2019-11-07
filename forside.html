@@ -10,19 +10,23 @@
     <style>
         /* Diverse css regler */
 
-
-
         p {
             line-height: 1.5rem;
         }
 
         /*--------------------Forside video sektion-------------------*/
 
+        #forside_video {
+            margin-top: 5vw;
+            position: relative;
+            z-index: 0;
+        }
+
         #loop_video {
             width: 100%;
         }
 
-        /* tekst som skal placeret i midten af video
+
 
         #video_tekst {
             text-align: center;
@@ -35,7 +39,7 @@
             width: 100%;
             padding: 20px;
         }
-*/
+
         .altid_koga_billede1,
         .altid_koga_billede2 {
             margin-bottom: 5vw;
@@ -54,6 +58,17 @@
         /*--------------------Desktop Media-------------------*/
 
         @media screen and (min-width:1000px) {
+
+
+            /*--------------------Forside video sektion-------------------*/
+
+
+            #loop_video {
+                object-fit: cover;
+                width: 100%;
+                height: 400px;
+            }
+
 
             /*--------------------Velkommen sektion-------------------*/
 
@@ -148,14 +163,31 @@
                 height: 20vw;
             }
 
+            .velkommen_left {
+                margin: auto;
+            }
+
         }
 
         /*--------------------Smartphone/Tablet Media-------------------*/
 
         @media screen and (max-width:1000px) {
-            .altid_koga_indhold {
-                margin: 10vw;
+
+            /*--------------------Forside video sektion-------------------*/
+
+
+            #video_tekst h1 {
+                font-size: 1.5rem;
             }
+
+            #video_tekst {
+                padding: 0px;
+            }
+
+
+
+            /*--------------------Velkommen sektion-------------------*/
+
 
             .velkommen_indhold {
                 margin: 10vw;
@@ -166,10 +198,22 @@
                 margin-bottom: 10vw;
             }
 
+            /*--------------------Altid koga sektion-------------------*/
+
+
+            .altid_koga_indhold {
+                margin: 10vw;
+            }
+
+            /*--------------------Altid koga Gallery -------------------*/
+
+
             #gallery {
                 margin: 10vw;
-
             }
+
+
+
         }
     </style>
 </head>
@@ -179,12 +223,11 @@
     <header></header>
     <section id="forside_video">
         <video autoplay muted loop id="loop_video" src="video/kogavideo_loop.mp4" type="video/mp4"></video>
-        <!-- video tekst
+
         <div id="video_tekst">
             <h1>En gang koga - altid koga</h1>
-            <p></p>
         </div>
--->
+
     </section>
 
     <section id="velkommen">
@@ -198,8 +241,6 @@
             </div>
         </article>
     </section>
-
-
 
     <section id="altid_koga">
         <article class="altid_koga_indhold">
