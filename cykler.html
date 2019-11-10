@@ -57,6 +57,8 @@
 
         }
 
+
+
         #bike_model_section h1 {
             margin-top: 50px;
             text-align: center;
@@ -70,11 +72,19 @@
 
         #bike_model h2 {
             text-align: center;
-            margin-top: 0;
+            margin-top: 1rem;
+
+        }
+
+        .wrap {
+            padding: 0 2rem 2rem 2rem;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         .cykler {
-            padding: 2rem;
             background-color: #ffffff;
             display: flex;
             flex-direction: column;
@@ -82,10 +92,27 @@
         }
 
         .cykler:hover {
-            border-top-style: solid;
-            border-top-color: var(--blue);
-            border-width: 3px;
             transform: scale(1.05);
+            transition: ease-out 0.2s;
+
+        }
+
+        hr {
+            z-index: 300;
+            width: 1px;
+            height: 5px;
+            padding: 0;
+            margin: 0 auto;
+            background-color: transparent;
+            border: none;
+            padding: 0;
+
+        }
+
+        .cykler:hover hr {
+            background-color: var(--blue);
+            width: 100%;
+            transition: ease 0.3s;
 
         }
 
@@ -129,12 +156,40 @@
             }
 
         }
+
     </style>
 </head>
 
 
 <body>
     <header>
+        <a href="forside.html"> <img id="logo" src="assets/logo.svg" alt="Kogas logo"></a>
+        <nav>
+            <button id="menuknap">☰</button>
+            <!--Burgermenu-ikon-->
+            <div id="burgermenu" class="hide">
+                <!--Indholdet af burgermenu. Er som udgangspunkt lukket (.hide) og åbnes med js -->
+                <ul id="hovedmenu">
+                    <li><a href="forside.html">Forside</a></li>
+                    <li class="dropdown"><a data-type="Alle cykler" href="cykler.html?type=Alle%20cykler">Cykler</a>
+                        <nav id="dropdown_nav">
+                            <ul class="dropdown-content">
+
+                                <li data-type="Elcykler" class="filter">Elcykler </li>
+
+                                <li class=" filter" data-type="Bycykler">Bycykler</li>
+                                <li class="filter" data-type="Trekkingcykler">Trekkingcykler</li>
+                                <li class="filter" data-type="Racercykler">Racercykler</li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li><a href="hvorfor_koga.html">Hvorfor Koga?</a></li>
+                    <li><a href="om_butikken.html">Om butikken</a></li>
+                    <li><a href="besoeg_os.html">Besøg os</a></li>
+                </ul>
+            </div>
+        </nav>
+
     </header>
 
 
@@ -153,19 +208,32 @@
             </div>
         </nav>
         <h1></h1>
+
         <div id="bike_model" class="wrapper">
 
         </div>
 
     </section>
-    <footer></footer>
+    <footer>
+        <p class="aabningstider"></p>
+        <div class="group">
+            <p class="tlf"></p>
+            <p class="email"></p>
+
+        </div>
+        <p class="adresse"></p>
+    </footer>
     <template class="bike_template">
+
         <article class="cykler">
-            <h2></h2>
-            <img class="image" src="" alt="">
-            <p class="kort"></p>
-            <p class="price"></p>
-            <button class="read_more">Læs mere</button>
+            <hr>
+            <div class="wrap">
+                <h2></h2>
+                <img class="image" src="" alt="">
+                <p class="kort"></p>
+                <p class="price"></p>
+                <button class="read_more">Læs mere</button>
+            </div>
         </article>
     </template>
 
@@ -256,6 +324,9 @@
             /*nulstil*/
             showBikes();
         }
+
     </script>
 
-</body></html>
+</body>
+
+</html>

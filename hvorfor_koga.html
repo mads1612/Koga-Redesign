@@ -7,6 +7,10 @@
     <title>Hvorfor koga</title>
     <link rel="stylesheet" href="style.css">
     <style>
+        section {
+            margin: 0 auto;
+        }
+
         /*Tekst layout*/
         .koga_h1,
         .koga_tekst,
@@ -24,6 +28,11 @@
             margin-top: 1rem;
         }
 
+        .om_koga_sektion {
+            margin: 0 auto;
+            max-width: 1200px;
+        }
+
         /*Media query desktop*/
 
 
@@ -37,44 +46,48 @@
             .koga_indhold {
                 display: grid;
                 grid-template-areas:
-                    "header txt txt txt"
-                    "left left right right"
-                    "left left right right";
+                    "h1 h1 txt txt txt"
+                    "left left right right right"
+                    "left left right right right";
                 margin-top: 6rem;
-                padding-left: 6rem;
-                padding-right: 6rem;
+                padding-left: 1rem;
+                padding-right: 1rem;
             }
 
 
             .koga_h1 {
-                grid-area: header;
-                min-width: 30vw;
+                grid-area: h1;
+
                 text-align: center;
-                padding-top: 18%;
+                align-self: center;
+
+
 
             }
 
-            .koga_tekst {
+            .koga_tekst_kort {
                 grid-area: txt;
                 border-left: 2.5px solid black;
+                line-height: 1.8rem;
+                padding-left: 3rem;
+                white-space: pre-line;
+
+
 
             }
 
-            .koga_billede_venstre {
+            .koga_tekst_venstre {
                 grid-area: left;
-                width: 40vw;
-                height: 24vw;
                 margin-top: 6rem;
+                white-space: pre-line;
 
             }
 
             .koga_billede_hoejre {
                 grid-area: right;
-                width: 40vw;
-                height: 24vw;
-                margin-top: 0;
                 margin-top: 6rem;
-                margin-left: 6rem;
+                padding-left: 3rem;
+                object-fit: cover;
             }
 
             /*Teknologi sektion*/
@@ -82,37 +95,35 @@
             .teknologi_indhold {
                 display: grid;
                 grid-template-areas:
-                    "header header header"
-                    "main main sidebar"
-                    "main main sidebar";
+                    "main main main overskrift overskrift"
+                    "main main main sidebar sidebar";
                 margin-top: 5rem;
-                padding-left: 6rem;
-                padding-right: 6rem;
+                width: 100%;
+                /*    padding-left: 6rem;*/
+
+
             }
 
             .teknologi_h2 {
-                grid-area: header;
+                grid-area: overskrift;
+                margin-left: 2rem;
 
             }
 
 
 
             .teknologi_tekst {
-                grid-area: main;
-                max-width: 50vw;
-                width: 40vw;
-                height: 24vw;
+                grid-area: sidebar;
+
+                margin-left: 2rem;
 
 
 
             }
 
             .teknologi_billede {
-                grid-area: sidebar;
+                grid-area: main;
                 width: 40vw;
-                margin-left: 4rem;
-
-
             }
 
 
@@ -132,21 +143,47 @@
 <body>
 
     <header>
-    </header>
+        <a href="forside.html"> <img id="logo" src="assets/logo.svg" alt="Kogas logo"></a>
+        <nav>
+            <button id="menuknap">☰</button>
+            <!--Burgermenu-ikon-->
+            <div id="burgermenu" class="hide">
+                <!--Indholdet af burgermenu. Er som udgangspunkt lukket (.hide) og åbnes med js -->
+                <ul id="hovedmenu">
+                    <li><a href="forside.html">Forside</a></li>
+                    <li class="dropdown"><a data-type="Alle cykler" href="cykler.html?type=Alle%20cykler">Cykler</a>
+                        <nav id="dropdown_nav">
+                            <ul class="dropdown-content">
 
-    <section class="om_koga_sektion">
-        <img class="koga_splash" src="" alt="mand på cykel">
+                                <li data-type="Elcykler" class="filter">Elcykler </li>
+
+                                <li class=" filter" data-type="Bycykler">Bycykler</li>
+                                <li class="filter" data-type="Trekkingcykler">Trekkingcykler</li>
+                                <li class="filter" data-type="Racercykler">Racercykler</li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li><a href="hvorfor_koga.html">Hvorfor Koga?</a></li>
+                    <li><a href="om_butikken.html">Om butikken</a></li>
+                    <li><a href="besoeg_os.html">Besøg os</a></li>
+                </ul>
+            </div>
+        </nav>
+
+    </header>
+    <section class="splash"> <img class="koga_splash" src="" alt="mand på cykel"></section>
+    <section class="om_koga_sektion max-width">
         <article class="koga_indhold">
 
             <h1 class="koga_h1"></h1>
-            <p class="koga_tekst"></p>
-            <img class="koga_billede_venstre" src="" alt="service mand">
-            <img class="koga_billede_hoejre" src="" alt="cykelstyr detalje">
+            <p class="koga_tekst_kort"></p>
+            <p class="koga_tekst_venstre"></p>
+            <img class="koga_billede_hoejre" src="" alt="">
         </article>
 
     </section>
 
-    <section class="teknologi_sektion">
+    <section class="teknologi_sektion max-width">
 
         <article class="teknologi_indhold">
             <h2 class="teknologi_h2"></h2>
@@ -158,6 +195,14 @@
     </section>
 
     <footer>
+        <p class="aabningstider"></p>
+        <div class="group">
+            <p class="tlf"></p>
+            <p class="email"></p>
+
+        </div>
+        <p class="adresse"></p>
+
     </footer>
     <script src="burgermenu.js"></script>
     <script src="footer.js"></script>
@@ -182,9 +227,9 @@
 
             document.querySelector(".koga_splash").src = side.top_billede.guid;
             document.querySelector(".koga_h1").textContent = side.hvorfor_overskrift;
-            document.querySelector(".koga_tekst").textContent = side.hvorfor_tekst;
-            document.querySelector(".koga_billede_venstre").src = side.hvorfor_billede_venstre.guid;
-            document.querySelector(".koga_billede_hoejre").src = side.hvorfor_billede_hoejre.guid;
+            document.querySelector(".koga_tekst_kort").textContent = side.hvorfor_tekst;
+            document.querySelector(".koga_tekst_venstre").textContent = side.hvorfor_koga_uddybende;
+            document.querySelector(".koga_billede_hoejre").src = side.hvorfor_billede_venstre.guid;
             document.querySelector(".teknologi_h2").textContent = side.teknologi_overskrift;
             document.querySelector(".teknologi_tekst").textContent = side.teknologi_tekst;
             document.querySelector(".teknologi_billede").src = side.teknologi_billede.guid;

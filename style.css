@@ -88,6 +88,11 @@ img {
     width: 100%;
 }
 
+.max-width {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
 
 /*------Burgermenu-----*/
 
@@ -222,6 +227,7 @@ li.filter {
     header {
         z-index: 100;
         height: 50px;
+        background-color: transparent;
     }
 
 

@@ -2,20 +2,21 @@ document.addEventListener("DOMContentLoaded", start);
 
 function start() {
 
-    hentNav();
-
+    /*  hentNav();*/
+    clickBurgermenu();
+    dropDown()
     /*  Klik eventlistener på burgermenuen*/
 
 }
 
-async function hentNav() {
-    const response = await fetch("/header.html");
-    const include = await response.text();
-    document.querySelector("header").innerHTML = include;
-    clickBurgermenu();
-    dropDown()
+/*async function hentNav() {
+    const urlHeader = "subangi.dk/kea/09-cms/kogacenter/header.html";
+    const responseHeader = await fetch(urlHeader);
+    const includeHeader = await responseHeader.text();
+    document.querySelector("header").innerHTML = includeHeader;
 
-}
+
+}*/
 
 function clickBurgermenu() {
 

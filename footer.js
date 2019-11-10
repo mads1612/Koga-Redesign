@@ -4,27 +4,27 @@
  document.addEventListener("DOMContentLoaded", start);
 
  function start() {
-     getJson();
-     getFooter();
+     getJsonFooter();
+     /* getFooter();*/
 
  }
 
- async function getFooter() {
-     const response = await fetch("inc/footer.html");
-     const include = await response.text();
-     document.querySelector("footer").innerHTML = include;
- }
+ /* async function getFooter() {
+      const responseFooter = await fetch("http://subangi.dk/kea/09-cms/kogacenter/footer.html");
+      const includeFooter = await responseFooter.text();
+      document.querySelector("footer").innerHTML = includeFooter;
+  }*/
 
- async function getJson() {
+ async function getJsonFooter() {
      let data = await fetch(urlVisit);
-     side = await data.json();
+     sideFooter = await data.json();
      showFooter();
  }
 
  function showFooter() {
-     document.querySelector(".aabningstider").textContent = side.aabningstider;
-     document.querySelector(".tlf").textContent = `+45 ${side.telefonnummer}`;
-     document.querySelector(".adresse").textContent = side.adresse;
-     document.querySelector(".email").textContent = side.emailadresse;
+     document.querySelector(".aabningstider").textContent = sideFooter.aabningstider;
+     document.querySelector(".tlf").textContent = `+45 ${sideFooter.telefonnummer}`;
+     document.querySelector(".adresse").textContent = sideFooter.adresse;
+     document.querySelector(".email").textContent = sideFooter.emailadresse;
 
  }
