@@ -297,6 +297,11 @@ header nav {
     display: none;
     position: absolute;
     background-color: var(--transparent-blue);
+    line-height: 2rem;
+    top: 4vw;
+
+
+
 
 
 }
@@ -321,7 +326,9 @@ header nav {
 
 .dropdown-content {
     padding: 0;
+    padding-top: 13px;
 }
+
 
 .dropdown-content li {
     padding: 20px;
