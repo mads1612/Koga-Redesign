@@ -1,9 +1,8 @@
 document.addEventListener("DOMContentLoaded", start);
 
 function start() {
-hentNav();
-    clickBurgermenu();
-    dropDown()
+    hentNav();
+
     /*  Klik eventlistener på burgermenuen*/
 
 }
@@ -14,7 +13,8 @@ async function hentNav() {
     const includeHeader = await responseHeader.text();
     document.querySelector("header").innerHTML = includeHeader;
 
-
+    clickBurgermenu();
+    dropDown();
 }
 
 function clickBurgermenu() {
