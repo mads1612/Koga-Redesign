@@ -18,37 +18,31 @@
 
         #forside_video {
             position: relative;
-            z-index: 0;
+            margin-top: 3vw;
         }
-
 
         #loop_video {
-            width: 100%;
-            right: 0;
-            bottom: 0;
-            width: 100%;
-            height: 56.5vw;
-            margin-top: 3rem;
+            width: 100vw;
+            height: 42vw;
+            object-fit: cover;
         }
-
-
 
         #video_tekst {
             text-align: center;
             position: absolute;
-            top: 50%;
+            top: 55%;
             left: 50%;
             transform: translate(-50%, -50%);
-            /*    background: rgba(0, 0, 0, 0.17);*/
             color: #ffffff;
-
             width: 100%;
             padding: 20px;
         }
 
         .altid_koga_billede1,
-        .altid_koga_billede2 {
+        .altid_koga_billede2,
+        .altid_koga_billede3 {
             margin-bottom: 5vw;
+            object-fit:
         }
 
         .velkommen_h1,
@@ -64,17 +58,6 @@
         /*--------------------Desktop Media-------------------*/
 
         @media screen and (min-width:1000px) {
-
-
-            /*--------------------Forside video sektion-------------------*/
-
-
-            #loop_video {
-                object-fit: cover;
-                width: 100%;
-                height: 700px;
-            }
-
 
             /*--------------------Velkommen sektion-------------------*/
 
@@ -181,16 +164,13 @@
 
             /*--------------------Forside video sektion-------------------*/
 
-
-            #video_tekst h1 {
-                font-size: 1.5rem;
+            #loop_video {
+                margin-top: 90px;
             }
 
             #video_tekst {
-                padding: 0px;
+                top: 60%;
             }
-
-
 
             /*--------------------Velkommen sektion-------------------*/
 
@@ -256,9 +236,11 @@
     <section id="forside_video">
         <video autoplay muted loop id="loop_video" src="video/kogavideo_loop.mp4" type="video/mp4"></video>
 
-        <!--   <div id="video_tekst">
+
+        <div id="video_tekst">
             <h1>Én gang Koga - altid Koga</h1>
-        </div>-->
+        </div>
+
 
     </section>
 
