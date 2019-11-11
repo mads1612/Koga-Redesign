@@ -11,22 +11,37 @@
             margin: 0 auto;
         }
 
-        /*Tekst layout*/
-        .koga_h1,
-        .koga_tekst,
-        .teknologi_h2,
-        .teknologi_tekst {
-            padding-left: 1rem;
-            padding-right: 1rem;
+        .slide {
+            animation-name: sliding;
+            animation-timing-function: ease-in-out;
+            animation-duration: 1s;
+            animation-fill-mode: forwards;
+
+
         }
+
+
+        @keyframes sliding {
+
+            0% {
+                left: -40vw;
+            }
+
+
+            100% {
+                left: 0vw;
+
+            }
+        }
+
+        /*Tekst layout*/
+
 
         p {
             line-height: 1.5rem;
         }
 
-        .koga_billede_hoejre {
-            margin-top: 1rem;
-        }
+
 
         .om_koga_sektion {
             margin: 0 auto;
@@ -44,11 +59,6 @@
             /*Hvorfor koga sektion*/
 
             .koga_indhold {
-                display: grid;
-                grid-template-areas:
-                    "h1 h1 txt txt txt"
-                    "left left right right right"
-                    "left left right right right";
                 margin-top: 6rem;
                 padding-left: 1rem;
                 padding-right: 1rem;
@@ -56,83 +66,31 @@
 
 
             .koga_h1 {
-                grid-area: h1;
-
                 text-align: center;
                 align-self: center;
-
-
-
-            }
-
-            .koga_tekst_kort {
-                grid-area: txt;
-                border-left: 2.5px solid black;
-                line-height: 1.8rem;
-                padding-left: 3rem;
-                white-space: pre-line;
-
-
+                font-size: 5rem;
+                text-transform: uppercase;
+                font-weight: lighter;
+                letter-spacing: 0.5rem;
+                margin-top: -3rem;
 
             }
 
-            .koga_tekst_venstre {
-                grid-area: left;
-                margin-top: 6rem;
-                white-space: pre-line;
+            .koga_h2 {
+                text-align: center;
+                align-self: center;
+                letter-spacing: 0.1rem;
+                text-transform: uppercase;
+                color: var(--blue);
+                margin-top: -3rem;
+                font-style: italic;
 
             }
-
-            .koga_billede_hoejre {
-                grid-area: right;
-                margin-top: 6rem;
-                padding-left: 3rem;
-                object-fit: cover;
-            }
-
-            /*Teknologi sektion*/
-
-            .teknologi_indhold {
-                display: grid;
-                grid-template-areas:
-                    "main main main overskrift overskrift"
-                    "main main main sidebar sidebar";
-                margin-top: 5rem;
-                width: 100%;
-                /*    padding-left: 6rem;*/
-
-
-            }
-
-            .teknologi_h2 {
-                grid-area: overskrift;
-                margin-left: 2rem;
-
-            }
-
-
-
-            .teknologi_tekst {
-                grid-area: sidebar;
-
-                margin-left: 2rem;
-
-
-
-            }
-
-            .teknologi_billede {
-                grid-area: main;
-                width: 40vw;
-            }
-
 
             .koga_splash {
-                height: 50vw;
+                width: 100vw;
+                height: 100vh;
             }
-
-
-
 
 
         }
@@ -175,9 +133,10 @@
     <section class="om_koga_sektion max-width">
         <article class="koga_indhold">
 
-            <h1 class="koga_h1"></h1>
+            <h1 class="koga_h1" class="slide"></h1>
             <h1 class="koga_h2"></h1>
-            <p class="koga_tekst"></p>
+            <p class="koga_tekst1"></p>
+            <p class="koga_tekst2"></p>
         </article>
 
     </section>
@@ -215,12 +174,11 @@
 
             document.querySelector(".koga_splash").src = side.top_billede.guid;
             document.querySelector(".koga_h1").textContent = side.hvorfor_overskrift;
-            document.querySelector(".koga_tekst_kort").textContent = side.hvorfor_tekst;
-            document.querySelector(".koga_tekst_venstre").textContent = side.hvorfor_koga_uddybende;
-            document.querySelector(".koga_billede_hoejre").src = side.hvorfor_billede_venstre.guid;
-            document.querySelector(".teknologi_h2").textContent = side.teknologi_overskrift;
-            document.querySelector(".teknologi_tekst").textContent = side.teknologi_tekst;
-            document.querySelector(".teknologi_billede").src = side.teknologi_billede.guid;
+            document.querySelector(".koga_tekst1").textContent = side.top_tekst;
+
+            document.querySelector(".koga_tekst2").textContent = side.bottom_tekst;
+
+            document.querySelector(".koga_h2").textContent = side.under_overskrift;
 
 
         }
