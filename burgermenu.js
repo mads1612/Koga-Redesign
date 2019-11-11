@@ -39,6 +39,7 @@ function toggleMenu() {
         document.querySelector("#menuknap").textContent = "X";
         /*    Ellers skift tegn til X*/
     }
+
 }
 
 function dropDown() {

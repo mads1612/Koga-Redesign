@@ -49,6 +49,7 @@ input {
     --link-color: #052D47;
     --button-color: #0E7DC7;
     --footer: #052D47;
+    --transparent-blue: rgba(14, 125, 199, 0.51);
 }
 
 button {
@@ -134,9 +135,9 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
     background-color: var(--blue);
     height: 100vh;
+
 
 
 }
@@ -162,18 +163,22 @@ header {
 
 header nav a {
     color: #ffffff;
-    font-weight: 700;
     text-decoration: none;
-    font-size: 1.2rem;
+    font-size: 1.65rem;
     margin: 0.3rem 0;
     padding: 0.3rem 0;
-    line-height: 3rem;
+    line-height: 5rem;
+    font-weight: lighter;
+    letter-spacing: 0.12rem;
+    text-transform: uppercase;
+
 }
 
 
 
 nav li {
     list-style-type: none;
+    text-align: right;
 }
 
 
@@ -187,6 +192,10 @@ nav#dropdown_nav {
 li.filter {
     display: none;
 }
+
+
+/*------Burgermenu Animation-----*/
+
 
 @media screen and (min-width:950px) {
     #menuknap {
@@ -230,11 +239,13 @@ li.filter {
 
     #hovedmenu a {
         margin: 0 1rem;
-        font-size: 1.2rem;
+        font-size: 1rem;
         text-align: center;
         color: var(--dark-blue);
         font-family: 'Montserrat', sans-serif;
-        font-weight: bolder;
+        font-weight: lighter;
+        letter-spacing: 0.12rem;
+        text-transform: uppercase;
         position: relative;
 
     }
@@ -246,7 +257,7 @@ li.filter {
         background-color: var(--blue);
         content: "";
         width: 0;
-        height: 3px;
+        height: 1.5px;
         left: 0;
         bottom: 0;
         transition: width 0.35s ease 0s;
@@ -279,7 +290,7 @@ header nav {
 #dropdown_nav {
     display: none;
     position: absolute;
-    background-color: rgb(255, 255, 255);
+    background-color: var(--transparent-blue);
 
 
 }
@@ -310,11 +321,16 @@ header nav {
     padding: 20px;
     text-align: left;
     width: 100%;
+    font-size: 0.8rem;
+    letter-spacing: 0.12rem;
+    text-transform: uppercase;
+    color: white;
 }
 
 .dropdown-content li:hover {
-    background-color: #e1e1e1e1;
+    background-color: var(--blue);
     cursor: pointer;
+
 }
 
 /*------------FOOTER----------------*/
