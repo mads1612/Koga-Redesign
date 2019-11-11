@@ -14,6 +14,36 @@
             line-height: 1.5rem;
         }
 
+        /* Sektion Velkommen/altid koga */
+
+        .velkommen_h1,
+        .velkommen_tekst,
+        .altid_koga_h1,
+        .altid_koga_tekst {
+            padding-left: 1rem;
+            max-width: 90vw;
+        }
+
+        .velkommen_h1 {
+            text-transform: uppercase;
+            font-weight: lighter;
+            letter-spacing: 0.5rem;
+        }
+
+        .altid_koga_h1 {
+            font-weight: lighter;
+            align-self: center;
+            letter-spacing: 0.1rem;
+            color: var(--blue);
+            font-style: italic;
+        }
+
+        .altid_koga_billede1,
+        .altid_koga_billede2,
+        .altid_koga_billede3 {
+            margin-bottom: 5vw;
+        }
+
         /*--------------------Forside video sektion-------------------*/
 
         #forside_video {
@@ -36,24 +66,9 @@
             color: #ffffff;
             width: 100%;
             padding: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5rem;
         }
-
-        .altid_koga_billede1,
-        .altid_koga_billede2,
-        .altid_koga_billede3 {
-            margin-bottom: 5vw;
-            object-fit:
-        }
-
-        .velkommen_h1,
-        .velkommen_tekst,
-        .altid_koga_h1,
-        .altid_koga_tekst {
-            padding-left: 1rem;
-            max-width: 90vw;
-        }
-
-
 
         /*--------------------Desktop Media-------------------*/
 
@@ -162,11 +177,20 @@
 
         @media screen and (max-width:1000px) {
 
+
+
+
             /*--------------------Forside video sektion-------------------*/
 
             #loop_video {
                 margin-top: 90px;
             }
+
+            #video_tekst h1 {
+                font-size: 1.04rem;
+            }
+
+
 
             #video_tekst {
                 top: 60%;
@@ -174,10 +198,12 @@
 
             /*--------------------Velkommen sektion-------------------*/
 
-
             .velkommen_indhold {
                 margin: 10vw;
+            }
 
+            .velkommen_h1 {
+                text-align: center;
             }
 
             .velkommen_tekst {
@@ -193,20 +219,20 @@
 
             /*--------------------Altid koga Gallery -------------------*/
 
-
             #gallery {
                 margin: 10vw;
             }
 
-
-
         }
+
     </style>
 </head>
 
 <body>
 
-    <header><a href="forside.html"> <img id="logo" src="assets/logo.svg" alt="Kogas logo"></a>
+
+    <header>
+        <a href="forside.html"> <img id="logo" src="assets/logo.svg" alt="Kogas logo"></a>
         <nav>
             <button id="menuknap">☰</button>
             <!--Burgermenu-ikon-->
@@ -232,6 +258,7 @@
                 </ul>
             </div>
         </nav>
+
     </header>
     <section id="forside_video">
         <video autoplay muted loop id="loop_video" src="video/kogavideo_loop.mp4" type="video/mp4"></video>
@@ -243,6 +270,9 @@
 
 
     </section>
+
+
+
 
     <section id="velkommen">
         <article class="velkommen_indhold">
@@ -300,10 +330,6 @@
         }
 
         function vis() {
-
-
-
-
             document.querySelector(".velkommen_h1").textContent = side.velkommen_overskrift;
             document.querySelector(".velkommen_tekst").textContent = side.velkommen_tekst;
             document.querySelector(".velkommen_billede").src = side.velkommen_billede.guid;
@@ -314,5 +340,8 @@
             document.querySelector(".altid_koga_billede3").src = side.altid_billede_hjre.guid;
 
         }
+
     </script>
-</body></html>
+</body>
+
+</html>
