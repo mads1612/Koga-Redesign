@@ -72,7 +72,8 @@
 
         #bike_model h2 {
             text-align: center;
-            margin: 0;
+            /*  margin-bottom: 1rem;*/
+            min-height: 4rem;
 
 
         }
@@ -136,7 +137,12 @@
             width: 50%;
         }
 
-
+        .container {
+            height: 200px;
+            width: 100%;
+            display: flex;
+            align-items: flex-end;
+        }
 
         /*    hr {
             z-index: 300;
@@ -164,10 +170,16 @@
             margin-bottom: 0;
             height: 40px;
 
+
         }
 
         .pris {
             padding-bottom: 0;
+            font-size: 1.2rem;
+            color: var(--blue);
+
+
+
         }
 
         .read_more {
@@ -202,40 +214,12 @@
             }
 
         }
-
     </style>
 </head>
 
 
 <body>
     <header>
-        <a href="forside.html"> <img id="logo" src="assets/logo.svg" alt="Kogas logo"></a>
-        <nav>
-            <button id="menuknap">☰</button>
-            <!--Burgermenu-ikon-->
-            <div id="burgermenu" class="hide">
-                <!--Indholdet af burgermenu. Er som udgangspunkt lukket (.hide) og åbnes med js -->
-                <ul id="hovedmenu">
-                    <li><a href="forside.html">Forside</a></li>
-                    <li class="dropdown"><a data-type="Alle cykler" href="cykler.html?type=Alle%20cykler">Cykler</a>
-                        <nav id="dropdown_nav">
-                            <ul class="dropdown-content">
-
-                                <li data-type="Elcykler" class="filter">Elcykler </li>
-
-                                <li class=" filter" data-type="Bycykler">Bycykler</li>
-                                <li class="filter" data-type="Trekkingcykler">Trekkingcykler</li>
-                                <li class="filter" data-type="Racercykler">Racercykler</li>
-                            </ul>
-                        </nav>
-                    </li>
-                    <li><a href="hvorfor_koga.html">Hvorfor Koga?</a></li>
-                    <li><a href="om_butikken.html">Om butikken</a></li>
-                    <li><a href="besoeg_os.html">Besøg os</a></li>
-                </ul>
-            </div>
-        </nav>
-
     </header>
 
 
@@ -261,13 +245,7 @@
 
     </section>
     <footer>
-        <p class="aabningstider"></p>
-        <div class="group">
-            <p class="tlf"></p>
-            <p class="email"></p>
 
-        </div>
-        <p class="adresse"></p>
     </footer>
     <template class="bike_template">
 
@@ -275,9 +253,11 @@
             <hr>
             <div class="wrap">
                 <h2></h2>
-                <img class="image" src="" alt="">
+                <div class="container">
+                    <img class="image" src="" alt="">
+                </div>
                 <p class="kort"></p>
-                <p class="price"></p>
+                <p class="pris"></p>
                 <button class="read_more">Læs mere</button>
             </div>
         </article>
@@ -326,7 +306,7 @@
                     document.querySelector("h1").textContent = filter;
                     const clone = template.cloneNode(true).content;
                     clone.querySelector("h2").textContent = bike.title.rendered;
-                    clone.querySelector(".price").textContent = `${bike.pris  -.00 } kr`;
+                    clone.querySelector(".pris").textContent = `${bike.pris  -.00 } kr`;
                     clone.querySelector(".kort").textContent = bike.kort_beskrivelse;
 
                     clone.querySelector("img").src = bike.thumbnail.guid;
@@ -370,9 +350,6 @@
             /*nulstil*/
             showBikes();
         }
-
     </script>
 
-</body>
-
-</html>
+</body></html>

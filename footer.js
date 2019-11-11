@@ -5,15 +5,15 @@
 
  function start() {
      getJsonFooter();
-     /* getFooter();*/
+     getFooter();
 
  }
 
- /* async function getFooter() {
-      const responseFooter = await fetch("http://subangi.dk/kea/09-cms/kogacenter/footer.html");
-      const includeFooter = await responseFooter.text();
-      document.querySelector("footer").innerHTML = includeFooter;
-  }*/
+ async function getFooter() {
+     const responseFooter = await fetch("footer.html");
+     const includeFooter = await responseFooter.text();
+     document.querySelector("footer").innerHTML = includeFooter;
+ }
 
  async function getJsonFooter() {
      let data = await fetch(urlVisit);

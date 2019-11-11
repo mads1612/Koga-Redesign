@@ -206,32 +206,7 @@
 
 <body>
 
-    <header><a href="forside.html"> <img id="logo" src="assets/logo.svg" alt="Kogas logo"></a>
-        <nav>
-            <button id="menuknap">☰</button>
-            <!--Burgermenu-ikon-->
-            <div id="burgermenu" class="hide">
-                <!--Indholdet af burgermenu. Er som udgangspunkt lukket (.hide) og åbnes med js -->
-                <ul id="hovedmenu">
-                    <li><a href="forside.html">Forside</a></li>
-                    <li class="dropdown"><a data-type="Alle cykler" href="cykler.html?type=Alle%20cykler">Cykler</a>
-                        <nav id="dropdown_nav">
-                            <ul class="dropdown-content">
-
-                                <li data-type="Elcykler" class="filter">Elcykler </li>
-
-                                <li class=" filter" data-type="Bycykler">Bycykler</li>
-                                <li class="filter" data-type="Trekkingcykler">Trekkingcykler</li>
-                                <li class="filter" data-type="Racercykler">Racercykler</li>
-                            </ul>
-                        </nav>
-                    </li>
-                    <li><a href="hvorfor_koga.html">Hvorfor Koga?</a></li>
-                    <li><a href="om_butikken.html">Om butikken</a></li>
-                    <li><a href="besoeg_os.html">Besøg os</a></li>
-                </ul>
-            </div>
-        </nav>
+    <header>
     </header>
     <section id="forside_video">
         <video autoplay muted loop id="loop_video" src="video/kogavideo_loop.mp4" type="video/mp4"></video>
@@ -270,13 +245,6 @@
 
     </section>
     <footer>
-        <p class="aabningstider"></p>
-        <div class="group">
-            <p class="tlf"></p>
-            <p class="email"></p>
-
-        </div>
-        <p class="adresse"></p>
 
     </footer>
     <script src="burgermenu.js"></script>

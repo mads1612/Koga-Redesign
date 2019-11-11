@@ -7,8 +7,89 @@
     <title>Besøg os</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        SKRIV DIN CSS HER
+        .besog_os_h1,
+        .besog_tekst {
+            padding-left: 1rem;
+            max-width: 90vw;
+        }
 
+        p {
+            line-height: 1.5rem;
+        }
+
+        .besog_os {}
+
+        /*Media query desktop*/
+
+        @media screen and (min-width:1000px) {
+
+
+            /*--------------------Besøg os-------------------*/
+
+            .besog_os_h1,
+            .besog_tekst {
+                padding-left: 0;
+            }
+
+
+
+            .besog_os {
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+
+
+            .besog_os_content {
+                display: grid;
+                grid-template-areas:
+                    "header header header"
+                    "main rightpic rightpic"
+                    "content rightpic rightpic"
+                    "content rightpic rightpic";
+                /*  margin-top: 5rem;
+  margin-left: 1rem;
+  margin-right: 1rem;*/
+                margin-top: 5rem;
+                margin-left: 1rem;
+                margin-right: 1rem;
+
+            }
+
+            .besog_os_h1 {
+                grid-area: header;
+            }
+
+            .besog_tekst {
+                grid-area: main;
+
+                padding-right: 3rem;
+                align-self: center;
+                white-space: pre;
+                height: 10%;
+                line-height: 3rem;
+
+            }
+
+            .gmap_canvas {
+                grid-area: rightpic;
+                width: 40vw;
+                height: 30vw;
+            }
+
+            .content-group {
+                grid-area: content;
+                padding-top: 0;
+                margin-top: 0;
+
+            }
+
+            /*--------------------Besøg os sektion-------------------*/
+
+
+            .besog_indhold {
+                margin: 10vw;
+
+            }
     </style>
 </head>
 
@@ -18,23 +99,33 @@
     <header>
     </header>
 
-
     <section class="besog_os">
-        <template>
-            <article class="box">
-                <h1 class=""></h1>
-                <p class=""></p>
-                <div class="gmap_canvas"><iframe width="505" height="453" id="gmap_canvas" src="https://maps.google.com/maps?q=koga%20k%C3%B8benhavn&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://www.embedgooglemap.net/blog/private-internet-access-coupon/"></a></div>
-            </article>
-        </template>
+
+        <article class="besog_os_content">
+            <h1 class="besog_os_h1"></h1>
+            <p class="besog_tekst">
+            </p>
+            <div class="content-group">
+                <p class="open"></p>
+                <p class="phone"></p>
+                <p class="mail"></p>
+                <p class="adress"></p>
+            </div>
+            <!--  <img class="besog_os_hoejre" src="" alt="butik">-->
+            <div class="gmap_canvas"><iframe width="505" height="453" id="gmap_canvas" src="https://maps.google.com/maps?q=koga%20k%C3%B8benhavn&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://www.embedgooglemap.net/blog/private-internet-access-coupon/"></a></div>
+
+        </article>
+
     </section>
 
     <footer>
     </footer>
     <script src="burgermenu.js"></script>
+    <script src="footer.js"></script>
+
     <script>
         let side = {};
-        const url = "";
+        const url = "http://kbdesign.dk/kea/kogacenter/wordpress/wp-json/wp/v2/besog-os/426";
 
         document.addEventListener("DOMContentLoaded", start);
 
@@ -51,12 +142,14 @@
         function vis() {
 
 
-            document.querySelector("").textContent = side.title.rendered;
-            document.querySelector("").innerHTML = side.content.rendered;
-        }
+            document.querySelector(".besog_os_h1").textContent = side.title.rendered;
+            document.querySelector(".besog_tekst").textContent = side.besg_os_tekst;
+            document.querySelector(".open").textContent = side.aabningstider;
+            document.querySelector(".phone").textContent = `+45 ${side.telefonnummer}`;
+            document.querySelector(".adress").textContent = side.adresse;
+            document.querySelector(".mail").textContent = side.emailadresse;
 
+        }
     </script>
 
-</body>
-
-</html>
+</body></html>
