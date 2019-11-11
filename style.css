@@ -210,6 +210,9 @@ li.filter {
 
     #burgermenu li {
         display: inline-block;
+        margin-top: 0;
+        padding-top: 0;
+        /**/
         /*lad menuen være vandret*/
 
     }
@@ -239,6 +242,7 @@ li.filter {
 
     #hovedmenu a {
         margin: 0 1rem;
+        margin-top: 0;
         font-size: 1rem;
         text-align: center;
         color: var(--dark-blue);
@@ -247,6 +251,8 @@ li.filter {
         letter-spacing: 0.12rem;
         text-transform: uppercase;
         position: relative;
+        line-height: 0;
+
 
     }
 
