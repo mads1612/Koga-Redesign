@@ -21,6 +21,7 @@
         }
 
 
+
         @keyframes sliding {
 
             0% {
@@ -41,11 +42,51 @@
             line-height: 1.5rem;
         }
 
+        .koga_splash {
+            width: 100vw;
+            height: 60vh;
+
+        }
+
 
 
         .om_koga_sektion {
             margin: 0 auto;
             max-width: 1200px;
+        }
+
+        .koga_h1 {
+            text-align: center;
+            align-self: center;
+            font-size: 1.7rem;
+            text-transform: uppercase;
+            font-weight: lighter;
+            letter-spacing: 0.5rem;
+            margin-top: 1rem;
+
+        }
+
+        .koga_h2 {
+            text-align: center;
+            align-self: center;
+            letter-spacing: 0.1rem;
+            text-transform: uppercase;
+            color: var(--blue);
+            font-size: 1.2rem;
+            font-style: italic;
+            margin-top: -1rem;
+
+        }
+
+        .koga_tekst1,
+        .koga_tekst2 {
+            margin-top: 1rem;
+            padding: 0px 30px;
+            text-align: justify;
+        }
+
+        .koga_tekst2 {
+            margin-bottom: 3rem;
         }
 
         /*Media query desktop*/
@@ -62,34 +103,61 @@
                 margin-top: 6rem;
                 padding-left: 1rem;
                 padding-right: 1rem;
+                grid-area: left;
+                position: relative;
+
+
+            }
+
+            .koga_tekst1,
+            .koga_tekst2,
+            .koga_h2 {
+                margin-top: 1rem;
+                padding: 0px 70px;
+                text-align: left;
+            }
+
+            .om_koga_sektion {
+                display: grid;
+                grid-template-areas: "left right";
+                max-width: none;
             }
 
 
             .koga_h1 {
                 text-align: center;
                 align-self: center;
-                font-size: 5rem;
+                font-size: 3rem;
                 text-transform: uppercase;
-                font-weight: lighter;
+                font-weight: bold;
                 letter-spacing: 0.5rem;
-                margin-top: -3rem;
+
 
             }
 
             .koga_h2 {
-                text-align: center;
-                align-self: center;
                 letter-spacing: 0.1rem;
                 text-transform: uppercase;
                 color: var(--blue);
                 margin-top: -3rem;
                 font-style: italic;
+                margin-top: 5rem;
+                font-weight: lighter;
 
             }
 
             .koga_splash {
-                width: 100vw;
+                grid-area: right;
+                width: 50vw;
                 height: 100vh;
+            }
+
+            .koga_tekst2 {
+                margin-bottom: 0;
+            }
+
+            footer {
+                margin-top: 0;
             }
 
 
@@ -103,11 +171,13 @@
     <header>
 
     </header>
-    <section class="splash"> <img class="koga_splash" src="" alt="cykelstel"></section>
-    <section class="om_koga_sektion max-width">
+    <section class="om_koga_sektion">
+
+        <img class="koga_splash" src="" alt="cykelstel">
+
         <article class="koga_indhold">
 
-            <h1 class="koga_h1" class="slide"></h1>
+            <h1 class="koga_h1"></h1>
             <h1 class="koga_h2"></h1>
             <p class="koga_tekst1"></p>
             <p class="koga_tekst2"></p>
@@ -138,7 +208,7 @@
 
         function visIndhold() {
 
-
+            document.querySelector(".koga_indhold").classList.add("slide");
             document.querySelector(".koga_splash").src = side.top_billede.guid;
             document.querySelector(".koga_h1").textContent = side.hvorfor_overskrift;
             document.querySelector(".koga_tekst1").textContent = side.top_tekst;
