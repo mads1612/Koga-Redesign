@@ -8,6 +8,64 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:400,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <style>
+        /* CSS animationer */
+
+        #velkommen span {
+            position: relative;
+            overflow: hidden;
+            display: block;
+            line-height: 1.2;
+        }
+
+        #velkommen span::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: white;
+            animation: a-ltr-after 2s cubic-bezier(.77, 0, .18, 1) forwards;
+            transform: translateX(-101%);
+        }
+
+        #velkommen span::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--bg-color);
+            animation: a-ltr-before 2s cubic-bezier(.77, 0, .18, 1) forwards;
+            transform: translateX(0);
+            background-color: #ffffff;
+        }
+
+
+        @keyframes a-ltr-after {
+            0% {
+                transform: translateX(-100%)
+            }
+
+            100% {
+                transform: translateX(101%)
+            }
+        }
+
+        @keyframes a-ltr-before {
+            0% {
+                transform: translateX(0)
+            }
+
+            100% {
+                transform: translateX(200%)
+            }
+        }
+
+
+
+
         /* Diverse css regler */
 
         p {
@@ -74,6 +132,8 @@
 
         @media screen and (min-width:1000px) {
 
+
+
             /*--------------------Velkommen sektion-------------------*/
 
             .velkommen_h1,
@@ -101,14 +161,14 @@
 
             .velkommen_tekst {
                 grid-area: main;
-                max-width: 50vw;
+                width: 30vw;
                 padding-right: 3rem;
             }
 
             .velkommen_billede {
                 grid-area: rightpic;
-                width: 40vw;
-                height: 30vw;
+                width: ;
+                height: ;
             }
 
             /*--------------------Altid koga sektion-------------------*/
@@ -132,12 +192,12 @@
                 grid-area: header;
                 min-width: 40vw;
                 text-align: center;
-                padding-top: 10%;
             }
 
             .altid_koga_tekst {
                 grid-area: txt;
                 border-left: 2.5px solid black;
+                width: 30vw;
             }
 
             /*--------------------Altid koga Gallery -------------------*/
@@ -278,22 +338,27 @@
 
 
     <section id="velkommen">
-        <article class="velkommen_indhold">
-            <div class="velkommen_left">
-                <h1 class="velkommen_h1"></h1>
-                <p class="velkommen_tekst"></p>
-            </div>
-            <div class="velkommen_right">
-                <img class="velkommen_billede" src="" alt="Morgen cykel">
-            </div>
-        </article>
+        <span>
+            <article class="velkommen_indhold">
+                <div class="velkommen_left">
+                    <h1 class="velkommen_h1">
+                    </h1>
+                    <p class="velkommen_tekst"></p>
+                </div>
+                <div class="velkommen_right">
+                    <img class="velkommen_billede" src="" alt="Morgen cykel">
+                </div>
+            </article>
+        </span>
     </section>
 
     <section id="altid_koga">
-        <article class="altid_koga_indhold">
-            <h1 class="altid_koga_h1"></h1>
-            <p class="altid_koga_tekst"></p>
-        </article>
+        <span>
+            <article class="altid_koga_indhold">
+                <h1 class="altid_koga_h1"></h1>
+                <p class="altid_koga_tekst"></p>
+            </article>
+        </span>
 
         <figure id="gallery">
             <img class="altid_koga_billede1" src="" alt="Natur cykel">
