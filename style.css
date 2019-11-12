@@ -2,7 +2,7 @@
 
 
 h1 {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-weight: bold;
     margin-top: 0;
     padding-top: 1rem;
@@ -10,7 +10,7 @@ h1 {
 }
 
 h2 {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
 h3 {
@@ -19,7 +19,8 @@ h3 {
 }
 
 p {
-    font-family: 'Montserrat', sans-serif;
+
+    font-family: 'Open Sans', sans-serif;
 }
 
 a {
