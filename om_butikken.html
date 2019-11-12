@@ -9,110 +9,131 @@
     <style>
         /*Tekst layout*/
 
-        .historie_h1,
-        .historie_tekst,
-        .ejer_h2,
-        .ejer_tekst {
-            padding-left: 1rem;
-            max-width: 90vw;
-        }
-
         p {
             line-height: 1.5rem;
         }
+
+        .splash_billede {
+            margin-top: 6rem;
+            position: relative;
+
+        }
+
+        .splash_h1 {
+            position: absolute;
+            top: 15vh;
+            left: 17vw;
+            color: white;
+            font-size: 1.5rem;
+            letter-spacing: 0.5rem;
+            text-transform: uppercase;
+
+
+
+        }
+
+        h4,
+        h2 {
+            color: var(--blue);
+
+        }
+
+        .info_indhold {
+            display: grid;
+            grid-template-areas: "left right";
+            padding: 0px 30px;
+
+        }
+
+
+        .info_ejer {
+            grid-area: left;
+
+
+        }
+
+        .info_fokus {
+            grid-area: right;
+        }
+
+        .ejer_beskrivelse,
+        .fokus_tekst {
+            font-size: 0.8rem;
+            line-height: 1rem;
+            margin-right: 1rem;
+
+        }
+
+
+        .om_indhold,
+        .ejer_indhold {
+            padding: 0px 30px;
+        }
+
+        .butik_billede {
+            margin-top: 1rem;
+        }
+
+
+
 
         /*Media query desktop*/
 
         @media screen and (min-width:1000px) {
 
-            .historie_h1,
-            .historie_tekst,
-            .ejer_h2,
-            .ejer_tekst {
-                padding-left: 0;
-
+            .splash_h1 {
+                font-size: 2.2rem;
+                left: 70vw;
+                top: 53vh
             }
 
-            /*Historie sektion*/
-            .historie_sektion {
-                margin: 2rem;
-
-            }
-
-
-
-            .historie_indhold {
+            .info_indhold {
                 display: grid;
-                grid-template-areas:
-                    "header header header"
-                    "main main sidebar"
-                    "main main sidebar";
-                margin-top: 5rem;
-                margin-left: 6rem;
-                margin-right: 6rem;
-            }
+                grid-template-areas: "left right";
+                padding: 0px 30px;
+                margin-top: 2rem;
+                border-bottom: solid;
+                border-bottom-color: var(--blue);
+                border-bottom-width: thin;
+                padding-bottom: 40px;
 
-            .historie_h1 {
-                grid-area: header;
-
-            }
-
-
-
-            .historie_tekst {
-                grid-area: main;
-                max-width: 50vw;
-                padding-right: 3rem;
 
 
             }
 
-            .historie_billede {
-                grid-area: sidebar;
-                width: 40vw;
-                height: 24vw;
-            }
+            .info_ejer {
+                grid-area: left;
+                max-width: 15rem;
+                margin-left: 7rem;
+                margin-right: 20rem;
 
-            /*Ejer sektion*/
 
-            .ejer_sektion {
-                margin: 2rem;
 
             }
 
 
+            .info_fokus {
+                grid-area: right;
+                max-width: 20rem;
+                justify-content: center
+            }
+
+            .sektion_2 {
+                display: grid;
+                grid-template-areas: "left right";
+                margin-top: 2rem;
+
+            }
+
+            .om_indhold {
+                padding: 60px 100px;
+            }
 
             .ejer_indhold {
-                display: grid;
-                grid-template-areas:
-                    "header header header"
-                    "main main sidebar"
-                    "main main sidebar";
-                margin-left: 6rem;
-                margin-right: 6rem;
+                padding: 0;
+                margin-bottom: 3rem;
             }
 
-            .ejer_h2 {
-                grid-area: header;
-
-            }
-
-
-
-            .ejer_tekst {
-                grid-area: main;
-                max-width: 50vw;
-                padding-right: 3rem;
-
-
-
-            }
-
-            .ejer_billede {
-                grid-area: sidebar;
-                width: 40vw;
-                height: 24vw;
-            }
         }
     </style>
 </head>
@@ -124,24 +145,41 @@
 
     </header>
 
+    <section class="splash">
+        <img class="splash_billede">
+        <h1 class="splash_h1"></h1>
+    </section>
+    <section class="info_sektion max-width">
 
-    <section class="historie_sektion">
+
+        <article class="info_indhold">
+            <div class="info_ejer">
+                <h4 class="ejer_h4"></h4>
+                <p class="ejer_beskrivelse"></p>
+            </div>
+            <div class="info_fokus">
+                <h4 class="fokus_h4"></h4>
+                <p class="fokus_tekst"></p>
+            </div>
 
 
-        <article class="historie_indhold">
-
-            <h1 class="historie_h1"></h1>
-            <img class="historie_billede" src="" alt="facade på butik">
-            <p class="historie_tekst"></p>
         </article>
 
     </section>
 
-    <section class="ejer_sektion">
+    <section class="om_sektion max-width">
+
+        <div class="sektion_2">
+            <img class="butik_billede" src="" alt="Koga Center butik på frederiksberg">
+            <article class="om_indhold">
+                <h2 class="om_h2"></h2>
+                <p class="om_tekst"></p>
+            </article>
+        </div>
         <article class="ejer_indhold">
             <h2 class="ejer_h2"></h2>
             <p class="ejer_tekst"></p>
-            <img class="ejer_billede" src="" alt="Jonas Larsson ejer af Koga Center">
+
         </article>
     </section>
 
@@ -168,12 +206,24 @@
         }
 
         function visIndhold() {
-            document.querySelector(".historie_h1").textContent = side.om_overskrift;
-            document.querySelector(".historie_billede").src = side.om_billede.guid;
-            document.querySelector(".historie_tekst").textContent = side.om_tekst;
+
+            document.querySelector(".splash_billede").src = side.om_billede.guid;
+            document.querySelector(".splash_h1").textContent = side.om_overskrift;
+
+            document.querySelector(".ejer_h4").textContent = side.underoverskrift_1;
+            document.querySelector(".ejer_beskrivelse").textContent = side.rubrik_1_tekst;
+
+            document.querySelector(".fokus_h4").textContent = side.underoverskrift_2;
+            document.querySelector(".fokus_tekst").textContent = side.rubrik_2_tekst;
+
+
+
+            document.querySelector(".butik_billede").src = side.butik_billede.guid;
+            document.querySelector(".om_h2").textContent = side.om_underoverskrift;
+            document.querySelector(".om_tekst").textContent = side.om_tekst;
+
             document.querySelector(".ejer_h2").textContent = side.ejer_overskrift;
             document.querySelector(".ejer_tekst").textContent = side.ejer_tekst;
-            document.querySelector(".ejer_billede").src = side.ejer_billede.guid;
 
 
 
