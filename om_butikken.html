@@ -38,6 +38,7 @@
 
         }
 
+
         .info_indhold {
             display: grid;
             grid-template-areas: "left right";
@@ -81,17 +82,28 @@
 
         @media screen and (min-width:1000px) {
 
+            h4 {
+                font-size: 1.8rem;
+            }
+
             .splash_h1 {
                 font-size: 2.2rem;
                 left: 70vw;
-                top: 53vh
+                top: 56vh
+            }
+
+            .splash_billede {
+                margin-top: 4rem;
+                height: 64vh;
+                position: relative;
+
             }
 
             .info_indhold {
                 display: grid;
                 grid-template-areas: "left right";
                 padding: 0px 30px;
-                margin-top: 2rem;
+                margin-top: 12px;
                 border-bottom: solid;
                 border-bottom-color: var(--blue);
                 border-bottom-width: thin;
@@ -103,13 +115,19 @@
 
             .info_ejer {
                 grid-area: left;
-                max-width: 15rem;
+                max-width: 14rem;
                 margin-left: 7rem;
                 margin-right: 20rem;
 
 
 
             }
+
+            .ejer_h4 {
+                width: 20rem;
+            }
+
+
 
 
             .info_fokus {
@@ -121,7 +139,7 @@
             .sektion_2 {
                 display: grid;
                 grid-template-areas: "left right";
-                margin-top: 2rem;
+                margin-top: 4rem;
 
             }
 
@@ -129,10 +147,15 @@
                 padding: 60px 100px;
             }
 
+
+
             .ejer_indhold {
                 padding: 0;
+                margin-top: 3rem;
                 margin-bottom: 3rem;
             }
+
+
 
         }
     </style>
@@ -145,14 +168,14 @@
 
     </header>
 
-    <section class="splash">
+    <section>
         <img class="splash_billede">
         <h1 class="splash_h1"></h1>
     </section>
     <section class="info_sektion max-width">
 
 
-        <article class="info_indhold">
+        <article class="info_indhold info_linje">
             <div class="info_ejer">
                 <h4 class="ejer_h4"></h4>
                 <p class="ejer_beskrivelse"></p>
