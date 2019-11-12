@@ -11,6 +11,8 @@
             margin: 0 auto;
         }
 
+
+
         .slide {
             animation-name: sliding;
             animation-timing-function: ease-in-out;
@@ -35,6 +37,30 @@
             }
         }
 
+        .slide2 {
+            animation-name: sliding2;
+            animation-timing-function: ease-in-out;
+            animation-duration: 1s;
+            animation-fill-mode: forwards;
+
+
+        }
+
+
+
+        @keyframes sliding2 {
+
+            0% {
+                right: -40vw;
+            }
+
+
+            100% {
+                right: 0vw;
+
+            }
+        }
+
         /*Tekst layout*/
 
 
@@ -45,7 +71,7 @@
         .koga_splash {
             width: 100vw;
             height: 60vh;
-
+            z-index: 50;
         }
 
 
@@ -62,7 +88,8 @@
             text-transform: uppercase;
             font-weight: bold;
             letter-spacing: 0.5rem;
-            margin-top: 1rem;
+            margin-top: 5rem;
+
 
         }
 
@@ -133,6 +160,8 @@
                 text-transform: uppercase;
                 font-weight: bold;
                 letter-spacing: 0.5rem;
+                position: relative;
+
 
 
             }
@@ -162,6 +191,11 @@
                 margin-top: 0;
             }
 
+            .koga_tekster {
+                position: relative;
+
+            }
+
 
         }
     </style>
@@ -180,9 +214,12 @@
         <article class="koga_indhold">
 
             <h1 class="koga_h1"></h1>
-            <h1 class="koga_h2"></h1>
-            <p class="koga_tekst1"></p>
-            <p class="koga_tekst2"></p>
+
+            <div class="koga_tekster">
+                <h1 class="koga_h2"></h1>
+                <p class="koga_tekst1"></p>
+                <p class="koga_tekst2"></p>
+            </div>
         </article>
 
     </section>
@@ -210,7 +247,8 @@
 
         function visIndhold() {
 
-            document.querySelector(".koga_indhold").classList.add("slide");
+            document.querySelector(".koga_tekster").classList.add("slide");
+            document.querySelector(".koga_h1").classList.add("slide2");
             document.querySelector(".koga_splash").src = side.top_billede.guid;
             document.querySelector(".koga_h1").textContent = side.hvorfor_overskrift;
             document.querySelector(".koga_tekst1").textContent = side.top_tekst;
