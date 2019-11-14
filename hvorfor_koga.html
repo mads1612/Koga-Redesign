@@ -129,7 +129,7 @@
             height: 35px;
             width: 40px;
             background-size: 40px;
-            background-image: url('assets/e268150a75320c3e02a4f9328a12f306.svg');
+            background-image: url('assets/cykel-ikon.svg');
             background-repeat: no-repeat;
             margin-right: 15px;
             background-position: center center;
@@ -151,6 +151,14 @@
             position: relative;
         }
 
+        .hvorfor_knap {
+            padding: 20px;
+            font-size: 1.1rem;
+            margin-left: 3.5rem;
+            margin-bottom: 1rem;
+            margin-top: 0;
+        }
+
         /*Media query desktop*/
 
 
@@ -167,6 +175,7 @@
                 padding-right: 1rem;
                 grid-area: left;
                 position: relative;
+
 
 
             }
@@ -230,7 +239,7 @@
             }
 
             .koga_noegle {
-                margin-top: 3rem;
+                margin-top: 2.5rem;
             }
 
             .koga_noegle ul {
@@ -240,6 +249,18 @@
                 line-height: 3;
                 margin-left: 1.5rem;
 
+            }
+
+            .hvorfor_knap {
+                position: relative;
+                top: -3vw;
+                ;
+                left: 23vw;
+
+            }
+
+            .slide_venstre {
+                position: relative;
             }
 
 
@@ -262,19 +283,24 @@
 
             <h1 class="koga_h1"></h1>
 
-            <div class="koga_tekster">
-                <h1 class="koga_h2"></h1>
-                <p class="koga_tekst1"></p>
-                <p class="koga_tekst2"></p>
+            <div class="slide_venstre">
+                <div class="koga_tekster">
+                    <h1 class="koga_h2"></h1>
+                    <p class="koga_tekst1"></p>
+                    <p class="koga_tekst2"></p>
+                </div>
+                <div class="koga_noegle">
+                    <ul>
+                        <li class="noegle_1">
+                        </li>
+                        <li class="noegle_2"></li>
+                        <li class="noegle_3"></li>
+                    </ul>
+                </div>
+
+                <a href="cykler.html?type=Alle%20cykler"><button class="hvorfor_knap">Se udvalget af kogacykler her</button></a>
             </div>
-            <div class="koga_noegle">
-                <ul>
-                    <li class="noegle_1">
-                    </li>
-                    <li class="noegle_2"></li>
-                    <li class="noegle_3"></li>
-                </ul>
-            </div>
+
         </article>
 
     </section>
@@ -302,8 +328,7 @@
 
         function visIndhold() {
 
-            document.querySelector(".koga_tekster").classList.add("slide");
-            document.querySelector(".koga_noegle").classList.add("slide");
+            document.querySelector(".slide_venstre").classList.add("slide");
             document.querySelector(".koga_h1").classList.add("slide2");
             document.querySelector(".koga_splash").src = side.top_billede.guid;
             document.querySelector(".koga_h1").textContent = side.hvorfor_overskrift;
