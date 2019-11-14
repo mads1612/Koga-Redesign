@@ -15,7 +15,7 @@
 
         .slide {
             animation-name: sliding;
-            animation-timing-function: ease-in-out;
+            animation-timing-function: ease-out;
             animation-duration: 1s;
             animation-fill-mode: forwards;
 
@@ -39,7 +39,7 @@
 
         .slide2 {
             animation-name: sliding2;
-            animation-timing-function: ease-in-out;
+            animation-timing-function: ease-out;
             animation-duration: 1s;
             animation-fill-mode: forwards;
 
@@ -65,7 +65,7 @@
 
 
         p {
-            line-height: 1.5rem;
+            line-height: 1.5;
         }
 
         .koga_splash {
@@ -119,8 +119,26 @@
         }
 
         .koga_noegle ul {
-            padding-left: 5rem;
             margin-bottom: 3rem;
+            list-style-type: none;
+        }
+
+        .om_koga_sektion ul li::before {
+            content: '';
+            display: inline-block;
+            height: 35px;
+            width: 40px;
+            background-size: 40px;
+            background-image: url('assets/e268150a75320c3e02a4f9328a12f306.svg');
+            background-repeat: no-repeat;
+            margin-right: 15px;
+            background-position: center center;
+            vertical-align: middle;
+        }
+
+
+        .koga_noegle li {
+            padding-bottom: 1rem;
 
         }
 
@@ -216,14 +234,17 @@
             }
 
             .koga_noegle ul {
-                list-style-position: inside;
-                padding-left: 13rem;
+
                 font-weight: lighter;
+                font-size: 1rem;
+                line-height: 3;
+                margin-left: 1.5rem;
+
             }
 
 
-        }
 
+        }
     </style>
 </head>
 
@@ -248,7 +269,8 @@
             </div>
             <div class="koga_noegle">
                 <ul>
-                    <li class="noegle_1"></li>
+                    <li class="noegle_1">
+                    </li>
                     <li class="noegle_2"></li>
                     <li class="noegle_3"></li>
                 </ul>
@@ -297,8 +319,5 @@
 
 
         }
-
     </script>
-</body>
-
-</html>
+</body></html>
