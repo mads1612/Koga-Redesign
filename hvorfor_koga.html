@@ -88,7 +88,7 @@
             text-transform: uppercase;
             font-weight: bold;
             letter-spacing: 0.5rem;
-            margin-top: 5rem;
+            margin-top: 20px;
 
 
         }
@@ -116,6 +116,20 @@
 
         .koga_tekst2 {
             margin-bottom: 3rem;
+        }
+
+        .koga_noegle ul {
+            padding-left: 5rem;
+            margin-bottom: 3rem;
+
+        }
+
+        .koga_noegle {
+            line-height: 2rem;
+            color: var(--blue);
+            text-transform: uppercase;
+            letter-spacing: 0.1rem;
+            font-size: 1.1rem;
         }
 
         /*Media query desktop*/
@@ -196,6 +210,16 @@
 
             }
 
+            .koga_noegle {
+                margin-top: 3rem;
+            }
+
+            .koga_noegle ul {
+                list-style-position: inside;
+                padding-left: 13rem;
+                font-weight: lighter;
+            }
+
 
         }
     </style>
@@ -219,6 +243,13 @@
                 <h1 class="koga_h2"></h1>
                 <p class="koga_tekst1"></p>
                 <p class="koga_tekst2"></p>
+            </div>
+            <div class="koga_noegle">
+                <ul>
+                    <li class="noegle_1"></li>
+                    <li class="noegle_2"></li>
+                    <li class="noegle_3"></li>
+                </ul>
             </div>
         </article>
 
@@ -256,6 +287,10 @@
             document.querySelector(".koga_tekst2").textContent = side.bottom_tekst;
 
             document.querySelector(".koga_h2").textContent = side.under_overskrift;
+            document.querySelector(".noegle_1").textContent = side.koga_ord_1;
+            document.querySelector(".noegle_2").textContent = side.koga_ord_2;
+            document.querySelector(".noegle_3").textContent = side.koga_ord_3;
+
 
 
         }
