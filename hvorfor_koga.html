@@ -130,6 +130,7 @@
             text-transform: uppercase;
             letter-spacing: 0.1rem;
             font-size: 1.1rem;
+            position: relative;
         }
 
         /*Media query desktop*/
@@ -222,6 +223,7 @@
 
 
         }
+
     </style>
 </head>
 
@@ -279,6 +281,7 @@
         function visIndhold() {
 
             document.querySelector(".koga_tekster").classList.add("slide");
+            document.querySelector(".koga_noegle").classList.add("slide");
             document.querySelector(".koga_h1").classList.add("slide2");
             document.querySelector(".koga_splash").src = side.top_billede.guid;
             document.querySelector(".koga_h1").textContent = side.hvorfor_overskrift;
@@ -294,5 +297,8 @@
 
 
         }
+
     </script>
-</body></html>
+</body>
+
+</html>

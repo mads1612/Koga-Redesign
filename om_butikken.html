@@ -21,14 +21,12 @@
 
         .splash_h1 {
             position: absolute;
-            top: 15vh;
+            top: 18vh;
             left: 17vw;
             color: white;
             font-size: 1.5rem;
             letter-spacing: 0.5rem;
             text-transform: uppercase;
-
-
 
         }
 
@@ -43,6 +41,7 @@
             display: grid;
             grid-template-areas: "left right";
             padding: 0px 30px;
+
 
         }
 
@@ -73,6 +72,28 @@
 
         .butik_billede {
             margin-top: 1rem;
+            grid-area: bottom;
+        }
+
+        .om_punkter {
+            line-height: 2rem;
+            color: var(--blue);
+            text-transform: uppercase;
+            letter-spacing: 0.1rem;
+            font-size: 1.1rem;
+            padding-left: 1.4rem;
+            grid-area: top;
+
+        }
+
+
+
+        .sektion_2 {
+            display: grid;
+            grid-template-areas: "top"
+                "bottom";
+            margin-top: 1rem;
+
         }
 
 
@@ -102,12 +123,10 @@
             .info_indhold {
                 display: grid;
                 grid-template-areas: "left right";
-                padding: 0px 30px;
-                margin-top: 12px;
                 border-bottom: solid;
                 border-bottom-color: var(--blue);
                 border-bottom-width: thin;
-                padding-bottom: 40px;
+
 
 
 
@@ -116,15 +135,24 @@
             .info_ejer {
                 grid-area: left;
                 max-width: 14rem;
-                margin-left: 7rem;
+                margin-left: 1rem;
                 margin-right: 20rem;
+
 
 
 
             }
 
             .ejer_h4 {
-                width: 20rem;
+                width: 50rem;
+                margin-bottom: 0.5rem;
+                letter-spacing: 0.1rem;
+            }
+
+
+            .fokus_h4 {
+                margin-bottom: 0.5rem;
+                letter-spacing: 0.1rem;
             }
 
 
@@ -133,7 +161,6 @@
             .info_fokus {
                 grid-area: right;
                 max-width: 20rem;
-                justify-content: center
             }
 
             .sektion_2 {
@@ -143,8 +170,28 @@
 
             }
 
+
+            .butik_billede {
+                grid-area: left;
+            }
+
+            .om_punkter {
+                grid-area: right;
+                font-size: 1.5rem;
+                font-weight: lighter;
+                line-height: 1.2;
+                padding: 90px 10px;
+                padding-left: 70px;
+
+            }
+
+            .om_punkter li {
+                padding-bottom: 2rem;
+            }
+
             .om_indhold {
-                padding: 60px 100px;
+                padding: 0;
+                margin-bottom: 50px;
             }
 
 
@@ -154,6 +201,19 @@
                 margin-top: 3rem;
                 margin-bottom: 3rem;
             }
+
+            .ejer_beskrivelse,
+            .fokus_tekst {
+                font-size: 1.2rem;
+                width: 30rem;
+                line-height: 1.5;
+                margin-top: 0;
+                padding-bottom: 1.5rem;
+            }
+
+
+
+
 
 
 
@@ -175,7 +235,7 @@
     <section class="info_sektion max-width">
 
 
-        <article class="info_indhold info_linje">
+        <article class="info_indhold">
             <div class="info_ejer">
                 <h4 class="ejer_h4"></h4>
                 <p class="ejer_beskrivelse"></p>
@@ -194,15 +254,21 @@
 
         <div class="sektion_2">
             <img class="butik_billede" src="" alt="Koga Center butik på frederiksberg">
-            <article class="om_indhold">
-                <h2 class="om_h2"></h2>
-                <p class="om_tekst"></p>
+            <article class="om_punkter">
+                <ul>
+                    <li class="noegleord_1"></li>
+                    <li class="noegleord_2"></li>
+                    <li class="noegleord_3"></li>
+                </ul>
             </article>
         </div>
         <article class="ejer_indhold">
             <h2 class="ejer_h2"></h2>
             <p class="ejer_tekst"></p>
-
+        </article>
+        <article class="om_indhold">
+            <h2 class="om_h2"></h2>
+            <p class="om_tekst"></p>
         </article>
     </section>
 
@@ -247,6 +313,12 @@
 
             document.querySelector(".ejer_h2").textContent = side.ejer_overskrift;
             document.querySelector(".ejer_tekst").textContent = side.ejer_tekst;
+
+
+            document.querySelector(".noegleord_1").textContent = side.noegleord_1;
+            document.querySelector(".noegleord_2").textContent = side.noegleord_2;
+            document.querySelector(".noegleord_3").textContent = side.noegleord_3;
+
 
 
 
