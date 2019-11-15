@@ -8,32 +8,6 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:400,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <style>
-        @keyframes bounce {
-
-            0%,
-            100%,
-            20%,
-            50%,
-            80% {
-                -webkit-transform: translateY(0);
-                -ms-transform: translateY(0);
-                transform: translateY(0);
-            }
-
-            40% {
-                -webkit-transform: translateY(-10px);
-                -ms-transform: translateY(-10px);
-                transform: translateY(-10px);
-            }
-
-            60% {
-                -webkit-transform: translateY(-5px);
-                -ms-transform: translateY(-5px);
-                transform: translateY(-5px);
-            }
-        }
-
-
         #button {
             position: absolute;
             top: 100px;
@@ -117,6 +91,31 @@
 
 
 
+        @keyframes bounce {
+
+            0%,
+            100%,
+            20%,
+            50%,
+            80% {
+                -webkit-transform: translateY(0);
+                -ms-transform: translateY(0);
+                transform: translateY(0);
+            }
+
+            40% {
+                -webkit-transform: translateY(-10px);
+                -ms-transform: translateY(-10px);
+                transform: translateY(-10px);
+            }
+
+            60% {
+                -webkit-transform: translateY(-5px);
+                -ms-transform: translateY(-5px);
+                transform: translateY(-5px);
+            }
+        }
+
 
         /* Diverse css regler */
 
@@ -159,13 +158,28 @@
 
         #forside_video {
             position: relative;
-            margin-top: 3vw;
+            min-height: 100vh;
+            max-height: 100vh;
+            height: 100vh;
+            overflow: hidden;
+
+
+
         }
 
         #loop_video {
-            width: 100vw;
-            height: 42vw;
-            object-fit: cover;
+
+            position: absolute;
+            object-fit: none;
+            margin-top: 5vw;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+
+
+
+
         }
 
         #video_tekst {
@@ -298,7 +312,7 @@
             /*--------------------Forside video sektion-------------------*/
 
             #loop_video {
-                margin-top: 90px;
+                margin-top: 20vw;
             }
 
             #video_tekst h1 {
@@ -339,7 +353,6 @@
             }
 
         }
-
     </style>
 </head>
 
@@ -465,8 +478,5 @@
             window.scrollTo(0, 560);
 
         }
-
     </script>
-</body>
-
-</html>
+</body></html>
