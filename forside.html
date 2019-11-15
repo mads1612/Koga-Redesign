@@ -8,6 +8,107 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:400,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <style>
+        #tilbud {}
+
+        .tilbud_indhold {
+            display: grid;
+            width: 100%;
+            grid-template-columns: 1fr 1fr 1fr;
+            justify-items: center;
+            align-items: center;
+            grid-template-rows: 20vw;
+
+
+        }
+
+        .top {}
+
+        .bottom {}
+
+
+        .tilbud_venstre {
+            width: 50%;
+            height: 50%;
+        }
+
+
+
+        .tilbud_midten {
+            width: 50%;
+            height: 50%;
+        }
+
+        .tilbud_hojre {
+            width: 50%;
+            height: 50%;
+        }
+
+        .altid_koga_tilbud1 {
+            width: 3vw;
+            height: 3vw;
+            margin: 4px 10px 0px 0px;
+            border: 1px solid black;
+            float: left;
+        }
+
+        .tilbud1_h1 {
+            line-height: 2rem;
+            color: var(--blue);
+            text-transform: uppercase;
+            letter-spacing: 0.1rem;
+            font-size: 0.8rem;
+        }
+
+        .tilbud1_tekst {
+
+            font-size: 0.6rem;
+        }
+
+        .altid_koga_tilbud2 {
+            width: 3vw;
+            height: 3vw;
+            margin: 4px 10px 0px 0px;
+            border: 1px solid black;
+            float: left;
+        }
+
+        .tilbud2_h1 {
+            line-height: 2rem;
+            color: var(--blue);
+            text-transform: uppercase;
+            letter-spacing: 0.1rem;
+            font-size: 0.8rem;
+
+        }
+
+        .tilbud2_tekst {
+            font-size: 0.6rem;
+        }
+
+        .altid_koga_tilbud3 {
+            width: 3vw;
+            height: 3vw;
+            margin: 4px 10px 0px 0px;
+            border: 1px solid black;
+            float: left;
+        }
+
+        .tilbud3_h1 {
+            line-height: 2rem;
+            color: var(--blue);
+            text-transform: uppercase;
+            letter-spacing: 0.1rem;
+            font-size: 0.8rem;
+
+        }
+
+        .tilbud3_tekst {
+            font-size: 0.6rem;
+        }
+
+
+
+
         .altid_koga_box {}
 
         #button {
@@ -284,30 +385,6 @@
 
             /*--------------------Altid koga Gallery -------------------*/
 
-            #gallery {
-                display: grid;
-                grid-template-columns: repeat(3, 1fr);
-                grid-gap: 10px;
-                margin-top: 6rem;
-                padding-left: 2rem;
-                padding-right: 2rem;
-                width: 100vw;
-            }
-
-            .altid_koga_billede1 {
-                width: 25vw;
-                height: 20vw;
-            }
-
-            .altid_koga_billede2 {
-                width: 25vw;
-                height: 20vw;
-            }
-
-            .altid_koga_billede3 {
-                width: 25vw;
-                height: 20vw;
-            }
 
             .velkommen_left {
                 margin: auto;
@@ -321,7 +398,13 @@
 
         @media screen and (max-width:1000px) {
 
+            .tilbud_indhold {
 
+                grid-template-columns: 1fr;
+
+
+
+            }
 
 
             /*--------------------Forside video sektion-------------------*/
@@ -363,9 +446,7 @@
 
             /*--------------------Altid koga Gallery -------------------*/
 
-            #gallery {
-                margin: 10vw;
-            }
+
 
         }
     </style>
@@ -448,12 +529,51 @@
 
             <p class="altid_koga_tekst"></p>
         </article>
+    </section>
 
-        <figure id="gallery">
-            <img class="altid_koga_billede1" src="" alt="Natur cykel">
-            <img class="altid_koga_billede2" src="" alt="Bjerg cykel">
-            <img class="altid_koga_billede3" src="" alt="By cykel">
-        </figure>
+    <section id="tilbud">
+
+        <article class="tilbud_indhold">
+            <div class="tilbud_venstre">
+
+                <div class="top">
+                    <img class="altid_koga_tilbud1" src="" alt="Natur cykel">
+
+                    <h1 class="tilbud1_h1"></h1>
+                </div>
+                <div class="bottom">
+
+                    <p class="tilbud1_tekst"></p>
+                </div>
+
+            </div>
+            <div class="tilbud_midten">
+                <div class="top">
+
+                    <img class="altid_koga_tilbud2" src="" alt="Natur cykel">
+                    <h1 class="tilbud2_h1"></h1>
+                </div>
+
+                <div class="bottom">
+
+                    <p class="tilbud2_tekst"></p>
+                </div>
+
+            </div>
+            <div class="tilbud_hojre">
+                <div class="top">
+
+                    <img class="altid_koga_tilbud3" src="" alt="Natur cykel">
+                    <h1 class="tilbud3_h1"></h1>
+                </div>
+
+                <div class="bottom">
+
+                    <p class="tilbud3_tekst"></p>
+                </div>
+
+            </div>
+        </article>
 
     </section>
     <footer>
@@ -490,9 +610,18 @@
             document.querySelector(".velkommen_billede").src = side.velkommen_billede.guid;
             document.querySelector(".altid_koga_h1").textContent = side.altid_overskrift;
             document.querySelector(".altid_koga_tekst").textContent = side.altid_tekst;
-            document.querySelector(".altid_koga_billede1").src = side.altid_billede_venstre.guid;
-            document.querySelector(".altid_koga_billede2").src = side.altid_billede_mid.guid;
-            document.querySelector(".altid_koga_billede3").src = side.altid_billede_hjre.guid;
+
+            document.querySelector(".altid_koga_tilbud1").src = side.altid_logo_venstre.guid;
+            document.querySelector(".tilbud1_h1").textContent = side.altid_header_venstre;
+            document.querySelector(".tilbud1_tekst").textContent = side.altid_tekst_venstre;
+
+            document.querySelector(".altid_koga_tilbud2").src = side.altid_logo_mid.guid;
+            document.querySelector(".tilbud2_h1").textContent = side.altid_header_mid;
+            document.querySelector(".tilbud2_tekst").textContent = side.altid_tekst_mid;
+
+            document.querySelector(".altid_koga_tilbud3").src = side.altid_logo_hojre.guid;
+            document.querySelector(".tilbud3_h1").textContent = side.altid_header_hojre;
+            document.querySelector(".tilbud3_tekst").textContent = side.altid_tekst_hojre;
 
         }
 
@@ -564,5 +693,53 @@
                 transform: translateX(200%)
             }
         }
+
+
+
+
+        <figure id="gallery">
+            <img class="altid_koga_billede1" src="" alt="Natur cykel">
+            <img class="altid_koga_billede2" src="" alt="Bjerg cykel">
+            <img class="altid_koga_billede3" src="" alt="By cykel">
+        </figure>
+
+
+                    document.querySelector(".altid_koga_billede1").src = side.altid_billede_venstre.guid;
+            document.querySelector(".altid_koga_billede2").src = side.altid_billede_mid.guid;
+            document.querySelector(".altid_koga_billede3").src = side.altid_billede_hjre.guid;
+
+
+
+
+            #gallery {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                grid-gap: 10px;
+                margin-top: 6rem;
+                padding-left: 2rem;
+                padding-right: 2rem;
+                width: 100vw;
+            }
+
+            .altid_koga_billede1 {
+                width: 25vw;
+                height: 20vw;
+            }
+
+            .altid_koga_billede2 {
+                width: 25vw;
+                height: 20vw;
+            }
+
+            .altid_koga_billede3 {
+                width: 25vw;
+                height: 20vw;
+            }
+
+
+
+                    #gallery {
+                margin: 10vw;
+            }
 -->
 
