@@ -56,7 +56,7 @@
             color: var(--blue);
             text-transform: uppercase;
             letter-spacing: 0.1rem;
-            font-size: 0.8rem;
+            font-size: 0.5rem;
         }
 
         .tilbud1_tekst {
@@ -537,12 +537,13 @@
             <div class="tilbud_venstre">
 
                 <div class="top">
-                    <img class="altid_koga_tilbud1" src="" alt="Natur cykel">
 
+                    <img class="altid_koga_tilbud1" src="" alt="Natur cykel">
                     <h1 class="tilbud1_h1"></h1>
+
+
                 </div>
                 <div class="bottom">
-
                     <p class="tilbud1_tekst"></p>
                 </div>
 
@@ -611,8 +612,10 @@
             document.querySelector(".altid_koga_h1").textContent = side.altid_overskrift;
             document.querySelector(".altid_koga_tekst").textContent = side.altid_tekst;
 
+
             document.querySelector(".altid_koga_tilbud1").src = side.altid_logo_venstre.guid;
             document.querySelector(".tilbud1_h1").textContent = side.altid_header_venstre;
+
             document.querySelector(".tilbud1_tekst").textContent = side.altid_tekst_venstre;
 
             document.querySelector(".altid_koga_tilbud2").src = side.altid_logo_mid.guid;
@@ -641,58 +644,6 @@
 
 <!--
 
-        #velkommen span {
-            position: relative;
-            overflow: hidden;
-            display: block;
-            line-height: 1.2;
-        }
-
-        #velkommen span::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 100%;
-            height: 100%;
-            background: white;
-            animation: a-ltr-after 2s cubic-bezier(.77, 0, .18, 1) forwards;
-            transform: translateX(-101%);
-        }
-
-        #velkommen span::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 100%;
-            height: 100%;
-            background: var(--bg-color);
-            animation: a-ltr-before 2s cubic-bezier(.77, 0, .18, 1) forwards;
-            transform: translateX(0);
-            background-color: #ffffff;
-        }
-
-
-        @keyframes a-ltr-after {
-            0% {
-                transform: translateX(-100%)
-            }
-
-            100% {
-                transform: translateX(101%)
-            }
-        }
-
-        @keyframes a-ltr-before {
-            0% {
-                transform: translateX(0)
-            }
-
-            100% {
-                transform: translateX(200%)
-            }
-        }
 
 
 
