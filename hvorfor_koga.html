@@ -7,9 +7,18 @@
     <title>Hvorfor koga</title>
     <link rel="stylesheet" href="style.css">
     <style>
+        /* --- Generelle indstillinger --- */
         section {
             margin: 0 auto;
         }
+
+        p {
+            line-height: 1.5;
+        }
+
+        /* --- Generelle indstillinger slut --- */
+
+        /* --- Animationer --- */
 
 
 
@@ -61,11 +70,13 @@
             }
         }
 
-        /*Tekst layout*/
+        /* --- Animationer slut --- */
 
+        /* ---- Koga sektion -----*/
 
-        p {
-            line-height: 1.5;
+        .om_koga_sektion {
+            margin: 0 auto;
+            max-width: 1200px;
         }
 
         .koga_splash {
@@ -74,21 +85,18 @@
             z-index: 50;
         }
 
-
-
-        .om_koga_sektion {
-            margin: 0 auto;
-            max-width: 1200px;
-        }
-
+        /* ---- Koga sektion -----Overskrifter----*/
         .koga_h1 {
             text-align: center;
             align-self: center;
-            font-size: 1.7rem;
+            font-size: 2rem;
             text-transform: uppercase;
             font-weight: bold;
-            letter-spacing: 0.5rem;
-            margin-top: 20px;
+            letter-spacing: 0.4rem;
+            margin: 3rem 0;
+            max-width: 10vw;
+            padding-left: 30px;
+
 
 
         }
@@ -107,6 +115,9 @@
 
         }
 
+
+        /* ---- Koga sektion -----Tekst----*/
+
         .koga_tekst1,
         .koga_tekst2 {
             margin-top: 1rem;
@@ -117,6 +128,9 @@
         .koga_tekst2 {
             margin-bottom: 3rem;
         }
+
+
+        /* ---- Koga sektion -----Punktopstilling----*/
 
         .koga_noegle ul {
             margin-bottom: 3rem;
@@ -151,6 +165,8 @@
             position: relative;
         }
 
+        /* ---- Koga sektion -----Knap----*/
+
         .hvorfor_knap {
             padding: 20px;
             font-size: 1.1rem;
@@ -159,40 +175,54 @@
             margin-top: 0;
         }
 
-        /*Media query desktop*/
+        /* ---- Koga sektion slut -----*/
+
+        /* ---- Media query - desktop ---- */
 
 
         @media screen and (min-width: 1000px) {
 
 
 
-
-            /*Hvorfor koga sektion*/
+            /* ---- Koga sektion -----*/
+            .om_koga_sektion {
+                display: grid;
+                grid-template-areas: "left right";
+                max-width: none;
+                margin-top: 1rem;
+            }
 
             .koga_indhold {
-                margin-top: 6rem;
+                padding-top: 4rem;
                 padding-left: 1rem;
                 padding-right: 1rem;
                 grid-area: left;
                 position: relative;
 
+            }
 
+
+
+
+            .koga_splash {
+                grid-area: right;
+                width: 50vw;
+                height: 100vh;
 
             }
 
-            .koga_tekst1,
-            .koga_tekst2,
-            .koga_h2 {
-                margin-top: 1rem;
-                padding: 0px 70px;
-                text-align: left;
+
+
+            footer {
+                margin-top: 0;
             }
 
-            .om_koga_sektion {
-                display: grid;
-                grid-template-areas: "left right";
-                max-width: none;
+            .slide_venstre {
+                position: relative;
             }
+
+
+            /* ---- Koga sektion ---Overskrifter--*/
 
 
             .koga_h1 {
@@ -203,6 +233,9 @@
                 font-weight: bold;
                 letter-spacing: 0.5rem;
                 position: relative;
+                padding: 0;
+                max-width: none;
+
 
 
 
@@ -219,24 +252,21 @@
 
             }
 
-            .koga_splash {
-                grid-area: right;
-                width: 50vw;
-                height: 100vh;
-            }
+
+            /* ---- Koga sektion ---Tekst---*/
 
             .koga_tekst2 {
                 margin-bottom: 0;
-            }
-
-            footer {
-                margin-top: 0;
             }
 
             .koga_tekster {
                 position: relative;
 
             }
+
+            /* ---- Koga sektion ---Punktopstilling--*/
+
+
 
             .koga_noegle {
                 margin-top: 2.5rem;
@@ -247,25 +277,49 @@
                 font-weight: lighter;
                 font-size: 1rem;
                 line-height: 3;
-                margin-left: 1.5rem;
+                padding-left: 30px;
 
             }
 
             .hvorfor_knap {
                 position: relative;
                 top: -3vw;
-                ;
                 left: 23vw;
 
             }
 
-            .slide_venstre {
-                position: relative;
+
+        }
+
+        /* ---- Media query - desktop slut ---- */
+
+
+        /* ---- Media query big-screen ----- */
+
+        @media screen and (min-width: 1800px) {
+
+            .koga_indhold {
+                margin-top: 12rem;
             }
 
 
+            .koga_tekster {
+                margin-top: 10rem;
+            }
+
+            .hvorfor_knap {
+                top: 0.5vw;
+                left: 30vw;
+            }
+
+            .koga_h1 {
+                font-size: 4rem;
+            }
+
 
         }
+
+        /* ---- Media query big-screen slut ----- */
     </style>
 </head>
 
