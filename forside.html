@@ -8,108 +8,102 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:400,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <style>
-        #tilbud {}
-
-        .tilbud_indhold {
+        .tilbud_box {
             display: grid;
             width: 100%;
             grid-template-columns: 1fr 1fr 1fr;
             justify-items: center;
-            align-items: center;
-            grid-template-rows: 20vw;
-
+            padding-left: 6rem;
+            padding-right: 6rem;
 
         }
 
-        .top {}
 
-        .bottom {}
-
+        .tilbud_indhold {
+            margin-top: 6rem;
+            padding-left: 6rem;
+            padding-right: 6rem;
+            margin-bottom: 6rem;
+        }
 
         .tilbud_venstre {
-            width: 50%;
-            height: 50%;
+            position: relative;
+
         }
 
-
-
         .tilbud_midten {
-            width: 50%;
-            height: 50%;
+            position: relative;
         }
 
         .tilbud_hojre {
-            width: 50%;
-            height: 50%;
+            position: relative;
         }
 
         .altid_koga_tilbud1 {
-            width: 3vw;
-            height: 3vw;
-            margin: 4px 10px 0px 0px;
-            border: 1px solid black;
+            width: 4vw;
             float: left;
+            margin-right: 10%;
         }
 
         .tilbud1_h1 {
-            line-height: 2rem;
-            color: var(--blue);
             text-transform: uppercase;
             letter-spacing: 0.1rem;
-            font-size: 0.5rem;
+            font-size: 0.8vw;
+            color: var(--blue);
+
         }
 
         .tilbud1_tekst {
-
-            font-size: 0.6rem;
+            text-align: justify;
+            font-size: 0.7vw;
+            font-weight: 600;
+            width: 15vw;
         }
 
         .altid_koga_tilbud2 {
-            width: 3vw;
-            height: 3vw;
-            margin: 4px 10px 0px 0px;
-            border: 1px solid black;
+            width: 4vw;
             float: left;
+            margin-right: 10%;
+
         }
 
         .tilbud2_h1 {
-            line-height: 2rem;
             color: var(--blue);
             text-transform: uppercase;
             letter-spacing: 0.1rem;
-            font-size: 0.8rem;
+            font-size: 0.8vw;
 
         }
 
         .tilbud2_tekst {
-            font-size: 0.6rem;
+            text-align: justify;
+            font-size: 0.7vw;
+            font-weight: 600;
+            width: 15vw;
+
         }
 
         .altid_koga_tilbud3 {
-            width: 3vw;
-            height: 3vw;
-            margin: 4px 10px 0px 0px;
-            border: 1px solid black;
+            width: 4vw;
             float: left;
+            margin-right: 10%;
+
         }
 
         .tilbud3_h1 {
-            line-height: 2rem;
             color: var(--blue);
             text-transform: uppercase;
             letter-spacing: 0.1rem;
-            font-size: 0.8rem;
+            font-size: 0.8vw;
 
         }
 
         .tilbud3_tekst {
-            font-size: 0.6rem;
+            text-align: justify;
+            font-size: 0.7vw;
+            font-weight: 600;
+            width: 15vw;
         }
-
-
-
-
-        .altid_koga_box {}
 
         #button {
             position: absolute;
@@ -173,9 +167,11 @@
             position: relative;
         }
 
-        .slide_venstrer {
+        .slide_venstre2 {
             position: relative;
         }
+
+
 
         .slide {
             animation-name: sliding;
@@ -209,7 +205,6 @@
         }
 
 
-
         @keyframes sliding2 {
 
             0% {
@@ -219,6 +214,28 @@
 
             100% {
                 right: 0vw;
+
+            }
+        }
+
+        .slide3 {
+            animation-name: sliding3;
+            animation-timing-function: ease-out;
+            animation-duration: 1s;
+            animation-fill-mode: forwards;
+
+
+        }
+
+        @keyframes sliding3 {
+
+            0% {
+                bottom: -40vw;
+            }
+
+
+            100% {
+                bottom: 0vw;
 
             }
         }
@@ -244,6 +261,8 @@
             font-weight: bold;
             letter-spacing: 0.4rem;
             position: relative;
+            color: var(--blue);
+
 
         }
 
@@ -335,6 +354,8 @@
                 margin-right: 6rem;
             }
 
+
+
             .velkommen_h1 {
                 grid-area: header;
             }
@@ -378,7 +399,6 @@
 
             .altid_koga_tekst {
                 grid-area: txt;
-                border-left: 2.5px solid black;
                 width: 40vw;
                 position: relative;
             }
@@ -446,6 +466,11 @@
 
             /*--------------------Altid koga Gallery -------------------*/
 
+            .tilbud_box {
+                grid-template-columns: 1fr;
+
+            }
+
 
 
         }
@@ -491,7 +516,7 @@
 
 
         <div id="video_tekst">
-            <h1>Én gang Koga - altid Koga</h1>
+            <h1>koga - center copenhagen</h1>
             <button id="button"></button>
         </div>
 
@@ -520,9 +545,10 @@
         </article>
     </section>
 
+
     <section id="altid_koga">
         <article class="altid_koga_indhold">
-            <div class="slide_venstrer">
+            <div class="slide_venstre2">
 
                 <h1 class="altid_koga_h1"></h1>
             </div>
@@ -531,45 +557,27 @@
         </article>
     </section>
 
+
     <section id="tilbud">
 
         <article class="tilbud_indhold">
-            <div class="tilbud_venstre">
-
-                <div class="top">
-
+            <div class="tilbud_box">
+                <div class="tilbud_venstre">
                     <img class="altid_koga_tilbud1" src="" alt="Natur cykel">
                     <h1 class="tilbud1_h1"></h1>
-
-
-                </div>
-                <div class="bottom">
                     <p class="tilbud1_tekst"></p>
                 </div>
-
-            </div>
-            <div class="tilbud_midten">
-                <div class="top">
+                <div class="tilbud_midten">
 
                     <img class="altid_koga_tilbud2" src="" alt="Natur cykel">
                     <h1 class="tilbud2_h1"></h1>
-                </div>
-
-                <div class="bottom">
-
                     <p class="tilbud2_tekst"></p>
                 </div>
 
-            </div>
-            <div class="tilbud_hojre">
-                <div class="top">
+                <div class="tilbud_hojre">
 
                     <img class="altid_koga_tilbud3" src="" alt="Natur cykel">
                     <h1 class="tilbud3_h1"></h1>
-                </div>
-
-                <div class="bottom">
-
                     <p class="tilbud3_tekst"></p>
                 </div>
 
@@ -577,6 +585,10 @@
         </article>
 
     </section>
+
+
+
+
     <footer>
 
     </footer>
@@ -603,9 +615,13 @@
 
         function vis() {
             document.querySelector(".slide_venstre").classList.add("slide");
-            document.querySelector(".slide_venstrer").classList.add("slide");
+            document.querySelector(".slide_venstre2").classList.add("slide");
+            document.querySelector(".tilbud_venstre").classList.add("slide");
             document.querySelector(".velkommen_tekst").classList.add("slide2");
             document.querySelector(".altid_koga_tekst").classList.add("slide2");
+            document.querySelector(".tilbud_hojre").classList.add("slide2");
+            document.querySelector(".tilbud_midten").classList.add("slide3");
+
             document.querySelector(".velkommen_h1").textContent = side.velkommen_overskrift;
             document.querySelector(".velkommen_tekst").textContent = side.velkommen_tekst;
             document.querySelector(".velkommen_billede").src = side.velkommen_billede.guid;
@@ -643,9 +659,6 @@
 
 
 <!--
-
-
-
 
 
         <figure id="gallery">
@@ -692,5 +705,10 @@
                     #gallery {
                 margin: 10vw;
             }
+
+
+
+
+
 -->
 
