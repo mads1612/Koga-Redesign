@@ -10,99 +10,107 @@
     <style>
         .tilbud_box {
             display: grid;
-            width: 100%;
+            width: 100vw;
             grid-template-columns: 1fr 1fr 1fr;
             justify-items: center;
             padding-left: 6rem;
             padding-right: 6rem;
-
+            align-items: center
         }
 
+        #tilbud {}
 
         .tilbud_indhold {
             margin-top: 6rem;
             padding-left: 6rem;
             padding-right: 6rem;
             margin-bottom: 6rem;
+
         }
 
         .tilbud_venstre {
             position: relative;
+            width: 100%;
 
         }
 
         .tilbud_midten {
             position: relative;
+            width: 100%;
         }
 
         .tilbud_hojre {
             position: relative;
+            width: 100%;
+
+
         }
 
         .altid_koga_tilbud1 {
-            width: 4vw;
             float: left;
             margin-right: 10%;
+            width: 62px;
+
+
         }
 
         .tilbud1_h1 {
             text-transform: uppercase;
             letter-spacing: 0.1rem;
-            font-size: 0.8vw;
+            font-size: 1rem;
             color: var(--blue);
-
         }
 
         .tilbud1_tekst {
             text-align: justify;
-            font-size: 0.7vw;
+            font-size: 0.7rem;
             font-weight: 600;
-            width: 15vw;
+            max-width: 260px;
         }
 
         .altid_koga_tilbud2 {
-            width: 4vw;
             float: left;
             margin-right: 10%;
-
+            width: 62px;
         }
 
         .tilbud2_h1 {
-            color: var(--blue);
             text-transform: uppercase;
             letter-spacing: 0.1rem;
-            font-size: 0.8vw;
+            font-size: 1rem;
+            color: var(--blue);
 
         }
 
         .tilbud2_tekst {
             text-align: justify;
-            font-size: 0.7vw;
+            font-size: 0.7rem;
             font-weight: 600;
-            width: 15vw;
+            max-width: 260px;
 
         }
 
         .altid_koga_tilbud3 {
-            width: 4vw;
             float: left;
             margin-right: 10%;
+            width: 62px;
 
         }
 
         .tilbud3_h1 {
-            color: var(--blue);
             text-transform: uppercase;
             letter-spacing: 0.1rem;
-            font-size: 0.8vw;
+            font-size: 1rem;
+            color: var(--blue);
 
         }
 
         .tilbud3_tekst {
             text-align: justify;
-            font-size: 0.7vw;
+            font-size: 0.7rem;
             font-weight: 600;
-            width: 15vw;
+            max-width: 260px;
+
         }
 
         #button {
@@ -468,9 +476,53 @@
 
             .tilbud_box {
                 grid-template-columns: 1fr;
+                width: 100%;
 
             }
 
+            .tilbud_indhold {
+                padding-left: 0rem;
+                padding-right: 0rem;
+                margin-bottom: 0rem;
+            }
+
+            .tilbud_midten {
+                margin-top: 5vw
+            }
+
+            .tilbud_hojre {
+                margin-top: 5vw
+            }
+
+            .altid_koga_tilbud1 {
+                margin-right: 5%;
+
+            }
+
+
+            .tilbud1_tekst {
+                max-width: 90vw;
+            }
+
+            .altid_koga_tilbud2 {
+                margin-right: 5%;
+            }
+
+
+
+            .tilbud2_tekst {
+                max-width: 90vw;
+            }
+
+            .altid_koga_tilbud3 {
+                margin-right: 5%;
+
+            }
+
+
+            .tilbud3_tekst {
+                max-width: 90vw;
+            }
 
 
         }
