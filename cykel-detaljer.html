@@ -15,38 +15,254 @@
         .model_singleview {
             max-width: 1200px;
             margin: 0 auto;
-            display: flex;
-            flex-direction: row-reverse;
-            margin-top: 12vw;
-            justify-content: center;
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-areas: "karrusel karrusel karrusel"
+                "info info info"
+                "fordele fordele fordele";
+            margin-top: 100px;
         }
 
+        /* Her starter karrusel   styles   */
+        .slideshow-carousel {
+            grid-area: karrusel;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 90%;
 
-        img {
-            width: 100%;
-            max-width: 800px;
+            margin: 0 auto;
+
         }
 
         .info {
-            margin: 1rem;
-            max-width: 80vw;
+            /*    margin: 1rem;*/
+
+            margin: 3rem;
+            grid-area: info;
+        }
+
+        .single_cykel {
+            width: 450px;
+            margin: 0 auto;
+        }
+
+        .benefits_section {
+            grid-area: fordele;
+        }
+
+        .benefit {
+            max-width: 350px;
+
         }
 
 
-        @media screen and (min-width: 1000px) {
+
+        h2 {
+            margin-left: 5rem;
+        }
+
+        img {
+            width: 100%;
+            max-width: 750px;
+        }
+
+
+
+
+
+        .mySlides {
+            height: 50vw;
+        }
+
+        .radio_btn_container {
+            display: flex;
+            justify-content: center;
+        }
+
+
+        .radioBTN {
+            background-color: var(--button-color);
+            border-radius: 50%;
+            width: 15px;
+            height: 15px;
+        }
+
+
+
+        .radioBTN:hover {
+            background-color: var(--dark-blue);
+
+        }
+
+        .checked {
+            background-color: var(--dark-blue);
+        }
+
+
+        .fwd,
+        .bwd {
+            font-size: 30px;
+            /*    width: 48px;*/
+            /* Flex for at centrere frem og tilbage pilene i højden */
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            color: var(--blue);
+            margin: 0;
+            height: 100%;
+            width: 100%;
+
+
+        }
+
+        .fwd:hover,
+        .bwd:hover {
+
+            color: var(--dark-blue);
+
+
+
+        }
+
+        main {
+            /*            width: 50vw;*/
+        }
+
+
+        .pics_container {
+            /* Dette element er "hullet vi kigger igennem ind på strimlen af billeder"*/
+            overflow: hidden;
+
+
+        }
+
+        .pics {
+            /* Hvis ikke sætter left til 0, kører  den første animation ikke, da det er left vores transition animerer  */
+            left: 0;
+            /*Vi kan ikke animere positioner uden at gøre elementet positaion relative*/
+            position: relative;
+            /* Vi vil gerene have rækken af billeder centreret i "hullet vi kigger igennem, man kunne også flex-start fx" */
+            display: flex;
+            align-items: center;
+            /*Det et denne transition der gør at karrusellen ikke bare hopper fra det ene billede til det næste*/
+            transition: all 1s;
+
+
+            /*Dette element skal have antallet af billeder gange 100% som width, men da antallet af billeder jo varierer er dette flyttet ned i javaScriptet             */
+        }
+
+        .img_container {
+            /* Hvert img ligger i en img_container - det virker ikke uden  */
+            width: 100%;
+
+
+        }
+
+        img {
+            /* En klassiker*/
+            width: 100%;
+            object-fit: contain;
+        }
+
+
+
+        .fwd {
+            /* fwd knappen skal lægge sig mod højre, hvis man gør font størrelsen meget lille på den, vil det blive et problem uden flex-end          */
+            justify-content: flex-end;
+            align-self: center;
+        }
+
+
+
+        .benefits {
+            list-style: none;
+            line-height: 1.5rem;
+            display: flex;
+            flex-wrap: wrap;
+            color: var(--blue);
+            font-weight: bold;
+            margin: 2rem;
+
+        }
+
+
+        .benefit::before {
+            content: '';
+            display: inline-block;
+            height: 35px;
+            width: 40px;
+            background-size: 40px;
+            background-image: url('assets/cykel-ikon.svg');
+            background-repeat: no-repeat;
+            margin-right: 15px;
+            background-position: center center;
+            vertical-align: middle;
+        }
+
+        .benefit {
+            /*     max-width: 350px;*/
+            padding-top: 2rem;
+        }
+
+        @media screen and (min-width: 650px) {
             .model_singleview {}
 
-            .billede {
-                max-width: 40vw;
-                object-fit: contain;
+
+
+
+            /* .info {
                 margin: 1rem;
-            }
+                width: 60vw;
+            }*/
+
+
+        }
+
+        @media screen and (min-width: 800px) {
+
+
 
             .info {
-                margin: 1rem;
-                width: 30vw;
+                margin-left: 2rem;
             }
+
+        }
+
+
+        @media screen and (min-width: 850px) {
+            .model_singleview {
+                grid-template-areas: "karrusel karrusel karrusel"
+                    "info fordele fordele"
+
+            }
+        }
+
+
+
+
+        @media screen and (min-width: 1200px) {
+
+            .model_singleview {
+                grid-template-areas: "info karrusel"
+                    "fordele fordele";
+
+
+
+            }
+
+            .benefit {
+                max-width: 350px;
+
+            }
+
+
+        }
+
+
+
+
+        /*---------------KARRUSEL-----------*/
+
         }
     </style>
 </head>
@@ -55,60 +271,246 @@
 <body>
     <header>
     </header>
+    <main class="model_singleview">
 
-    <section class="model_singleview">
+        <template>
+            <article class="img_container">
+                <img src="" alt="">
+            </article>
+        </template>
+
+        <section class="slideshow-carousel">
+            <div class="bwd">
+                <p>&#9664;</p>
+            </div>
+
+            <div class="pics_container">
+                <div class="pics">
+                    <!-- her bliver vores klonede template med billederne i sat ind-->
+                </div>
+                <div class="radio_btn_container">
+                    <button class="btn0 radioBTN checked" type="radio" data-num="0"></button>
+                    <button class="btn1 radioBTN" type="radio" data-num="1"></button>
+                    <button class="btn2 radioBTN" type="radio" data-num="2"></button>
+                </div>
+            </div>
+            <div class="fwd">
+                <p>&#9654;</p>
+            </div>
 
 
-        <img class="billede" src="" alt="">
+        </section>
 
-        <div class="info">
-            <h1></h1>
-            <p class="lang"></p>
-            <p class="vaegt"></p>
-            <p class="farve"></p>
-            <p class="pris"></p>
-            <a class="link" href="" target="_blank">Find specifikationer på Kogas officielle hjemmeside</a>
-            <p>Kom ind i butikken og få vejledning!</p>
-        </div>
 
-    </section>
+
+
+
+
+
+        <section class="info">
+            <article class="single_cykel">
+                <h1></h1>
+                <p class="lang"></p>
+                <p class="vaegt"></p>
+                <p class="farve"></p>
+                <p class="pris"></p>
+                <a class="link" href="" target="_blank">Find specifikationer på Kogas officielle hjemmeside</a>
+                <p>Kom ind i butikken og få vejledning!</p>
+            </article>
+        </section>
+
+        <section class="benefits_section">
+            <!--  <h2>Hvorfor denne model?</h2>-->
+            <ul class="benefits">
+                <li id="benefit1" class="benefit"></li>
+                <li id="benefit2" class="benefit"></li>
+                <li id="benefit3" class="benefit"></li>
+            </ul>
+
+        </section>
+
+    </main>
     <footer>
     </footer>
     <script src="burgermenu.js"></script>
     <script src="footer.js"></script>
     <script>
+        "use strict" /*Scriptet udføres i "strict mode"*/
         let side;
-        const url = "http://kbdesign.dk/kea/kogacenter/wordpress/wp-json/wp/v2/cykler?per_page=100"
         const urlParams = new URLSearchParams(window.location.search);
+        let caroCurrentNum = 0;
+        let caroSpeed = 6000;
+        let count;
+        let autoInt;
         const id = urlParams.get("id");
         document.addEventListener("DOMContentLoaded", start);
+        const url = "http://kbdesign.dk/kea/kogacenter/wordpress/wp-json/wp/v2/cykler/" + id;
 
         function start() {
             hentJson();
+
+            document.querySelector(".fwd").addEventListener("click", fwd);
+            document.querySelector(".bwd").addEventListener("click", bwd);
+
+            document.querySelector(".slideshow-carousel").addEventListener("mouseover", interruption);
+            document.querySelector(".slideshow-carousel").addEventListener("mouseout", automatic);
         }
 
         async function hentJson() {
             let jsonData = await fetch(url);
-            sides = await jsonData.json();
+            side = await jsonData.json();
             showSide();
+            /*  showSlides(slideIndex);*/
+            /*     clickDot();*/
         }
+
+
 
         function showSide() {
 
-            sides.forEach(side => {
-                if (side.id == id) {
+            document.querySelector("h1").textContent = side.title.rendered;
+            document.querySelector(".lang").textContent = side.lang_beskrivelse;
+            document.querySelector(".vaegt").innerHTML = `<b>Vægt:</b> ${side.vaegt} kg`;
+            document.querySelector(".farve").innerHTML = `<b>Farve:</b> ${side.farve}`;
+            document.querySelector(".pris").innerHTML = `<b>Pris:</b> ${side.pris} kr`;
+            document.querySelector(".link").href = side.link;
 
-                    document.querySelector(".billede").src = side.billede1.guid;
-                    document.querySelector("h1").textContent = side.title.rendered;
-                    document.querySelector(".lang").textContent = side.lang_beskrivelse;
-                    document.querySelector(".vaegt").innerHTML = `<b>Vægt:</b> ${side.vaegt} kg`;
-                    document.querySelector(".farve").innerHTML = `<b>Farve:</b> ${side.farve}`;
-                    document.querySelector(".pris").innerHTML = `<b>Pris:</b> ${side.pris} kr`;
-                    document.querySelector(".link").href = side.link;
+            document.querySelector("#benefit1").textContent = side.fordel_1;
+            document.querySelector("#benefit2").textContent = side.fordel_2;
+            document.querySelector("#benefit3").textContent = side.fordel_3;
+
+            buildCarousel();
+        }
 
 
-                }
+
+
+        function buildCarousel() {
+            console.log(url);
+            // Antallet af billeder i karrusellen svarer jo til længden af arrayet med billederne
+            count = side.billeder.length;
+            console.log(count);
+            // Vin sætter bredden af pics så den passeer med antallet af billederr
+            document.querySelector(".pics").style.width = `${count*100}%`
+            // Vi looper over billed array'et
+            side.billeder.forEach((billede, index) => {
+
+                const theClone = document.querySelector("template").cloneNode(true).content;
+                theClone.querySelector("img").src = billede.guid
+
+                // Vi lægger billederne ind i elementet pics
+                document.querySelector(".pics").appendChild(theClone);
+
+                // Vi fabrikerer en radiobutton pr billede der skal være i bunden
+                /*    let radioBTN = document.createElement("input");
+                   radioBTN.type = "radio"
+                   radioBTN.classList.add("btn" + index);
+                   radioBTN.classList.add("radioBTN");
+                   radioBTN.dataset.num = index;*/
+
+                // Vi appender radiobutton til radio_btn_container
+                /* document.querySelector(".radio_btn_container").appendChild(radioBTN);
+                 */
+
             })
+
+            document.querySelectorAll(".radioBTN").forEach(btn => {
+                btn.addEventListener("click", radioBTNClick)
+            });
+
+
+
+
+            // Den første radio button skal være valgt når vi starter
+            /*   document.querySelector(".btn0").classList.add("checked");*/
+            // BWD knappen skal være deaktiveret når vi starter
+            document.querySelector(".bwd").style.opacity = 0.5;
+            document.querySelector(".bwd").style.cursor = "default";
+            // Start den automatiske karrusel
+            automatic();
+
+        }
+        // Naviger fremad
+        function fwd() {
+            // Hvis karrusellens tæller er mindre end antallet af billeder minus 1 skal der ...
+            if (caroCurrentNum < count - 1) {
+                // lægges en til tælleren
+                caroCurrentNum++;
+                // og vi kalder navigate funktionen der håndterer knappernes tilstand og flytter pics elememntet med alle billederne
+                navigate();
+            }
+        };
+
+        function bwd() {
+            // Hvis karrusellens tæller er mindre end nul skal der ...
+            if (caroCurrentNum > 0) {
+                // trækkes en fra tælleren
+                caroCurrentNum--;
+                // og vi kalder navigate funktionen der håndterer knappernes tilstand og flytter pics elememntet med alle billederne
+                navigate();
+            }
+        };
+
+        function radioBTNClick() {
+            // hvis der klikkes på en af radio buttons i bunden skal tælleren opdateres så vi navigerer til det rette nummer foto
+            caroCurrentNum = this.dataset.num;
+            // og vi kalder navigate funktionen der håndterer knappernes tilstand og flytter pics elememntet med alle billederne
+            navigate();
+        }
+
+        function navigate() {
+            // Vi flytter pics elementet med alle billederne i tælleren gange 100%
+            document.querySelector(".pics").style.left = `${-caroCurrentNum * 100}%`;
+
+            // Alle radiobuttons sættes til uklikket ....
+            document.querySelectorAll(".radioBTN").forEach(each => {
+                each.classList.remove("checked");
+            });
+
+            // og den radiobutton "der er den" sættes til klikket
+            document.querySelector(".btn" + caroCurrentNum).classList.add("checked");
+
+
+            if (caroCurrentNum < count - 1) {
+                // Hvis ikke vi er nået til sidste billede i kaarusellen skal fwd knappen være aktiv ...
+                document.querySelector(".fwd").style.opacity = 1;
+                document.querySelector(".fwd").style.cursor = "pointer";
+
+            } else {
+                // ellers skal den være inaktiv
+                document.querySelector(".fwd").style.opacity = 0.2;
+                document.querySelector(".fwd").style.cursor = "default";
+            }
+
+
+            if (caroCurrentNum > 0) {
+                // Hvis ikke vi er ved det første billede i kaarusellen skal bwd knappen være aktiv ...
+                document.querySelector(".bwd").style.opacity = 1;
+                document.querySelector(".bwd").style.cursor = "pointer";
+
+            } else {
+                // ellers skal den være inaktiv
+                document.querySelector(".bwd").style.opacity = 0.2;
+                document.querySelector(".bwd").style.cursor = "default";
+            }
+
+        }
+        // karrusellen  kører af sig selv når vi starter eller mouser out på karrusellen
+        function automatic() {
+            autoInt = setInterval(function() {
+                // Hvis vi er nået til det det sidste billede i karrusellen sætter vi tælleren til minus 1 og kalder fwd funktionen der jo tæller en op, derfor minus 1
+                if (caroCurrentNum >= count - 1) {
+                    caroCurrentNum = -1;
+                }
+                fwd();
+                // hstighed i millisekunder
+            }, caroSpeed);
+        }
+
+        function interruption() {
+            // Hvis der er mouse over på karrusellen fjernes intervallet og karrusellen standser
+            clearInterval(autoInt);
+
         }
     </script>
 </body></html>
