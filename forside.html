@@ -8,97 +8,43 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:400,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <style>
-        .tilbud_box {
+        #koga_tilbyder {
+            display: grid;
+            justify-content: center;
+        }
+
+        .tilbud {
             display: grid;
             width: 100vw;
             grid-template-columns: 1fr 1fr 1fr;
             padding-left: 7%;
         }
 
-        #tilbud {
-            display: grid;
-            justify-content: center;
-        }
-
-        .tilbud_indhold {
+        .koga_tilbyder_indhold {
             margin-top: 6rem;
             margin-bottom: 6rem;
         }
 
-        .tilbud_venstre {
-            position: relative;
-
-        }
-
-        .tilbud_midten {
+        .position {
             position: relative;
         }
 
-        .tilbud_hojre {
-            position: relative;
-
-
-        }
-
-        .altid_koga_tilbud1 {
-            float: left;
-            margin-right: 5%;
-            width: 62px;
-
-
-        }
-
-        .tilbud1_h1 {
-            text-transform: uppercase;
-            letter-spacing: 0.1rem;
-            font-size: 1.1rem;
-            color: var(--blue);
-        }
-
-        .tilbud1_tekst {
+        .tilbud_txt {
             font-size: 0.9rem;
             width: 75%;
         }
 
-        .altid_koga_tilbud2 {
+        .tilbud_img {
             float: left;
             margin-right: 5%;
             width: 62px;
         }
 
-        .tilbud2_h1 {
+        .tilbud_header {
             text-transform: uppercase;
             letter-spacing: 0.1rem;
             font-size: 1.1rem;
             color: var(--blue);
-
-        }
-
-        .tilbud2_tekst {
-            font-size: 0.9rem;
-            width: 75%;
-
-        }
-
-        .altid_koga_tilbud3 {
-            float: left;
-            margin-right: 5%;
-            width: 62px;
-
-        }
-
-        .tilbud3_h1 {
-            text-transform: uppercase;
-            letter-spacing: 0.1rem;
-            font-size: 1.1rem;
-            color: var(--blue);
-
-        }
-
-        .tilbud3_tekst {
-            font-size: 0.9rem;
-            width: 75%;
-
         }
 
         #button {
@@ -112,7 +58,6 @@
             border: 2px solid #FFF;
             border-radius: 50%;
             animation: bounce 2s infinite 2s;
-
         }
 
         #button:before {
@@ -128,8 +73,6 @@
         }
 
         /* CSS animationer */
-
-
 
         @keyframes bounce {
 
@@ -156,7 +99,6 @@
             }
         }
 
-
         /* Diverse css regler */
 
         .slide_venstre {
@@ -167,15 +109,11 @@
             position: relative;
         }
 
-
-
         .slide {
             animation-name: sliding;
             animation-timing-function: ease-out;
             animation-duration: 1s;
             animation-fill-mode: forwards;
-
-
         }
 
         @keyframes sliding {
@@ -196,10 +134,7 @@
             animation-timing-function: ease-out;
             animation-duration: 1s;
             animation-fill-mode: forwards;
-
-
         }
-
 
         @keyframes sliding2 {
 
@@ -219,8 +154,6 @@
             animation-timing-function: ease-out;
             animation-duration: 1s;
             animation-fill-mode: forwards;
-
-
         }
 
         @keyframes sliding3 {
@@ -229,10 +162,8 @@
                 bottom: -40vw;
             }
 
-
             100% {
                 bottom: 0vw;
-
             }
         }
 
@@ -240,7 +171,6 @@
         p {
             line-height: 1.5rem;
             text-align: justify;
-
         }
 
         /* Sektion Velkommen/altid koga */
@@ -251,7 +181,6 @@
         .altid_koga_tekst {
             padding-left: 1rem;
             max-width: 90vw;
-
         }
 
         .velkommen_h1 {
@@ -261,12 +190,10 @@
             position: relative;
             color: var(--blue);
 
-
         }
 
         .velkommen_right {
             z-index: 50;
-
         }
 
         .altid_koga_h1 {
@@ -276,12 +203,7 @@
             font-style: italic;
             text-transform: uppercase;
             position: relative;
-        }
 
-        .altid_koga_billede1,
-        .altid_koga_billede2,
-        .altid_koga_billede3 {
-            margin-bottom: 5vw;
         }
 
         /*--------------------Forside video sektion-------------------*/
@@ -292,9 +214,6 @@
             max-height: 100vh;
             height: 100vh;
             overflow: hidden;
-
-
-
         }
 
         #loop_video {
@@ -305,10 +224,6 @@
             left: 0;
             width: 100%;
             height: 87%;
-
-
-
-
         }
 
         #video_tekst {
@@ -327,8 +242,6 @@
         /*--------------------Desktop Media-------------------*/
 
         @media screen and (min-width:1000px) {
-
-
 
             /*--------------------Velkommen sektion-------------------*/
 
@@ -351,8 +264,6 @@
                 margin-right: 6rem;
             }
 
-
-
             .velkommen_h1 {
                 grid-area: header;
             }
@@ -366,7 +277,6 @@
 
             .velkommen_billede {
                 grid-area: rightpic;
-
             }
 
             /*--------------------Altid koga sektion-------------------*/
@@ -402,11 +312,8 @@
 
             /*--------------------Altid koga Gallery -------------------*/
 
-
             .velkommen_left {
                 margin: auto;
-
-
             }
 
         }
@@ -416,13 +323,8 @@
         @media screen and (max-width:1000px) {
 
             .tilbud_indhold {
-
                 grid-template-columns: 1fr;
-
-
-
             }
-
 
             /*--------------------Forside video sektion-------------------*/
 
@@ -433,8 +335,6 @@
             #video_tekst h1 {
                 font-size: 1.04rem;
             }
-
-
 
             #video_tekst {
                 top: 60%;
@@ -456,18 +356,17 @@
 
             /*--------------------Altid koga sektion-------------------*/
 
-
             .altid_koga_indhold {
                 margin: 10vw;
             }
 
             /*--------------------Altid koga Gallery -------------------*/
 
-            .tilbud_box {
+            .tilbud {
                 grid-template-columns: 1fr;
             }
 
-            .tilbud_indhold {
+            .koga_tilbyder_indhold {
                 padding-left: 15%;
             }
 
@@ -480,7 +379,6 @@
             }
 
         }
-
     </style>
 </head>
 
@@ -565,27 +463,33 @@
     </section>
 
 
-    <section id="tilbud">
 
-        <article class="tilbud_indhold">
-            <div class="tilbud_box">
-                <div class="tilbud_venstre">
-                    <img class="altid_koga_tilbud1" src="" alt="Natur cykel">
-                    <h1 class="tilbud1_h1"></h1>
-                    <p class="tilbud1_tekst"></p>
+
+
+
+
+
+
+    <section id="koga_tilbyder">
+
+        <article class="koga_tilbyder_indhold">
+            <div class="tilbud">
+                <div class="tilbud_venstre position">
+                    <img class="tilbud_venstre_img tilbud_img" src="" alt="firkant logo">
+                    <h1 class="tilbud_venstre_h1 tilbud_header"></h1>
+                    <p class="tilbud_venstre_tekst tilbud_txt"></p>
                 </div>
-                <div class="tilbud_midten">
+                <div class="tilbud_midten position">
 
-                    <img class="altid_koga_tilbud2" src="" alt="Natur cykel">
-                    <h1 class="tilbud2_h1"></h1>
-                    <p class="tilbud2_tekst"></p>
+                    <img class="tilbud_midten_img tilbud_img" src="" alt="firkant logo">
+                    <h1 class="tilbud_midten_h1 tilbud_header"></h1>
+                    <p class="tilbud_midten_tekst tilbud_txt"></p>
                 </div>
 
-                <div class="tilbud_hojre">
-
-                    <img class="altid_koga_tilbud3" src="" alt="Natur cykel">
-                    <h1 class="tilbud3_h1"></h1>
-                    <p class="tilbud3_tekst"></p>
+                <div class="tilbud_hojre position">
+                    <img class="tilbud_hojre_img tilbud_img" src="" alt="firkant logo">
+                    <h1 class="tilbud_hojre_h1 tilbud_header"></h1>
+                    <p class="tilbud_hojre_tekst tilbud_txt"></p>
                 </div>
 
             </div>
@@ -636,18 +540,17 @@
             document.querySelector(".altid_koga_tekst").textContent = side.altid_tekst;
 
 
-            document.querySelector(".altid_koga_tilbud1").src = side.altid_logo_venstre.guid;
-            document.querySelector(".tilbud1_h1").textContent = side.altid_header_venstre;
+            document.querySelector(".tilbud_venstre_img").src = side.koga_tilbyder_logo_venstre.guid;
+            document.querySelector(".tilbud_venstre_h1").textContent = side.koga_tilbyder_header_venstre;
+            document.querySelector(".tilbud_venstre_tekst").textContent = side.koga_tilbyder_tekst_venstre;
 
-            document.querySelector(".tilbud1_tekst").textContent = side.altid_tekst_venstre;
+            document.querySelector(".tilbud_midten_img").src = side.koga_tilbyder_logo_mid.guid;
+            document.querySelector(".tilbud_midten_h1").textContent = side.koga_tilbyder_header_mid;
+            document.querySelector(".tilbud_midten_tekst").textContent = side.koga_tilbyder_tekst_mid;
 
-            document.querySelector(".altid_koga_tilbud2").src = side.altid_logo_mid.guid;
-            document.querySelector(".tilbud2_h1").textContent = side.altid_header_mid;
-            document.querySelector(".tilbud2_tekst").textContent = side.altid_tekst_mid;
-
-            document.querySelector(".altid_koga_tilbud3").src = side.altid_logo_hojre.guid;
-            document.querySelector(".tilbud3_h1").textContent = side.altid_header_hojre;
-            document.querySelector(".tilbud3_tekst").textContent = side.altid_tekst_hojre;
+            document.querySelector(".tilbud_hojre_img").src = side.koga_tilbyder_logo_hojre.guid;
+            document.querySelector(".tilbud_hojre_h1").textContent = side.koga_tilbyder_header_hojre;
+            document.querySelector(".tilbud_hojre_tekst").textContent = side.koga_tilbyder_tekst_hojre;
 
         }
 
@@ -658,11 +561,8 @@
             window.scrollTo(0, 560);
 
         }
-
     </script>
-</body>
-
-</html>
+</body></html>
 
 
 
