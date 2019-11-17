@@ -7,11 +7,21 @@
     <title>Om butikken</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /*Tekst layout*/
+        /* ----- Generelle indstillinger  ----- */
 
         p {
             line-height: 1.5rem;
         }
+
+        h4,
+        h2 {
+            color: var(--blue);
+
+        }
+
+        /* ----- Generelle indstillinger slut ----- */
+
+        /* ----- Splash sektion  ----- */
 
         .splash_billede {
             margin-top: 6rem;
@@ -30,11 +40,11 @@
 
         }
 
-        h4,
-        h2 {
-            color: var(--blue);
 
-        }
+        /* ----- Splash sektion  slut  ----- */
+
+        /* ----- Sektion under Billede  ----- */
+
 
 
         .info_indhold {
@@ -68,10 +78,29 @@
             display: none;
         }
 
+        /* ----- Sektion under Billede slut  ----- */
 
-        .om_indhold,
-        .ejer_indhold {
-            padding: 0px 30px;
+        /* ----- Billede og punkter sektion ----- */
+
+
+        .om_sektion {
+            display: grid;
+            grid-template-areas:
+                "main"
+                "midt"
+                "bund";
+        }
+
+
+
+
+        .sektion_2 {
+            display: grid;
+            grid-template-areas: "top"
+                "bottom";
+            margin-top: 1rem;
+            grid-area: midt;
+
         }
 
         .butik_billede {
@@ -91,24 +120,34 @@
         }
 
 
+        .om_indhold,
+        .ejer_indhold {
+            padding: 0px 30px;
+        }
 
-        .sektion_2 {
-            display: grid;
-            grid-template-areas: "top"
-                "bottom";
-            margin-top: 1rem;
+        .om_indhold {
+            grid-area: main;
+        }
 
+        .ejer_indhold {
+            grid-area: bund;
         }
 
 
+        /* ----- Billede og punkter sektion slut ----- */
 
 
-        /*Media query desktop*/
+
+
+        /* ------ Media query desktop -------- */
+
+
+        /* ------ Splash sektion -------- */
 
         @media screen and (min-width:1000px) {
 
             h4 {
-                font-size: 1.8rem;
+                font-size: 2rem;
             }
 
             .splash_h1 {
@@ -124,14 +163,17 @@
 
             }
 
+            /* ------ Splash sektion slut -------- */
+
+            /* ------ Splash-undersektion -------- */
+
             .info_indhold {
                 display: grid;
                 grid-template-areas: "left right";
                 border-bottom: solid;
                 border-bottom-color: var(--blue);
                 border-bottom-width: thin;
-
-
+                margin-top: 1rem;
 
 
             }
@@ -143,8 +185,12 @@
                 margin-right: 20rem;
 
 
+            }
 
-
+            .fokus_tekst,
+            .ejer_beskrivelse {
+                margin-bottom: 0;
+                padding-bottom: 0;
             }
 
             .ejer_h4 {
@@ -167,10 +213,15 @@
                 max-width: 20rem;
             }
 
+            /* ------ Splash-undersektion slut -------- */
+
+            /* ------ Billede og punkt-sektion -------- */
+
             .sektion_2 {
                 display: grid;
                 grid-template-areas: "left right";
                 margin-top: 7rem;
+                grid-area: main;
 
             }
 
@@ -195,17 +246,24 @@
                 padding-bottom: 2rem;
             }
 
+            /* ------ Billede og punkt-sektion slut-------- */
+
+            /* ------ Om/baggrund og ejer sektion -------- */
+
             .om_indhold {
                 padding: 0;
-                margin-bottom: 50px;
+                margin-bottom: 2rem;
+                grid-area: midt;
+                margin-top: 2rem;
             }
 
 
 
             .ejer_indhold {
                 padding: 0;
-                margin-top: 3rem;
+
                 margin-bottom: 3rem;
+                grid-area: bund;
             }
 
             .ejer_beskrivelse,
@@ -217,6 +275,57 @@
                 padding-bottom: 1.5rem;
             }
 
+            .ejer_h2 {
+                margin-top: 0;
+            }
+
+
+            /* ------ Om/baggrund og ejer sektion slut -------- */
+
+
+            /* ------ Scroll knap -------- */
+
+
+            .button_om {
+                position: absolute;
+                bottom: 13%;
+                left: 48%;
+                margin-left: -16px;
+                display: block;
+                width: 50px;
+                height: 50px;
+                border: 2px solid #FFF;
+                border-radius: 50%;
+                animation: bounce 2s infinite 2s;
+
+            }
+
+            .button_om:before {
+                position: absolute;
+                top: calc(50% - 10px);
+                left: calc(50% - 7.8px);
+                transform: rotate(-45deg);
+                width: 12px;
+                height: 12px;
+                content: "";
+                border: 2px solid white;
+                border-width: 0px 0 2px 2px;
+            }
+
+            .om_laes_mere {
+                position: absolute;
+                bottom: 1%;
+                left: 43.7%;
+                display: none;
+            }
+
+            .laes_mere_indhold {
+                display: block;
+            }
+
+            /* ------ Scroll knap slut -------- */
+
+            /* ------ Animation-------- */
 
 
             @keyframes bounce {
@@ -244,50 +353,77 @@
                 }
             }
 
+            /* ------ Animation slut-------- */
+
+
+
+        }
+
+        /* ------ Media query desktop slut -------- */
+
+        /* ------ Media query big-screen -------- */
+
+
+        @media screen and (min-width:1800px) {
+
+
+            .splash_h1 {
+                font-size: 3.5rem;
+            }
+
+            .info_indhold {
+                margin-top: 2rem;
+                margin-bottom: 3rem;
+                width: 80vw;
+                max-width: none;
+
+                margin-left: -15rem;
+
+
+            }
+
+            h4 {
+                font-size: 3rem;
+                max-width: none;
+
+            }
+
+            .info_fokus {
+                max-width: none;
+                padding-left: 10rem;
+            }
+
+            .info_ejer {
+                margin-left: 9rem;
+            }
+
+            .ejer_beskrivelse,
+            .fokus_tekst {
+                font-size: 1.5rem;
+                width: 40rem;
+                line-height: 1.5;
+                margin-top: 0;
+                padding-bottom: 1.5rem;
+            }
+
 
             .button_om {
                 position: absolute;
-                bottom: 1.5%;
-                left: 50.7%;
+                bottom: 3%;
+                left: 93.7%;
                 margin-left: -16px;
                 display: block;
-                width: 32px;
-                height: 32px;
+                width: 90px;
+                height: 90px;
                 border: 2px solid #FFF;
                 border-radius: 50%;
                 animation: bounce 2s infinite 2s;
 
             }
 
-            .button_om:before {
-                position: absolute;
-                top: calc(50% - 10px);
-                left: calc(50% - 7.5px);
-                transform: rotate(-45deg);
-                width: 12px;
-                height: 12px;
-                content: "";
-                border: 2px solid white;
-                border-width: 0px 0 2px 2px;
-            }
-
             .om_laes_mere {
-                position: absolute;
-                bottom: 1%;
-                left: 44.5%;
+                display: none;
             }
-
-            .laes_mere_indhold {
-                display: block;
-            }
-
-
-
-
-
-
-
-
         }
     </style>
 </head>
