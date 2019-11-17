@@ -8,6 +8,42 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:400,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <style>
+        /* CSS animationer */
+
+        @keyframes bounce {
+
+            0%,
+            100%,
+            20%,
+            50%,
+            80% {
+                -webkit-transform: translateY(0);
+                -ms-transform: translateY(0);
+                transform: translateY(0);
+            }
+
+            40% {
+                -webkit-transform: translateY(-10px);
+                -ms-transform: translateY(-10px);
+                transform: translateY(-10px);
+            }
+
+            60% {
+                -webkit-transform: translateY(-5px);
+                -ms-transform: translateY(-5px);
+                transform: translateY(-5px);
+            }
+        }
+
+
+
+
+        .but {
+            width: 6%;
+            animation: bounce 2s infinite 2s;
+
+        }
+
         #koga_tilbyder {
             display: grid;
             justify-content: center;
@@ -47,57 +83,7 @@
             color: var(--blue);
         }
 
-        #button {
-            position: absolute;
-            top: 100px;
-            left: 50%;
-            margin-left: -16px;
-            display: block;
-            width: 32px;
-            height: 32px;
-            border: 2px solid #FFF;
-            border-radius: 50%;
-            animation: bounce 2s infinite 2s;
-        }
 
-        #button:before {
-            position: absolute;
-            top: calc(50% - 10px);
-            left: calc(50% - 6.5px);
-            transform: rotate(-45deg);
-            width: 12px;
-            height: 12px;
-            content: "";
-            border: 2px solid white;
-            border-width: 0px 0 2px 2px;
-        }
-
-        /* CSS animationer */
-
-        @keyframes bounce {
-
-            0%,
-            100%,
-            20%,
-            50%,
-            80% {
-                -webkit-transform: translateY(0);
-                -ms-transform: translateY(0);
-                transform: translateY(0);
-            }
-
-            40% {
-                -webkit-transform: translateY(-10px);
-                -ms-transform: translateY(-10px);
-                transform: translateY(-10px);
-            }
-
-            60% {
-                -webkit-transform: translateY(-5px);
-                -ms-transform: translateY(-5px);
-                transform: translateY(-5px);
-            }
-        }
 
         /* Diverse css regler */
 
@@ -422,7 +408,9 @@
 
         <div id="video_tekst">
             <h1>koga - center copenhagen</h1>
-            <button id="button"></button>
+            <a href="#velkommen">
+                <img class="but" src="" alt="scroll down button">
+            </a>
         </div>
 
 
@@ -510,7 +498,6 @@
         let side;
         const url = "http://kbdesign.dk/kea/kogacenter/wordpress/wp-json/wp/v2/forside/316";
 
-        document.querySelector("#button").addEventListener("click", scrollDown);
 
         document.addEventListener("DOMContentLoaded", start);
 
@@ -532,6 +519,7 @@
             document.querySelector(".altid_koga_tekst").classList.add("slide2");
             document.querySelector(".tilbud_hojre").classList.add("slide2");
             document.querySelector(".tilbud_midten").classList.add("slide3");
+            document.querySelector(".but").src = side.scroll_button_scroll_down.guid;
 
             document.querySelector(".velkommen_h1").textContent = side.velkommen_overskrift;
             document.querySelector(".velkommen_tekst").textContent = side.velkommen_tekst;
@@ -553,14 +541,6 @@
             document.querySelector(".tilbud_hojre_tekst").textContent = side.koga_tilbyder_tekst_hojre;
 
         }
-
-
-
-        function scrollDown() {
-
-            window.scrollTo(0, 560);
-
-        }
     </script>
 </body></html>
 
@@ -569,6 +549,72 @@
 
 
 <!--
+
+        #button {
+            position: absolute;
+            top: 100px;
+            left: 50%;
+            margin-left: -16px;
+            display: block;
+            width: 32px;
+            height: 32px;
+            border: 2px solid #FFF;
+            border-radius: 50%;
+            animation: bounce 2s infinite 2s;
+        }
+
+        #button:before {
+            position: absolute;
+            top: calc(50% - 10px);
+            left: calc(50% - 6.5px);
+            transform: rotate(-45deg);
+            width: 12px;
+            height: 12px;
+            content: "";
+            border: 2px solid white;
+            border-width: 0px 0 2px 2px;
+        }
+
+        /* CSS animationer */
+
+        @keyframes bounce {
+
+            0%,
+            100%,
+            20%,
+            50%,
+            80% {
+                -webkit-transform: translateY(0);
+                -ms-transform: translateY(0);
+                transform: translateY(0);
+            }
+
+            40% {
+                -webkit-transform: translateY(-10px);
+                -ms-transform: translateY(-10px);
+                transform: translateY(-10px);
+            }
+
+            60% {
+                -webkit-transform: translateY(-5px);
+                -ms-transform: translateY(-5px);
+                transform: translateY(-5px);
+            }
+        }
+
+
+
+
+
+
+    document.querySelector("#button").addEventListener("click", scrollDown);
+
+
+        function scrollDown() {
+
+            window.scrollTo(0, 560);
+
+        }
 
 
         <figure id="gallery">
