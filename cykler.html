@@ -25,6 +25,8 @@
             z-index: 200;
         }
 
+
+
         .hidden {
             display: none;
         }
@@ -37,7 +39,10 @@
         }
 
 
-
+        .sort {
+            /*      width: 150px;*/
+            float: right;
+        }
 
         #bike_model {
             display: grid;
@@ -54,9 +59,6 @@
             background-color: #f7f7f7;
             max-width: 1200px;
             margin: 0 auto;
-
-
-
         }
 
 
@@ -207,8 +209,7 @@
             #kategorier {
                 display: list-item;
                 list-style-type: none;
-                position: absolute;
-                right: 165px;
+
             }
 
             #filterknap {
@@ -239,8 +240,10 @@
                 <button class="filter" data-type="Racercykler">Racercykler</button>
             </div>
         </nav>
-        <button class="l-til-h">Pris - lav til høj</button>
-        <button class="h-til-l">Pris - høj til lav</button>
+        <nav class="sort">
+            <button class="l-til-h">Pris - lav til høj</button>
+            <button class="h-til-l">Pris - høj til lav</button>
+        </nav>
         <h1></h1>
 
         <div id="bike_model" class="wrapper">
@@ -298,24 +301,34 @@
 
         function klikSort() {
 
+
             document.querySelector(".l-til-h").addEventListener("click", sortDesc);
             document.querySelector(".h-til-l").addEventListener("click", sortAsc);
+
 
         }
 
         function sortDesc() {
+
             bikes.sort(function(a, b) {
                 return a.pris - b.pris;
                 /*Kilde: https://stackoverflow.com/questions/979256/sorting-an-array-of-javascript-objects-by-property*/
+
+
             });
+            document.querySelector(".h-til-l").classList.remove("valgt");
+            this.classList.add("valgt");
             showBikes();
         }
 
         function sortAsc() {
             bikes.sort(function(a, b) {
+
                 return b.pris - a.pris;
                 /*Kilde: https://stackoverflow.com/questions/979256/sorting-an-array-of-javascript-objects-by-property*/
             });
+            document.querySelector(".l-til-h").classList.remove("valgt");
+            this.classList.add("valgt");
             showBikes();
         }
 
