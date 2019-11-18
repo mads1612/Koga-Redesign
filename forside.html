@@ -8,6 +8,59 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:400,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <style>
+        #button {
+            position: absolute;
+            top: 18vw;
+            left: 50%;
+            margin-left: -16px;
+            display: block;
+            width: 32px;
+            height: 32px;
+            border: 2px solid #FFF;
+            border-radius: 50%;
+            animation: bounce 2s infinite 2s;
+        }
+
+        #button:before {
+            position: absolute;
+            top: calc(50% - 10px);
+            left: calc(50% - 6.5px);
+            transform: rotate(-45deg);
+            width: 12px;
+            height: 12px;
+            content: "";
+            border: 2px solid white;
+            border-width: 0px 0 2px 2px;
+        }
+
+        /* CSS animationer */
+
+        @keyframes bounce {
+
+            0%,
+            100%,
+            20%,
+            50%,
+            80% {
+                -webkit-transform: translateY(0);
+                -ms-transform: translateY(0);
+                transform: translateY(0);
+            }
+
+            40% {
+                -webkit-transform: translateY(-10px);
+                -ms-transform: translateY(-10px);
+                transform: translateY(-10px);
+            }
+
+            60% {
+                -webkit-transform: translateY(-5px);
+                -ms-transform: translateY(-5px);
+                transform: translateY(-5px);
+            }
+        }
+
+
         /* CSS animationer */
 
         @keyframes bounce {
@@ -162,9 +215,7 @@
         /* Sektion Velkommen/altid koga */
 
         .velkommen_h1,
-        .velkommen_tekst,
-        .altid_koga_h1,
-        .altid_koga_tekst {
+        .velkommen_tekst. {
             padding-left: 1rem;
             max-width: 90vw;
         }
@@ -180,17 +231,9 @@
 
         .velkommen_right {
             z-index: 50;
-        }
-
-        .altid_koga_h1 {
-            font-weight: lighter;
-            letter-spacing: 0.1rem;
-            color: var(--blue);
-            font-style: italic;
-            text-transform: uppercase;
-            position: relative;
 
         }
+
 
         /*--------------------Forside video sektion-------------------*/
 
@@ -212,7 +255,7 @@
             height: 87%;
         }
 
-        #video_tekst {
+        #scroll_down {
             text-align: center;
             position: absolute;
             top: 55%;
@@ -236,9 +279,6 @@
                 padding-left: 0;
             }
 
-            #velkommen {
-                margin: 2rem;
-            }
 
             .velkommen_indhold {
                 display: grid;
@@ -267,34 +307,8 @@
 
             /*--------------------Altid koga sektion-------------------*/
 
-            .altid_koga_h1,
-            .altid_koga_tekst {
-                padding-left: 1rem;
-                padding-right: 1rem;
-            }
 
-            .altid_koga_indhold {
-                display: grid;
-                grid-template-areas:
-                    "header txt txt txt";
-                margin-top: 6rem;
-                padding-left: 6rem;
-                padding-right: 6rem;
-                justify-content: center;
-                align-items: center;
-            }
 
-            .altid_koga_h1 {
-                grid-area: header;
-                min-width: 40vw;
-                text-align: center;
-            }
-
-            .altid_koga_tekst {
-                grid-area: txt;
-                width: 40vw;
-                position: relative;
-            }
 
             /*--------------------Altid koga Gallery -------------------*/
 
@@ -318,11 +332,8 @@
                 margin-top: 20vw;
             }
 
-            #video_tekst h1 {
-                font-size: 1.04rem;
-            }
 
-            #video_tekst {
+            #scroll_down {
                 top: 60%;
             }
 
@@ -337,14 +348,11 @@
             }
 
             .velkommen_tekst {
-                margin-bottom: 10vw;
+                margin-bottom: 5vw;
             }
 
             /*--------------------Altid koga sektion-------------------*/
 
-            .altid_koga_indhold {
-                margin: 10vw;
-            }
 
             /*--------------------Altid koga Gallery -------------------*/
 
@@ -363,6 +371,13 @@
             .tilbud_hojre {
                 margin-top: 5vw
             }
+
+            #button {
+                top: 28vw;
+                left: 50%;
+
+            }
+
 
         }
     </style>
@@ -406,10 +421,8 @@
         <video autoplay muted loop id="loop_video" src="video/kogavideo_loop.mp4" type="video/mp4"></video>
 
 
-        <div id="video_tekst">
-            <h1>koga - center copenhagen</h1>
-            <a href="#velkommen">
-                <img class="but" src="" alt="scroll down button">
+        <div id="scroll_down">
+            <a href="#velkommen"><button id="button"></button>
             </a>
         </div>
 
@@ -431,24 +444,15 @@
 
 
                 <p class="velkommen_tekst"></p>
+                <p class="velkommen_tekst2 velkommen_tekst"></p>
+
             </div>
             <div class="velkommen_right">
-                <img class="velkommen_billede" src="" alt="Morgen cykel">
+                <img class="velkommen_billede" src="" height="100%" alt="Morgen cykel">
             </div>
         </article>
     </section>
 
-
-    <section id="altid_koga">
-        <article class="altid_koga_indhold">
-            <div class="slide_venstre2">
-
-                <h1 class="altid_koga_h1"></h1>
-            </div>
-
-            <p class="altid_koga_tekst"></p>
-        </article>
-    </section>
 
 
 
@@ -513,19 +517,15 @@
 
         function vis() {
             document.querySelector(".slide_venstre").classList.add("slide");
-            document.querySelector(".slide_venstre2").classList.add("slide");
             document.querySelector(".tilbud_venstre").classList.add("slide");
             document.querySelector(".velkommen_tekst").classList.add("slide2");
-            document.querySelector(".altid_koga_tekst").classList.add("slide2");
             document.querySelector(".tilbud_hojre").classList.add("slide2");
             document.querySelector(".tilbud_midten").classList.add("slide3");
-            document.querySelector(".but").src = side.scroll_button_scroll_down.guid;
 
             document.querySelector(".velkommen_h1").textContent = side.velkommen_overskrift;
             document.querySelector(".velkommen_tekst").textContent = side.velkommen_tekst;
+            document.querySelector(".velkommen_tekst2").textContent = side.velkommen_tekst2;
             document.querySelector(".velkommen_billede").src = side.velkommen_billede.guid;
-            document.querySelector(".altid_koga_h1").textContent = side.altid_overskrift;
-            document.querySelector(".altid_koga_tekst").textContent = side.altid_tekst;
 
 
             document.querySelector(".tilbud_venstre_img").src = side.koga_tilbyder_logo_venstre.guid;
@@ -549,6 +549,79 @@
 
 
 <!--
+
+
+
+                    document.querySelector(".slide_venstre2").classList.add("slide");
+
+            document.querySelector(".altid_koga_tekst").classList.add("slide2");
+
+            document.querySelector(".altid_koga_h1").textContent = side.altid_overskrift;
+            document.querySelector(".altid_koga_tekst").textContent = side.altid_tekst;
+
+
+
+
+
+    <section id="altid_koga">
+        <article class="altid_koga_indhold">
+            <div class="slide_venstre2">
+
+                <h1 class="altid_koga_h1"></h1>
+            </div>
+
+            <p class="altid_koga_tekst"></p>
+        </article>
+    </section>
+
+
+
+            .altid_koga_indhold {
+                margin: 10vw;
+            }
+
+
+                             .altid_koga_h1 {
+            font-weight: lighter;
+            letter-spacing: 0.1rem;
+            color: var(--blue);
+            font-style: italic;
+            text-transform: uppercase;
+            position: relative;
+
+        }
+
+
+            .altid_koga_h1,
+            .altid_koga_tekst {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+
+            .altid_koga_indhold {
+                display: grid;
+                grid-template-areas:
+                    "header txt txt txt";
+                margin-top: 6rem;
+                padding-left: 6rem;
+                padding-right: 6rem;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .altid_koga_h1 {
+                grid-area: header;
+                min-width: 40vw;
+                text-align: center;
+            }
+
+            .altid_koga_tekst {
+                grid-area: txt;
+                width: 40vw;
+                position: relative;
+            }
+
+
 
         #button {
             position: absolute;
