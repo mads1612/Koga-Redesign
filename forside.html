@@ -55,7 +55,7 @@
             object-fit: none;
             margin-top: 5vw;
             width: 100%;
-            height: 87%;
+            height: 100%;
         }
 
         #scroll_down {
@@ -70,6 +70,7 @@
             text-transform: uppercase;
             letter-spacing: 0.5rem;
         }
+
 
         #button {
             position: absolute;
@@ -277,7 +278,6 @@
             /*--------------------Forside video sektion-------------------*/
 
             #forside_video {
-                position: relative;
                 min-height: 100vh;
                 max-height: 100vh;
                 height: 100vh;
@@ -285,10 +285,8 @@
             }
 
             #loop_video {
-                position: absolute;
-                object-fit: none;
-                top: 0;
-                left: 0;
+                object-fit: fill;
+
                 width: 100%;
                 height: 87%;
                 margin-top: 12vw;
@@ -336,6 +334,7 @@
                 margin-top: 5vw
             }
         }
+
     </style>
 </head>
 
@@ -478,5 +477,8 @@
             document.querySelector(".tilbud_hojre").classList.add("slide2");
             document.querySelector(".tilbud_midten").classList.add("slide3");
         }
+
     </script>
-</body></html>
+</body>
+
+</html>
