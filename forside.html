@@ -45,18 +45,21 @@
         /*--------------------Forside video sektion-------------------*/
 
 
-        #forside_video {
-            min-height: 100vh;
-            max-height: 100vh;
-            height: 100vh;
-            overflow: hidden;
-        }
+
+        #forside_video {}
+
+        .video_container {}
+
 
         #loop_video {
+            min-height: 10vh;
+            max-height: 100vh;
+            height: 100vh;
             object-fit: none;
             margin-top: 5vw;
             width: 100%;
-            height: 100%;
+            padding-bottom: 5.1%;
+
         }
 
         #scroll_down {
@@ -280,19 +283,14 @@
             /*--------------------Forside video sektion-------------------*/
 
 
-            #forside_video {
-                min-height: 100vh;
-                max-height: 100vh;
-                height: 100vh;
-                overflow: hidden;
-            }
+            #forside_video {}
 
             #loop_video {
                 object-fit: fill;
 
                 width: 100%;
                 height: 87%;
-                margin-top: 12vw;
+                margin-top: 16%;
             }
 
             #button {
@@ -301,7 +299,7 @@
             }
 
             #scroll_down {
-                top: 60%;
+                display: none;
             }
 
 
@@ -373,14 +371,15 @@
 
         >>>>>>> origin/master
     </header>
-
+    <!--autoplay muted loop-->
     <section id="forside_video">
-        <video autoplay muted loop id="loop_video" width="640" height="360" src="video/kogavideo_loop.mp4" type="video/mp4"></video>
-        <div id="scroll_down">
-            <a href="#velkommen"><button id="button"></button>
-            </a>
+        <div class="video_container">
+            <video id="loop_video" width="640" height="360" src="video/kogavideo_loop.mp4" type="video/mp4"></video>
+            <div id="scroll_down">
+                <a href="#velkommen"><button id="button"></button>
+                </a>
+            </div>
         </div>
-
     </section>
 
     <section id="velkommen">
@@ -481,3 +480,45 @@
         }
     </script>
 </body></html>
+
+
+
+
+
+<!--
+
+
+        #forside_video {}
+
+        .video_container {
+            display: grid;
+            width: 100vw;
+            height: 50vw;
+        }
+
+
+        #loop_video {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+
+        }
+
+
+      mobil
+
+
+            #forside_video {
+                min-height: 100vh;
+                max-height: 100vh;
+                height: 100vh;
+                overflow: hidden;
+            }
+
+            #loop_video {
+                object-fit: fill;
+
+                width: 100%;
+                height: 87%;
+                margin-top: 12vw;
+            }-->
