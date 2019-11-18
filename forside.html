@@ -91,11 +91,6 @@
 
 
 
-        .but {
-            width: 6%;
-            animation: bounce 2s infinite 2s;
-
-        }
 
         #koga_tilbyder {
             display: grid;
@@ -140,71 +135,7 @@
 
         /* Diverse css regler */
 
-        .slide_venstre {
-            position: relative;
-        }
 
-        .slide_venstre2 {
-            position: relative;
-        }
-
-        .slide {
-            animation-name: sliding;
-            animation-timing-function: ease-out;
-            animation-duration: 1s;
-            animation-fill-mode: forwards;
-        }
-
-        @keyframes sliding {
-
-            0% {
-                left: -40vw;
-            }
-
-
-            100% {
-                left: 0vw;
-
-            }
-        }
-
-        .slide2 {
-            animation-name: sliding2;
-            animation-timing-function: ease-out;
-            animation-duration: 1s;
-            animation-fill-mode: forwards;
-        }
-
-        @keyframes sliding2 {
-
-            0% {
-                right: -40vw;
-            }
-
-
-            100% {
-                right: 0vw;
-
-            }
-        }
-
-        .slide3 {
-            animation-name: sliding3;
-            animation-timing-function: ease-out;
-            animation-duration: 1s;
-            animation-fill-mode: forwards;
-        }
-
-        @keyframes sliding3 {
-
-            0% {
-                bottom: -40vw;
-            }
-
-            100% {
-                bottom: 0vw;
-            }
-        }
 
 
         p {
@@ -308,7 +239,71 @@
             /*--------------------Altid koga sektion-------------------*/
 
 
+            .slide_venstre {
+                position: relative;
+            }
 
+            .slide_venstre2 {
+                position: relative;
+            }
+
+            .slide {
+                animation-name: sliding;
+                animation-timing-function: ease-out;
+                animation-duration: 1s;
+                animation-fill-mode: forwards;
+            }
+
+            @keyframes sliding {
+
+                0% {
+                    left: -40vw;
+                }
+
+
+                100% {
+                    left: 0vw;
+
+                }
+            }
+
+            .slide2 {
+                animation-name: sliding2;
+                animation-timing-function: ease-out;
+                animation-duration: 1s;
+                animation-fill-mode: forwards;
+            }
+
+            @keyframes sliding2 {
+
+                0% {
+                    right: -40vw;
+                }
+
+
+                100% {
+                    right: 0vw;
+
+                }
+            }
+
+            .slide3 {
+                animation-name: sliding3;
+                animation-timing-function: ease-out;
+                animation-duration: 1s;
+                animation-fill-mode: forwards;
+            }
+
+            @keyframes sliding3 {
+
+                0% {
+                    bottom: -40vw;
+                }
+
+                100% {
+                    bottom: 0vw;
+                }
+            }
 
             /*--------------------Altid koga Gallery -------------------*/
 
@@ -503,6 +498,9 @@
         const url = "http://kbdesign.dk/kea/kogacenter/wordpress/wp-json/wp/v2/forside/316";
 
 
+        document.querySelector('#button').onclick = startAnimation
+
+
         document.addEventListener("DOMContentLoaded", start);
 
         function start() {
@@ -516,11 +514,7 @@
         }
 
         function vis() {
-            document.querySelector(".slide_venstre").classList.add("slide");
-            document.querySelector(".tilbud_venstre").classList.add("slide");
-            document.querySelector(".velkommen_tekst").classList.add("slide2");
-            document.querySelector(".tilbud_hojre").classList.add("slide2");
-            document.querySelector(".tilbud_midten").classList.add("slide3");
+
 
             document.querySelector(".velkommen_h1").textContent = side.velkommen_overskrift;
             document.querySelector(".velkommen_tekst").textContent = side.velkommen_tekst;
@@ -540,6 +534,16 @@
             document.querySelector(".tilbud_hojre_h1").textContent = side.koga_tilbyder_header_hojre;
             document.querySelector(".tilbud_hojre_tekst").textContent = side.koga_tilbyder_tekst_hojre;
 
+        }
+
+
+        function startAnimation() {
+            document.querySelector(".slide_venstre").classList.add("slide");
+            document.querySelector(".tilbud_venstre").classList.add("slide");
+            document.querySelector(".velkommen_tekst").classList.add("slide2");
+            document.querySelector(".velkommen_tekst2").classList.add("slide2");
+            document.querySelector(".tilbud_hojre").classList.add("slide2");
+            document.querySelector(".tilbud_midten").classList.add("slide3");
         }
     </script>
 </body></html>
@@ -686,6 +690,7 @@
         function scrollDown() {
 
             window.scrollTo(0, 560);
+$("div").animate({right: '500px'});
 
         }
 
