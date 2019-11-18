@@ -111,22 +111,22 @@ img {
     height: 34.85px;
     margin-top: 20px;
     margin-left: 20px;
-    z-index: 300;
-    position: fixed;
+    z-index: 30;
     cursor: pointer;
     top: 0;
-    background-color: #ffffff;
 
 
 }
 
+.hvid {
+    position: static;
+}
 
 header {
-    background-color: rgba(255, 255, 255, 0.95);
     z-index: 500;
     height: 90px;
     width: 100%;
-    position: fixed;
+
 }
 
 #burgermenu {
@@ -204,9 +204,20 @@ li.filter {
 /*------Burgermenu Animation-----*/
 
 
-@media screen and (min-width:950px) {
+@media screen and (min-width:1100px) {
     #menuknap {
         display: none;
+    }
+
+    .hvid {
+        display: none;
+    }
+
+
+
+    #logo {
+        z-index: 300;
+        position: fixed;
     }
 
     #burgermenu.hide {
@@ -282,7 +293,6 @@ li.filter {
     }
 
 }
-
 
 
 header nav {
