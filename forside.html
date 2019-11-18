@@ -44,6 +44,7 @@
 
         /*--------------------Forside video sektion-------------------*/
 
+
         #forside_video {
             min-height: 100vh;
             max-height: 100vh;
@@ -96,6 +97,7 @@
             border: 2px solid white;
             border-width: 0px 0 2px 2px;
         }
+
 
         /*--------------------Velkommen sektion-------------------*/
 
@@ -277,6 +279,7 @@
 
             /*--------------------Forside video sektion-------------------*/
 
+
             #forside_video {
                 min-height: 100vh;
                 max-height: 100vh;
@@ -300,6 +303,7 @@
             #scroll_down {
                 top: 60%;
             }
+
 
             /*--------------------Velkommen sektion-------------------*/
 
@@ -334,7 +338,6 @@
                 margin-top: 5vw
             }
         }
-
     </style>
 </head>
 
@@ -372,8 +375,7 @@
     </header>
 
     <section id="forside_video">
-
-        <video autoplay muted loop id="loop_video" src="video/kogavideo_loop.mp4" type="video/mp4"></video>
+        <video autoplay muted loop id="loop_video" width="640" height="360" src="video/kogavideo_loop.mp4" type="video/mp4"></video>
         <div id="scroll_down">
             <a href="#velkommen"><button id="button"></button>
             </a>
@@ -477,8 +479,5 @@
             document.querySelector(".tilbud_hojre").classList.add("slide2");
             document.querySelector(".tilbud_midten").classList.add("slide3");
         }
-
     </script>
-</body>
-
-</html>
+</body></html>
