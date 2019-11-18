@@ -234,16 +234,16 @@
                 <!-- <template id="filterbuttons">
                 <button class="filter" data-type=""></button>
                 </template>-->
-                <button class="filter" data-type="Alle cykler">Alle cykler </button>
-                <button class="filter" data-type="Elcykler">Elcykler</button>
-                <button class="filter" data-type="Bycykler">Bycykler</button>
-                <button class="filter" data-type="Trekkingcykler">Trekkingcykler</button>
-                <button class="filter" data-type="Racercykler">Racercykler</button>
+                <button class="filter allecykler" data-type="Alle cykler">Alle cykler </button>
+                <button class="filter elcykler" data-type="Elcykler">Elcykler</button>
+                <button class="filter bycykler" data-type="Bycykler">Bycykler</button>
+                <button class="filter trekkingcykler" data-type="Trekkingcykler">Trekkingcykler</button>
+                <button class="filter racercykler" data-type="Racercykler">Racercykler</button>
             </div>
         </nav>
         <nav class="sort">
-            <button class="l-til-h">Pris - lav til høj</button>
-            <button class="h-til-l">Pris - høj til lav</button>
+            <button class="h-til-l">Pris - lav til høj</button>
+            <button class="l-til-h">Pris - høj til lav</button>
         </nav>
         <h1></h1>
 
@@ -297,6 +297,7 @@
             clickonFilterknap();
             klikFilter();
             klikSort();
+            filtrering();
 
         }
 
@@ -382,14 +383,18 @@
         }
 
         function filtrering() {
-            filter = this.dataset.type;
+            filter = urlParams.get("type");
             /*tag værdien af dataatribute med typen på den knap, der bliver trykket på*/
+
+
             document.querySelectorAll(".filter").forEach(elm => {
                 elm.classList.remove("valgt");
-                /*       Fjern klassen "avalgt fra alle knapper*/
+                /*       Fjern klassen "valgt fra alle knapper*/
             });
 
-            this.classList.add("valgt");
+            let convert = filter.toLowerCase();
+            let filterButton = convert.replace(/ /g, '');
+            document.querySelector(`.${filterButton}`).classList.add("valgt");
             /*Tilføj klassen "valgt" på knappen, der er trykket på*/
 
             bikes.innerHTML = "";
