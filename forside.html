@@ -10,6 +10,8 @@
     <style>
         /* CSS animationer */
 
+
+
         @keyframes bounce {
 
             0%,
@@ -45,19 +47,10 @@
         /*--------------------Forside video sektion-------------------*/
 
 
-
-        #forside_video {}
-
-        .video_container {}
-
-
         #loop_video {
-            min-height: 10vh;
-            max-height: 100vh;
-            height: 100vh;
-            object-fit: cover;
-            width: 100%;
-            padding-bottom: 3%;
+            object-fit: fill;
+            width: 100vw;
+            height: 94vh;
 
         }
 
@@ -276,7 +269,7 @@
 
         /*--------------------Smartphone/Tablet Media-------------------*/
 
-        @media screen and (max-width:1000px) {
+        @media screen and (max-width:1100px) {
 
 
             /*--------------------Forside video sektion-------------------*/
@@ -285,8 +278,7 @@
             #forside_video {}
 
             #loop_video {
-                object-fit: cover;
-                height: 87%;
+                height: 30%;
             }
 
             #button {
@@ -369,12 +361,12 @@
     </header>
     <!--autoplay muted loop-->
     <section id="forside_video">
-        <div class="video_container">
-            <video id="loop_video" width="640" height="360" src="video/kogavideo_loop.mp4" type="video/mp4"></video>
-            <div id="scroll_down">
-                <a href="#velkommen"><button id="button"></button>
-                </a>
-            </div>
+        <video id="loop_video" src="video/kogavideo_loop.mp4" type="video/mp4">
+        </video>
+
+        <div id="scroll_down">
+            <a href="#velkommen"><button id="button"></button>
+            </a>
         </div>
     </section>
 
