@@ -902,8 +902,9 @@ img {
 .om_sektion {
     display: grid;
     grid-template-areas:
-        "main main"
-        "midt bund";
+        "main"
+        "midt"
+        "bund";
 }
 
 .sektion_2 {
@@ -1209,6 +1210,13 @@ footer p {
     }
 
     /* ------ Splash sektion slut -------- */
+
+    .om_sektion {
+        display: grid;
+        grid-template-areas:
+            "main main"
+            "midt bund";
+    }
 
     /* ------ Splash-undersektion -------- */
 
