@@ -1,6 +1,5 @@
 /*-----------fonts & variables-----------*/
 
-
 h1 {
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
@@ -18,15 +17,14 @@ h3 {
     text-transform: uppercase;
 }
 
-
 h4 {
     font-family: 'Montserrat', sans-serif;
     text-transform: uppercase;
 }
 
 p {
-
     font-family: 'Open Sans', sans-serif;
+    line-height: 1.5;
 }
 
 a {
@@ -45,8 +43,6 @@ ul {
 input {
     margin-top: 1rem;
 }
-
-
 
 :root {
     --light-blue: #4d9cd0;
@@ -72,6 +68,94 @@ button:hover {
     background-color: #052D47;
 }
 
+/*-------------ANIMATIONER-------------------------*/
+/*----------Forside-----------*/
+@keyframes bounce {
+
+    0%,
+    100%,
+    20%,
+    50%,
+    80% {
+        -webkit-transform: translateY(0);
+        -ms-transform: translateY(0);
+        transform: translateY(0);
+    }
+
+    40% {
+        -webkit-transform: translateY(-10px);
+        -ms-transform: translateY(-10px);
+        transform: translateY(-10px);
+    }
+
+    60% {
+        -webkit-transform: translateY(-5px);
+        -ms-transform: translateY(-5px);
+        transform: translateY(-5px);
+    }
+}
+
+
+/* CSS animationer */
+
+.slide {
+    animation-name: sliding;
+    animation-timing-function: ease-out;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes sliding {
+
+    0% {
+        left: -40vw;
+    }
+
+
+    100% {
+        left: 0vw;
+
+    }
+}
+
+.slide2 {
+    animation-name: sliding2;
+    animation-timing-function: ease-out;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes sliding2 {
+
+    0% {
+        right: -40vw;
+    }
+
+
+    100% {
+        right: 0vw;
+
+    }
+}
+
+.slide3 {
+    animation-name: sliding3;
+    animation-timing-function: ease-out;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes sliding3 {
+
+    0% {
+        bottom: -40vw;
+    }
+
+    100% {
+        bottom: 0vw;
+    }
+}
+
 /*-------------Generelt & common styling----------*/
 * {
     box-sizing: border-box;
@@ -80,6 +164,10 @@ button:hover {
 body {
     margin: 0;
     overflow-x: hidden;
+}
+
+section {
+    margin: 0 auto;
 }
 
 html {
@@ -101,10 +189,7 @@ img {
     margin: 0 auto;
 }
 
-
 /*------Burgermenu-----*/
-
-
 
 #logo {
     width: 230px;
@@ -114,8 +199,6 @@ img {
     z-index: 30;
     cursor: pointer;
     top: 0;
-
-
 }
 
 .hvid {
@@ -126,7 +209,6 @@ header {
     z-index: 700;
     height: 90px;
     width: 100%;
-
 }
 
 #burgermenu {
@@ -144,9 +226,6 @@ header {
     justify-content: center;
     background-color: var(--blue);
     height: 100vh;
-
-
-
 }
 
 
@@ -163,11 +242,6 @@ header {
     color: #ffffff;
 }
 
-/*#menuknap:hover {
-    background-color: var(--blue);
-}*/
-
-
 header nav a {
     color: #ffffff;
     text-decoration: none;
@@ -178,39 +252,24 @@ header nav a {
     font-weight: lighter;
     letter-spacing: 0.12rem;
     text-transform: uppercase;
-
 }
-
-
 
 nav li {
     list-style-type: none;
     text-align: right;
 }
 
-
-
-
 nav#dropdown_nav {
     display: none;
-
 }
 
 li.filter {
     display: none;
 }
 
-
 /*------Burgermenu Animation-----*/
-
-
-
 header nav {
     overflow: hidden;
-
-}
-
-
 }
 
 .dropdown b {
@@ -219,46 +278,34 @@ header nav {
 
 .dropdown #dropdownbtn {
     background-color: inherit;
-
 }
-
 
 #dropdown_nav {
     display: none;
     position: absolute;
     background-color: var(--transparent-blue);
     line-height: 2rem;
-    top: 4vw;
-
-
-
-
-
+    top: 55px;
 }
-
 
 .dropdown-content a:hover {
     background-color: #f0f0f0;
-
 }
 
 .dropdown:hover #dropdown_nav {
     display: block;
-
     /*vis indholdet af dropdown når der bliver hoveret*/
 }
 
 .dropdown:hover .dropdown-content {
     display: flex;
     flex-direction: column;
-
 }
 
 .dropdown-content {
     padding: 0;
     padding-top: 13px;
 }
-
 
 .dropdown-content li {
     padding: 20px;
@@ -273,17 +320,6 @@ header nav {
 .dropdown-content li:hover {
     background-color: var(--blue);
     cursor: pointer;
-
-}
-
-i {
-    border: solid var(--dark-blue);
-    border-width: 0 1px 1px 0;
-    display: inline-block;
-    padding: 4px;
-    margin-bottom: 4px;
-    margin-left: 7px;
-
 }
 
 .down {
@@ -291,10 +327,704 @@ i {
     -webkit-transform: rotate(45deg);
 }
 
+/*-------------FORSIDEN--------------*/
+/*~~~~~~~~Forside video sektion~~~~~~~~*/
+#loop_video {
+    object-fit: fill;
+    width: 100vw;
+    height: 95vh;
+}
+
+#velkommen p,
+#koga_tilbyder p {
+    line-height: 1.5rem;
+    text-align: justify;
+    margin-right: 1rem;
+}
+
+#scroll_down {
+    text-align: center;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ffffff;
+    width: 100%;
+    padding: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.5rem;
+}
+
+#button {
+    position: absolute;
+    top: 18vw;
+    left: 50%;
+    margin-left: -16px;
+    display: block;
+    width: 32px;
+    height: 32px;
+    border: 2px solid #FFF;
+    border-radius: 50%;
+    animation: bounce 2s infinite 2s;
+}
+
+#button:before {
+    position: absolute;
+    top: calc(50% - 10px);
+    left: calc(50% - 6.5px);
+    transform: rotate(-45deg);
+    width: 12px;
+    height: 12px;
+    content: "";
+    border: 2px solid white;
+    border-width: 0px 0 2px 2px;
+}
+
+/*~~~~~~~~~~Vekommen-sektion~~~~~~~~~~~~*/
+
+.velkommen_h1,
+.velkommen_tekst. {
+    padding-left: 1rem;
+    max-width: 90vw;
+}
+
+.velkommen_h1 {
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 0.4rem;
+    position: relative;
+    color: var(--blue);
+}
+
+.velkommen_right {
+    z-index: 35;
+}
+
+
+/*~~~~~~~~~~Koga tilbyder-sektion~~~~~~~~*/
+
+#koga_tilbyder {
+    display: grid;
+    justify-content: center;
+}
+
+.tilbud {
+    display: grid;
+    width: 100vw;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding-left: 7%;
+}
+
+.koga_tilbyder_indhold {
+    margin-top: 4rem;
+    margin-bottom: 3rem;
+}
+
+.position {
+    position: relative;
+}
+
+.tilbud_txt {
+    font-size: 0.9rem;
+    width: 75%;
+}
+
+.tilbud_img {
+    float: left;
+    margin-right: 5%;
+    width: 62px;
+}
+
+.tilbud_header {
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    font-size: 1.1rem;
+    color: var(--blue);
+}
+
+/*--------------------CYKLER--------------*/
+
+#body-cykler {
+    overflow-x: hidden;
+    margin: 0 auto;
+    background-color: #f7f7f7;
+}
+
+#filtermenu {
+    text-align: right;
+    max-width: 1200px;
+}
+
+#filterknap {
+    margin-top: 30px;
+    z-index: 200;
+}
+
+.hidden {
+    display: none;
+}
+
+#kateogrier {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.sort {
+    /*      width: 150px;*/
+    float: right;
+}
+
+#bike_model {
+    display: grid;
+    grid-gap: 2rem;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    /*Hvert element skal være mindst 300px. Hver gang der er plads til et element ved siden af med 300px kommer det op ved siden af og udvider rækken*/
+    margin: 1rem auto;
+    padding: 2rem;
+}
+
+#bike_model_section {
+    background-color: #f7f7f7;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 10px;
+}
+
+#bike_model_section h1 {
+    margin-top: 50px;
+    text-align: center;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.wrapper {
+    max-width: 1200px;
+}
+
+#bike_model h2 {
+    text-align: center;
+    /*  margin-bottom: 1rem;*/
+    min-height: 4rem;
+}
+
+.wrap {
+    padding: 0 2rem 2rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.cykler {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    position: relative;
+}
+
+.cykler:hover {
+    transform: scale(1.05);
+    transition: ease-out 0.2s;
+}
+
+.cykler::before {
+    background-color: var(--blue);
+    content: "";
+    width: 0;
+    height: 3px;
+    left: 50%;
+    top: 0;
+    text-align: center;
+    transition: width 0.5s ease 0s;
+    position: absolute;
+}
+
+.cykler:hover::before {
+    width: 50%;
+}
+
+.cykler::after {
+    background-color: var(--blue);
+    content: "";
+    width: 0;
+    height: 3px;
+    right: 50%;
+    top: 0;
+    text-align: center;
+    transition: width 0.5s ease 0s;
+    position: absolute;
+}
+
+.cykler:hover::after {
+    width: 50%;
+}
+
+.container {
+    height: 200px;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+}
+
+
+.kort {
+    margin-bottom: 0;
+    height: 40px;
+}
+
+.pris {
+    padding-bottom: 0;
+    font-size: 1.2rem;
+    color: var(--blue);
+}
+
+.read_more {
+    text-align: center;
+    padding: 0.5rem;
+    cursor: pointer;
+    width: 100px;
+    font-size: 1rem;
+    align-self: flex-end;
+    margin-top: 1rem;
+}
+
+/*------------------CYKEL-DETALJER--------------------*/
+.model_singleview {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-areas: "karrusel karrusel karrusel"
+        "info info info"
+        "fordele fordele fordele";
+    margin-top: 40px;
+}
+
+/*~~~~~~~Karrusel~~~~~~*/
+.slideshow-carousel {
+    grid-area: karrusel;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70%;
+    margin: 0 auto;
+}
+
+.info {
+    margin: 3rem;
+    grid-area: info;
+}
+
+.single_cykel {
+    width: 320px;
+    margin: 0 auto;
+}
+
+.benefits_section {
+    grid-area: fordele;
+}
+
+.benefit {
+    max-width: 350px;
+}
+
+.karrusel {
+    width: 100%;
+    max-width: 750px;
+}
+
+.radio_btn_container {
+    display: flex;
+    justify-content: center;
+}
+
+.radioBTN {
+    background-color: var(--button-color);
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+}
+
+.radioBTN:hover {
+    background-color: var(--dark-blue);
+}
+
+.checked {
+    background-color: var(--dark-blue);
+}
+
+
+.fwd p,
+.bwd p {
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    color: var(--blue);
+    margin: 0;
+    padding-bottom: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.fwd:hover,
+.bwd:hover {
+    color: var(--dark-blue);
+}
+
+.pics_container
+
+/*Der, hvor billederne vises*/
+    {
+    overflow: hidden;
+}
+
+.pics {
+    left: 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+    transition: all 1s;
+}
+
+.img_container {
+    width: 100%;
+}
+
+img {
+    width: 100%;
+    object-fit: contain;
+}
+
+.fwd {
+    justify-content: flex-end;
+    align-self: center;
+}
+
+.benefits {
+    list-style: none;
+    line-height: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    color: var(--blue);
+    font-weight: bold;
+    margin: 2rem;
+
+}
+
+
+.benefit::before {
+    content: '';
+    display: inline-block;
+    height: 35px;
+    width: 40px;
+    background-size: 40px;
+    background-image: url('assets/cykel-ikon.svg');
+    background-repeat: no-repeat;
+    margin-right: 15px;
+    background-position: center center;
+    vertical-align: middle;
+}
+
+.benefit {
+    padding-top: 2rem;
+}
+
+.button {
+    padding: 0.5rem;
+    margin-top: 1rem;
+    background-color: var(--button-color);
+    color: #ffffff;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+
+}
+
+/*-------------HVORFOR KOGA?------------*/
+/* ---- Koga sektion -----*/
+.om_koga_sektion {
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.koga_splash {
+    width: 100%;
+    height: 60vh;
+    z-index: 50;
+    object-fit: cover;
+}
+
+/* ---- Koga sektion -----Overskrifter----*/
+.koga_h1 {
+    text-align: center;
+    align-self: center;
+    font-size: 2rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 0.4rem;
+    margin: 3rem 0;
+    max-width: 10vw;
+    padding-left: 30px;
+
+}
+
+.koga_h2 {
+    text-align: left;
+    align-self: center;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+    color: var(--blue);
+    font-size: 1.1rem;
+    font-style: italic;
+    font-weight: lighter;
+    margin-top: 3rem;
+    padding: 0px 30px;
+
+}
+
+/* ---- Koga sektion -----Tekst----*/
+
+.koga_tekst1,
+.koga_tekst2 {
+    margin-top: 1rem;
+    padding: 0px 30px;
+
+}
+
+.koga_tekst2 {
+    margin-bottom: 3rem;
+}
+
+/* ---- Koga sektion -----Punktopstilling----*/
+
+.koga_noegle ul {
+    margin-bottom: 3rem;
+    list-style-type: none;
+}
+
+.om_koga_sektion ul li::before {
+    content: '';
+    display: inline-block;
+    height: 35px;
+    width: 40px;
+    background-size: 40px;
+    background-image: url('assets/cykel-ikon.svg');
+    background-repeat: no-repeat;
+    margin-right: 15px;
+    background-position: center center;
+    vertical-align: middle;
+}
+
+
+.koga_noegle li {
+    padding-bottom: 1rem;
+
+}
+
+.koga_noegle {
+    line-height: 2rem;
+    color: var(--blue);
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    font-size: 1.1rem;
+    position: relative;
+}
+
+/* ---- Koga sektion -----Knap----*/
+
+.hvorfor_knap {
+    padding: 20px;
+    font-size: 1.1rem;
+    margin-left: 3.5rem;
+    margin-bottom: 1rem;
+    margin-top: 0;
+}
+
+/* ---- Koga sektion slut -----*/
+
+/*-----------------OM BUTIKKEN-----------*/
+.body-butikken h4,
+.body-butikken h2 {
+    color: var(--blue);
+}
+
+.splash_billede {
+    position: relative;
+    width: 100vw;
+    margin: 0 0;
+    object-fit: cover;
+}
+
+.splash_h1 {
+    position: absolute;
+    top: 20%;
+    left: 24%;
+    color: white;
+    font-size: 1.5rem;
+    letter-spacing: 0.5rem;
+    text-transform: uppercase;
+
+}
+
+/*---- Under billedet*/
+
+.info_indhold {
+    display: grid;
+    grid-template-areas: "left right";
+    padding: 0px 30px;
+}
+
+.info_ejer {
+    grid-area: left;
+
+}
+
+.info_fokus {
+    grid-area: right;
+}
+
+.ejer_beskrivelse,
+.fokus_tekst {
+    font-size: 0.8rem;
+    line-height: 1rem;
+    margin-right: 1rem;
+}
+
+.laes_mere_indhold {
+    display: none;
+}
+
+/* ----- Sektion under Billede slut  ----- */
+
+/* ----- Billede og punkter sektion ----- */
+
+
+.om_sektion {
+    display: grid;
+    grid-template-areas:
+        "main main"
+        "midt bund";
+}
+
+.sektion_2 {
+    display: grid;
+    grid-template-areas: "top"
+        "bottom";
+    margin-top: 1rem;
+    grid-area: midt;
+
+}
+
+.butik_billede {
+    margin-top: 1rem;
+    grid-area: bottom;
+}
+
+.om_punkter {
+    line-height: 2rem;
+    color: var(--blue);
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    font-size: 1.1rem;
+    padding-left: 1.4rem;
+    grid-area: top;
+
+}
+
+.om_indhold,
+.ejer_indhold {
+    padding: 0px 30px;
+    margin-top: 1rem;
+}
+
+.om_indhold {
+    grid-area: main;
+    margin-right: 3rem;
+}
+
+.ejer_indhold {
+    grid-area: bund;
+    margin-top: 3rem;
+
+}
+
+
+/* ----- Billede og punkter sektion slut ----- */
+
+/*-------------BESØG OS------------*/
+
+
+.besog_os {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+.besog_os_content {
+    display: grid;
+    grid-template-areas:
+        "header"
+        "main"
+        "content"
+        "rightpic"
+        "footer";
+    margin-top: 5rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+
+}
+
+
+.besog_os_h1 {
+    grid-area: header;
+    margin-bottom: 1rem;
+}
+
+.besog_tekst {
+    grid-area: main;
+    /*    white-space: pre;*/
+    line-height: 1.5rem;
+
+}
+
+.besog_os_h1,
+.besog_tekst {
+    width: 100%;
+}
+
+.gmap_canvas {
+    overflow: hidden;
+    padding-bottom: 56.25%;
+    position: relative;
+    grid-area: rightpic;
+    width: 90vw;
+    height: 30vw;
+}
+
+.gmap_canvas iframe {
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+
+.content-group {
+    grid-area: content;
+    padding-top: 0;
+    display: flex;
+    flex-direction: column;
+
+}
+
+/*.besog_indhold {
+    margin: 10vw;
+
+}*/
+
 /*------------FOOTER----------------*/
 footer {
     background-color: var(--dark-blue);
-    /* height: 30vh;*/
     text-align: center;
     margin-top: 1rem;
     display: flex;
@@ -305,9 +1035,8 @@ footer {
     flex-wrap: wrap;
     margin-bottom: 0;
     width: 100%;
-
+    grid-area: footer;
 }
-
 
 footer p {
     white-space: pre-wrap;
@@ -320,13 +1049,15 @@ footer p {
 
 .tlf {
     margin-bottom: 0;
-
 }
 
-
-
 #some-icons p {
+
     text-align: center;
+}
+
+#some-icons {
+    margin: 0;
 }
 
 #some-icons img {
@@ -345,8 +1076,39 @@ footer p {
 }
 
 
+/*-------MEDIA QUERIE MIN-WIDTH 700px ------*/
+
+@media screen and (min-width:700px) {
+
+    #bike_model_section {
+        padding-top: 50px;
+    }
+
+    #bike_model {
+        padding-top: 4rem;
+    }
+
+    #kategorier {
+        display: list-item;
+        list-style-type: none;
+    }
+
+    #filterknap {
+        display: none;
+    }
+
+}
+
+/*-------MEDIA QUERIE MIN-WIDTH 800px ------*/
 
 @media screen and (min-width:800px) {
+
+    /*Cykler-detaljer*/
+    .info {
+        margin-left: 2rem;
+    }
+
+    /*Footer*/
 
     footer {
         height: 30vh;
@@ -354,8 +1116,9 @@ footer p {
         margin-top: 1rem;
         display: flex;
         align-items: center;
-        justify-content: space-around;
+        justify-content: center;
         flex-direction: row;
+        margin: 0 auto;
     }
 
     .aabningstider,
@@ -365,12 +1128,304 @@ footer p {
         flex-basis: 300px;
     }
 
+}
 
-
+/*-------MEDIA QUERIE MIN-WIDTH 850px ------*/
+@media screen and (min-width: 850px) {
+    .model_singleview {
+        grid-template-areas: "karrusel karrusel karrusel"
+            "info fordele fordele"
+    }
 
 }
 
+/*-------MEDIA QUERIE MIN-WIDTH 1000px ------*/
+@media screen and (min-width:1000px) {
 
+    /* Diverse css regler */
+
+    .slide_venstre {
+        position: relative;
+    }
+
+    .slide_venstre2 {
+        position: relative;
+    }
+
+    /*--------------------Velkommen sektion-------------------*/
+    .velkommen_h1,
+    .velkommen_tekst {
+        padding-left: 0;
+    }
+
+    .velkommen_indhold {
+        display: grid;
+        grid-template-areas:
+            "header header header"
+            "main main rightpic";
+        margin-top: 5rem;
+        margin-left: 6rem;
+        margin-right: 6rem;
+    }
+
+    .velkommen_h1 {
+        grid-area: header;
+    }
+
+    .velkommen_tekst {
+        grid-area: main;
+        width: 30vw;
+        padding-right: 3rem;
+        position: relative;
+    }
+
+    .velkommen_billede {
+        grid-area: rightpic;
+    }
+
+    .velkommen_left {
+        margin: auto;
+    }
+
+
+    /*----butikken----*/
+    /* ------ Splash sektion -------- */
+
+    .body-butikken h4 {
+        font-size: 2rem;
+    }
+
+    .splash_h1 {
+        font-size: 2.2rem;
+        left: 70%;
+        top: 56%;
+    }
+
+    .splash_billede {
+        margin-top: 1rem;
+        height: 64vh;
+        position: relative;
+
+    }
+
+    /* ------ Splash sektion slut -------- */
+
+    /* ------ Splash-undersektion -------- */
+
+    .info_indhold {
+        display: grid;
+        grid-template-areas: "left right";
+        border-bottom: solid;
+        border-bottom-color: var(--blue);
+        border-bottom-width: thin;
+        margin-top: 1rem;
+
+
+    }
+
+    .info_ejer {
+        grid-area: left;
+        max-width: 14rem;
+        margin-left: 1rem;
+        margin-right: 20rem;
+
+
+    }
+
+    .fokus_tekst,
+    .ejer_beskrivelse {
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+
+    .ejer_h4 {
+        width: 50rem;
+        margin-bottom: 0.5rem;
+        letter-spacing: 0.1rem;
+        margin-top: 2rem;
+    }
+
+
+    .fokus_h4 {
+        margin-bottom: 0.5rem;
+        letter-spacing: 0.1rem;
+        margin-top: 2rem;
+    }
+
+
+
+
+    .info_fokus {
+        grid-area: right;
+        max-width: 20rem;
+    }
+
+    /* ------ Splash-undersektion slut -------- */
+
+    /* ------ Billede og punkt-sektion -------- */
+
+    .sektion_2 {
+        display: grid;
+        grid-template-areas: "left right";
+        margin-top: 7rem;
+        grid-area: main;
+
+    }
+
+
+    .butik_billede {
+        grid-area: left;
+        margin-top: 0;
+    }
+
+    .om_punkter {
+        grid-area: right;
+        font-size: 1.5rem;
+        font-weight: lighter;
+        line-height: 2.5;
+        padding: 0rem 1rem 1rem 0rem;
+
+
+
+
+    }
+
+    .om_punkter h2 {
+        margin-left: 40px;
+        text-align: center;
+        border-bottom: 1px solid;
+
+
+
+    }
+
+    .om_punkter li {
+        list-style-type: none;
+        text-align: center;
+
+
+    }
+
+    /* ------ Billede og punkt-sektion slut-------- */
+
+    /* ------ Om/baggrund og ejer sektion -------- */
+
+    .om_indhold {
+        padding: 0;
+        margin-bottom: 2rem;
+        grid-area: midt;
+        margin-top: 2rem;
+        margin-left: 1rem;
+    }
+
+
+    .ejer_indhold {
+        padding: 0;
+        margin-left: 1rem;
+        margin-bottom: 3rem;
+        grid-area: bund;
+    }
+
+    .ejer_beskrivelse,
+    .fokus_tekst {
+        font-size: 1.1rem;
+        width: 30rem;
+        line-height: 1.5;
+        margin-top: 0;
+        padding-bottom: 1.5rem;
+    }
+
+    .ejer_h2 {
+        margin-top: 0;
+    }
+
+
+    /* ------ Om/baggrund og ejer sektion slut -------- */
+
+
+    /* ------ Scroll knap -------- */
+
+
+    .button_om {
+        position: absolute;
+        top: 81%;
+        left: 48%;
+        margin-left: -16px;
+        display: block;
+        width: 60px;
+        height: 60px;
+        border: 2px solid #FFF;
+        border-radius: 50%;
+        animation: bounce 2s infinite 2s;
+
+    }
+
+    .button_om:before {
+        position: absolute;
+        top: calc(50% - 10px);
+        left: calc(50% - 7.8px);
+        transform: rotate(-45deg);
+        width: 12px;
+        height: 12px;
+        content: "";
+        border: 2px solid white;
+        border-width: 0px 0 2px 2px;
+    }
+
+    .om_laes_mere {
+        position: absolute;
+        bottom: 1%;
+        left: 43.7%;
+        display: none;
+    }
+
+    .laes_mere_indhold {
+        display: block;
+    }
+
+    /* ------ Scroll knap slut -------- */
+
+    /*--------------------Besøg os-------------------*/
+
+    .besog_os_h1,
+    .besog_tekst {
+        padding-left: 0;
+        margin-bottom: 0;
+
+    }
+
+
+    .besog_os_content {
+        display: grid;
+        grid-template-areas:
+            "header rightpic rightpic"
+            "main rightpic rightpic"
+            "content rightpic rightpic"
+            "content rightpic rightpic"
+            "footer footer footer";
+        margin-top: 5rem;
+        margin-left: 1rem;
+        margin-right: 1rem;
+
+    }
+
+    .gmap_canvas {
+        width: 40vw;
+        height: 30vw;
+        margin-right: 1rem;
+        margin-bottom: 1rem;
+    }
+
+
+
+    .besog_tekst {
+        margin-top: 1rem;
+        max-width: 40vw;
+        margin-bottom: 1rem
+    }
+}
+
+/*-------MEDIA QUERIE MIN-WIDTH 1100px ------*/
 @media screen and (min-width:1100px) {
     #menuknap {
         display: none;
@@ -379,8 +1434,6 @@ footer p {
     .hvid {
         display: none;
     }
-
-
 
     #logo {
         z-index: 300;
@@ -397,7 +1450,6 @@ footer p {
         display: inline-block;
         margin-top: 0;
         padding-top: 0;
-        /**/
         /*lad menuen være vandret*/
 
     }
@@ -415,7 +1467,6 @@ footer p {
         display: flex;
         flex-direction: row;
         height: 70px;
-
     }
 
     header {
@@ -423,7 +1474,6 @@ footer p {
         height: 50px;
         background-color: transparent;
     }
-
 
     #hovedmenu a {
         margin: 0 1rem;
@@ -437,11 +1487,7 @@ footer p {
         text-transform: uppercase;
         position: relative;
         line-height: 0;
-
-
     }
-
-
 
     #hovedmenu a::after {
 
@@ -459,14 +1505,267 @@ footer p {
         width: 100%;
     }
 
-    /*  footer {
-        height: 30vh;
-        text-align: center;
-        margin-top: 1rem;
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
-        flex-direction: row;
-    }*/
+    i {
+        /*Dropdown-pil*/
+        border: solid var(--dark-blue);
+        border-width: 0 1px 1px 0;
+        display: inline-block;
+        padding: 4px;
+        margin-bottom: 4px;
+        margin-left: 7px;
+    }
 
+    /*---HVORFOR KOGA?---*/
+
+    /* ---- Koga sektion -----*/
+    .om_koga_sektion {
+        display: grid;
+        grid-template-areas: "left right";
+        max-width: none;
+        margin-top: 1rem;
+    }
+
+    .koga_indhold {
+
+        padding-left: 1rem;
+        padding-right: 1rem;
+        grid-area: left;
+        position: relative;
+
+    }
+
+
+    .koga_splash {
+        grid-area: right;
+        width: 50vw;
+        height: 100vh;
+        z-index: -1;
+
+    }
+
+    .slide_venstre {
+        position: relative;
+    }
+
+
+    /* ---- Koga sektion ---Overskrifter--*/
+
+
+    .koga_h1 {
+        text-align: center;
+        align-self: center;
+        font-size: 3rem;
+        text-transform: uppercase;
+        font-weight: bold;
+        letter-spacing: 0.5rem;
+        position: relative;
+        padding: 0;
+        max-width: none;
+    }
+
+    .koga_h2 {
+        letter-spacing: 0.1rem;
+        text-transform: uppercase;
+        color: var(--blue);
+        font-style: italic;
+        margin-top: 2rem;
+        font-weight: lighter;
+    }
+
+    .koga_splash {
+        object-position: top right
+    }
+
+    /* ---- Koga sektion ---Tekst---*/
+
+    .koga_tekst2 {
+        margin-bottom: 0;
+    }
+
+    .koga_tekster {
+        position: relative;
+    }
+
+    /* ---- Koga sektion ---Punktopstilling--*/
+
+    .koga_noegle {
+        margin-top: 4rem;
+    }
+
+    .koga_noegle ul {
+
+        font-weight: lighter;
+        font-size: 1rem;
+        line-height: 3;
+        padding-left: 30px;
+    }
+
+    .hvorfor_knap {
+        position: absolute;
+        top: 86%;
+        left: 60%;
+        padding: 1rem;
+    }
+
+
+}
+
+
+
+/*-------MEDIA QUERIE MIN-WIDTH 1200px ------*/
+@media screen and (min-width: 1200px) {
+
+    .model_singleview {
+        grid-template-areas: "info karrusel"
+            "fordele fordele";
+    }
+
+    .benefit {
+        max-width: 350px;
+    }
+}
+
+/*-------MEDIA QUERIE MIN-WIDTH 1332px ------*/
+
+@media screen and (max-width:1332px) {
+
+
+    /*~~~~~~~~Forside video sektion~~~~~~~~~~*/
+
+    #loop_video {
+        height: 30%;
+    }
+
+    #button {
+        top: 28vw;
+        left: 50%;
+    }
+
+    #scroll_down {
+        display: none;
+    }
+
+    /*~~~~~~~~~~Velkommen sektion~~~~~~~~*/
+
+    .velkommen_indhold {
+        margin: 10vw;
+    }
+
+    .velkommen_tekst {
+        margin-bottom: 5vw;
+    }
+
+    /*~~~~~~~~Koga tilbyder sektion~~~~~~~~*/
+
+    .tilbud {
+        grid-template-columns: 1fr;
+    }
+
+    .koga_tilbyder_indhold {
+        padding-left: 15%;
+        margin-top: 0;
+    }
+
+    .tilbud_midten {
+        margin-top: 5vw
+    }
+
+    .tilbud_hojre {
+        margin-top: 5vw
+    }
+
+    .content-group {
+        white-space: pre;
+        margin-top: 1rem;
+        margin-top: -10px;
+
+    }
+}
+
+
+/*-----------MEDIA QUERIE MIN-WIDTH 1300px--------*/
+
+@media screen and (min-width: 1300px) {
+    .content-group {
+        white-space: pre;
+        margin-top: 1rem;
+        margin-top: -70px;
+
+    }
+}
+
+/*-------MEDIA QUERIE MIN-WIDTH 1800px ------*/
+@media screen and (min-width: 1800px) {
+
+    .koga_indhold {
+        margin-top: 9rem;
+    }
+
+    .koga_tekster {
+        margin-top: 7rem;
+    }
+
+    .hvorfor_knap {
+        left: 74%;
+    }
+
+    .koga_h1 {
+        font-size: 4rem;
+    }
+
+
+    /*Butikken*/
+    .splash_h1 {
+        font-size: 3.5rem;
+    }
+
+    .info_indhold {
+        margin-top: 2rem;
+        margin-bottom: 3rem;
+        width: 80vw;
+        max-width: none;
+        margin-left: -15rem;
+    }
+
+    .body-butikken h4 {
+        font-size: 3rem;
+        max-width: none;
+
+    }
+
+    .info_fokus {
+        max-width: none;
+        padding-left: 10rem;
+    }
+
+    .info_ejer {
+        margin-left: 9rem;
+    }
+
+    .ejer_beskrivelse,
+    .fokus_tekst {
+        font-size: 1.5rem;
+        width: 40rem;
+        line-height: 1.5;
+        margin-top: 0;
+        padding-bottom: 1.5rem;
+    }
+
+
+    .button_om {
+        position: absolute;
+        bottom: 3%;
+        left: 93.7%;
+        margin-left: -16px;
+        display: block;
+        width: 90px;
+        height: 90px;
+        border: 2px solid #FFF;
+        border-radius: 50%;
+        animation: bounce 2s infinite 2s;
+    }
+
+    .om_laes_mere {
+        display: none;
+    }
 }
